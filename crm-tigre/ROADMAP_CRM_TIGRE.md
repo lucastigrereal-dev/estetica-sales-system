@@ -1,184 +1,273 @@
-# 🐯 CRM TIGRE - ROADMAP DE IMPLEMENTAÇÃO
+# 🐯 CRM TIGRE - ROADMAP COMPLETO
 
-## Visão Geral
+## ⚡ ESTRATÉGIA: WHATICKET COMO BASE
 
-Este é o roadmap completo para construir o CRM Tigre em **16 semanas**, dividido em **3 fases**.
-
-**Stack Tecnológico:**
-- Frontend: Next.js 14 + React 18 + TypeScript + TailwindCSS + Radix UI
-- Backend: Node.js 20 + Express + tRPC + TypeScript
-- Database: PostgreSQL (Supabase) + Prisma ORM + Redis
-- IA: OpenAI GPT-4 + Embeddings
-- Integrações: WhatsApp Business API, Google Calendar, Stripe, SendGrid
+Em vez de construir do zero, o CRM Tigre será construído **em cima do Whaticket**, que já está disponível em `ferramentas/whaticket/`. Isso economiza **60+ horas** de desenvolvimento porque o Whaticket já tem autenticação, WhatsApp, chat, kanban e multi-tenant prontos.
 
 ---
 
-## 📅 FASE 1: MVP (Semanas 1-4)
+## 📊 COMPARATIVO: DO ZERO vs WHATICKET
 
-### Objetivo
-Sistema básico funcional: Pacientes + Agendamentos + Lembretes
+| Funcionalidade | Do Zero | Com Whaticket | Economia |
+|----------------|---------|---------------|----------|
+| Autenticação + Usuários | 8h | ✅ Pronto | 8h |
+| Integração WhatsApp | 16h | ✅ Pronto | 16h |
+| Sistema de Chat/Tickets | 12h | ✅ Pronto | 12h |
+| Kanban Visual | 8h | ✅ Pronto | 8h |
+| Multi-tenant (SaaS) | 12h | ✅ Pronto | 12h |
+| Filas de Atendimento | 4h | ✅ Pronto | 4h |
+| **TOTAL** | **60h** | **0h** | **60h** |
 
-| Semana | Entregável | Responsável |
-|--------|------------|-------------|
-| 1 | Setup (GitHub, Vercel, Supabase, Prisma) | Claude Code |
-| 2 | CRUD Pacientes completo | Claude Code |
-| 3 | Calendário + Agendamentos + Google Calendar | Claude Code |
-| 4 | Lembretes WhatsApp + Dashboard básico | Claude Code |
-
-### Métricas de Sucesso
-- ✅ 100+ pacientes cadastrados
-- ✅ 20+ agendamentos criados
-- ✅ 93%+ taxa sucesso lembretes
-- ✅ No-show reduzido em 50%
+**O que você precisa adicionar:** Pacientes, Procedimentos, Agendamentos, Financeiro, Anna IA, Dashboard, Lembretes.
 
 ---
 
-## 📅 FASE 2: IA + AUTOMAÇÕES (Semanas 5-8)
+## 📅 TIMELINE: 8 SEMANAS (em vez de 16)
 
-### Objetivo
-Integração OpenAI + Automações avançadas + Conversão 3x
+### FASE 1: FUNDAÇÃO (Semanas 1-2)
 
-| Semana | Entregável | Responsável |
-|--------|------------|-------------|
-| 5 | Anna Chatbot (WhatsApp + IA) | Claude Code |
-| 6 | Agendamento automático + Pagamento Stripe | Claude Code |
-| 7 | Pesquisa NPS + Upsell inteligente | Claude Code |
-| 8 | Dashboard avançado + Relatórios | Claude Code |
+| Semana | Prompt | Entregável | Horas |
+|--------|--------|------------|-------|
+| 1 | CC-TIGRE-01 | Setup Whaticket configurado como CRM Tigre | 2h |
+| 1 | CC-TIGRE-02 | Módulo de Pacientes completo | 4h |
+| 2 | CC-TIGRE-03 | Procedimentos + Agendamentos + Calendário | 6h |
 
-### Métricas de Sucesso
-- ✅ 72+ leads qualificados por Anna
-- ✅ 62-65% taxa conversão
-- ✅ 8.7+ NPS médio
-- ✅ 40%+ taxa upsell
+**Resultado Fase 1:** Sistema básico funcionando com pacientes, procedimentos e agendamentos.
 
 ---
 
-## 📅 FASE 3: INTELIGÊNCIA AVANÇADA (Semanas 9-16)
+### FASE 2: MONETIZAÇÃO (Semanas 3-4)
 
-### Objetivo
-ML predictivo + Programa fidelidade + Relatórios 360° = CLV 3x
+| Semana | Prompt | Entregável | Horas |
+|--------|--------|------------|-------|
+| 3 | CC-TIGRE-04 | Módulo Financeiro + Stripe + PIX | 4h |
+| 4 | CC-TIGRE-05 | Anna IA (upgrade do chatbot) | 6h |
 
-| Semana | Entregável | Responsável |
-|--------|------------|-------------|
-| 9-10 | Upload fotos antes/depois + IA Quality | Claude Code |
-| 11-12 | Programa Fidelidade (pontos, níveis) | Claude Code |
-| 13-14 | ML Predictivo + Reativação automática | Claude Code |
-| 15-16 | Relatórios 360° + Otimizações | Claude Code |
-
-### Métricas de Sucesso
-- ✅ 80%+ retenção pacientes
-- ✅ R$75k/mês faturando
-- ✅ CLV triplicado
-- ✅ 4h/semana seu tempo admin
+**Resultado Fase 2:** Sistema com pagamentos integrados e chatbot inteligente.
 
 ---
 
-## 💰 CUSTOS ESTIMADOS
+### FASE 3: AUTOMAÇÃO (Semanas 5-6)
 
-### Desenvolvimento
+| Semana | Prompt | Entregável | Horas |
+|--------|--------|------------|-------|
+| 5 | CC-TIGRE-06 | Lembretes automáticos + NPS + Reativação | 4h |
+| 6 | CC-TIGRE-07 | Dashboard executivo + Relatórios | 6h |
+
+**Resultado Fase 3:** Sistema automatizado com métricas em tempo real.
+
+---
+
+### FASE 4: PRODUÇÃO (Semanas 7-8)
+
+| Semana | Prompt | Entregável | Horas |
+|--------|--------|------------|-------|
+| 7 | CC-TIGRE-08 | Deploy + Docker + Segurança | 3h |
+| 8 | - | Testes finais + Ajustes | 4h |
+
+**Resultado Fase 4:** Sistema em produção, pronto para usar.
+
+---
+
+## 🎯 O QUE CADA PROMPT FAZ
+
+### CC-TIGRE-01: Setup Inicial
+Configura o Whaticket existente como base do CRM Tigre. Renomeia, ajusta cores, prepara ambiente.
+
+### CC-TIGRE-02: Módulo Pacientes
+Adiciona cadastro completo de pacientes com histórico médico, classificação automática (Ouro/Prata/Bronze) e integração com contatos do Whaticket.
+
+### CC-TIGRE-03: Procedimentos + Agendamentos
+Adiciona catálogo de procedimentos estéticos e sistema de agendamento com calendário visual, detecção de conflitos e status (agendado, confirmado, realizado, no-show).
+
+### CC-TIGRE-04: Financeiro
+Adiciona controle financeiro com integração Stripe (cartão), PIX, registro de pagamentos e dashboard de faturamento.
+
+### CC-TIGRE-05: Anna IA
+Faz upgrade do chatbot básico do Whaticket para a Anna, assistente com IA (GPT-4) que qualifica leads automaticamente e sugere agendamentos.
+
+### CC-TIGRE-06: Lembretes
+Adiciona automações de lembrete 24h, lembrete 2h, pesquisa NPS pós-atendimento e campanhas de reativação de pacientes inativos.
+
+### CC-TIGRE-07: Dashboard
+Substitui a home do Whaticket por um dashboard executivo com KPIs, gráficos de faturamento, funil de conversão e relatórios exportáveis.
+
+### CC-TIGRE-08: Deploy
+Finaliza o sistema para produção com Docker, nginx, SSL, backups automáticos e documentação.
+
+---
+
+## 📁 ESTRUTURA FINAL DO PROJETO
+
 ```
-Fase 1 (Semanas 1-4):  R$ 15.000
-Fase 2 (Semanas 5-8):  R$ 18.000
-Fase 3 (Semanas 9-16): R$ 25.800
-Total:                 R$ 58.800
+estetica-sales-system/
+│
+├── crm-tigre/                      # 🐯 SISTEMA PRINCIPAL
+│   ├── whaticket-saas/             # Base do Whaticket (copiado de ferramentas/)
+│   │   ├── backend/                # Node.js + Express + Sequelize
+│   │   │   ├── src/
+│   │   │   │   ├── models/         # + Paciente, Procedimento, Agendamento, Pagamento
+│   │   │   │   ├── controllers/    # + PacienteController, AgendamentoController, etc
+│   │   │   │   ├── services/       # + OpenAIService, StripeService, AnnaService
+│   │   │   │   ├── jobs/           # + LembreteJob, NpsJob, ReativacaoJob
+│   │   │   │   └── routes/         # + novas rotas
+│   │   │   └── package.json
+│   │   │
+│   │   └── frontend/               # React + Material UI
+│   │       ├── src/
+│   │       │   ├── pages/          # + Pacientes, Agendamentos, Financeiro, Dashboard
+│   │       │   ├── components/     # + Charts, Calendar, Forms
+│   │       │   └── ...
+│   │       └── package.json
+│   │
+│   ├── docs/                       # Documentação completa
+│   │   ├── 01-checklist_inicio.md
+│   │   ├── 02-plano_acao.md
+│   │   ├── 03-visual_stack.md
+│   │   ├── 04-ui_design.md
+│   │   ├── 05-resumo_executivo.md
+│   │   ├── 06-documentacao_final.md
+│   │   └── 07-arquitetura_completa.md
+│   │
+│   ├── ROADMAP_CRM_TIGRE.md        # ← VOCÊ ESTÁ AQUI
+│   ├── PROMPTS_CLAUDE_CODE_TIGRE.md
+│   ├── .env.example
+│   └── README.md
+│
+├── ferramentas/                    # Ferramentas de automação Windows
+│   ├── whaticket/                  # 📦 BASE DO CRM TIGRE
+│   ├── wacrm/
+│   ├── wasender/
+│   └── jarvee/
+│
+├── backend/                        # API antiga (FastAPI) - pode ignorar
+├── scripts/                        # Scripts de integração
+└── n8n-workflows/                  # Fluxos de automação
 ```
 
-### Infraestrutura (mensal)
+---
+
+## ⚡ COMO EXECUTAR
+
+### Passo 1: Preparar o Ambiente
+```bash
+# Clone o repositório
+git clone https://github.com/lucastigrereal-dev/estetica-sales-system.git
+cd estetica-sales-system
+
+# Copie o Whaticket como base do CRM Tigre
+cp -r ferramentas/whaticket/whaticket-saas crm-tigre/
 ```
-Vercel Pro:     R$ 100/mês
-Supabase Pro:   R$ 500/mês
-OpenAI:         R$ 1.000/mês
-SendGrid:       R$ 150/mês
-Stripe fees:    3% automático
-Total:          ~R$ 3-4k/mês
+
+### Passo 2: Executar os Prompts
+```bash
+# Entre na pasta do CRM Tigre
+cd crm-tigre
+
+# Abra o Claude Code e cole os prompts na ordem:
+# CC-TIGRE-01 → CC-TIGRE-02 → ... → CC-TIGRE-08
 ```
+
+### Passo 3: Commitar Cada Etapa
+```bash
+# Após cada prompt completar:
+git add .
+git commit -m "feat: [descrição do que foi feito]"
+git push
+```
+
+### Passo 4: Subir em Produção
+```bash
+# Após CC-TIGRE-08:
+docker-compose up -d
+```
+
+---
+
+## 🔄 EXECUÇÃO PARALELA (MÚLTIPLAS ABAS)
+
+Para acelerar, você pode rodar alguns prompts em paralelo:
+
+**Aba 1 (Sequencial):**
+```
+CC-TIGRE-01 → CC-TIGRE-02 → CC-TIGRE-03 → CC-TIGRE-04
+```
+
+**Aba 2 (Após CC-TIGRE-01):**
+```
+CC-TIGRE-05 (Anna IA)
+```
+
+**Aba 3 (Após CC-TIGRE-03 e CC-TIGRE-05):**
+```
+CC-TIGRE-06 (Lembretes)
+```
+
+**Aba 4 (Após CC-TIGRE-03 e CC-TIGRE-04):**
+```
+CC-TIGRE-07 (Dashboard)
+```
+
+**Final (Após todos):**
+```
+CC-TIGRE-08 (Deploy)
+```
+
+---
+
+## 💰 INVESTIMENTO vs RETORNO
+
+### Tempo de Desenvolvimento
+| Abordagem | Tempo | Custo Dev (R$100/h) |
+|-----------|-------|---------------------|
+| Do zero (16 semanas) | 160h | R$ 16.000 |
+| Com Whaticket (8 semanas) | 40h | R$ 4.000 |
+| **Economia** | **120h** | **R$ 12.000** |
 
 ### ROI Esperado
-```
-Payback:    3 meses
-ROI Year 1: 382%
-ROI Year 2: 850%+
-```
+| Mês | Faturamento Extra | Acumulado |
+|-----|-------------------|-----------|
+| 1 | + R$ 5.000 | R$ 5.000 |
+| 2 | + R$ 15.000 | R$ 20.000 |
+| 3 | + R$ 25.000 | R$ 45.000 |
+| **Payback** | **2 meses** | - |
 
 ---
 
-## 🎯 PRÓXIMOS PASSOS
+## ✅ CHECKLIST DE PROGRESSO
 
-1. **AGORA:** Rodar os prompts do Claude Code na ordem
-2. **Semana 1:** Setup completo + primeiro deploy
-3. **Semana 4:** MVP funcionando
-4. **Semana 8:** IA integrada
-5. **Semana 16:** Sistema completo
+### Fase 1: Fundação
+- [ ] CC-TIGRE-01: Setup concluído
+- [ ] CC-TIGRE-02: Pacientes funcionando
+- [ ] CC-TIGRE-03: Agendamentos funcionando
 
----
+### Fase 2: Monetização
+- [ ] CC-TIGRE-04: Pagamentos funcionando
+- [ ] CC-TIGRE-05: Anna IA respondendo
 
-## 📁 ESTRUTURA DO PROJETO
+### Fase 3: Automação
+- [ ] CC-TIGRE-06: Lembretes enviando
+- [ ] CC-TIGRE-07: Dashboard mostrando métricas
 
-```
-crm-tigre/
-├── docs/                    # Documentação completa
-│   ├── 01-checklist_inicio.md
-│   ├── 02-plano_acao.md
-│   ├── 03-visual_stack.md
-│   ├── 04-ui_design.md
-│   ├── 05-resumo_executivo.md
-│   ├── 06-documentacao_final.md
-│   └── 07-arquitetura_completa.md
-│
-├── frontend/                # Next.js 14 + React
-│   ├── src/
-│   │   ├── app/            # App Router
-│   │   ├── components/     # Componentes React
-│   │   ├── lib/            # Utilitários
-│   │   └── styles/         # TailwindCSS
-│   └── package.json
-│
-├── backend/                 # Node.js + tRPC
-│   ├── src/
-│   │   ├── routers/        # tRPC routers
-│   │   ├── services/       # Lógica de negócio
-│   │   ├── integrations/   # WhatsApp, Stripe, etc
-│   │   └── utils/          # Utilitários
-│   └── package.json
-│
-├── prisma/                  # Schema do banco
-│   ├── schema.prisma
-│   └── migrations/
-│
-├── automations/             # Fluxos N8N
-│   ├── anna-chatbot.json
-│   ├── lembretes.json
-│   └── nps-upsell.json
-│
-├── integrations/            # Configs de integrações
-│   ├── whatsapp/
-│   ├── stripe/
-│   ├── google-calendar/
-│   └── openai/
-│
-└── scripts/                 # Scripts utilitários
-    ├── seed.ts
-    └── migrate.ts
-```
+### Fase 4: Produção
+- [ ] CC-TIGRE-08: Deploy concluído
+- [ ] Testes finais OK
+- [ ] Sistema em produção
 
 ---
 
-## ⚡ PROMPTS PARA CLAUDE CODE
+## 📞 PRÓXIMO PASSO
 
-Os prompts estão no arquivo `PROMPTS_CLAUDE_CODE_TIGRE.md`
-
-**Ordem de execução:**
-1. CC-TIGRE-01: Setup inicial
-2. CC-TIGRE-02: Prisma Schema
-3. CC-TIGRE-03: Backend tRPC
-4. CC-TIGRE-04: Frontend Next.js
-5. CC-TIGRE-05: Anna Chatbot
-6. CC-TIGRE-06: Integrações
-7. CC-TIGRE-07: Dashboard
-8. CC-TIGRE-08: Deploy
+1. Abra o arquivo `PROMPTS_CLAUDE_CODE_TIGRE.md`
+2. Copie o prompt **CC-TIGRE-01**
+3. Cole no Claude Code
+4. Deixe executar
+5. Faça commit e push
+6. Repita para os próximos prompts
 
 ---
 
-**Documento:** ROADMAP CRM Tigre
-**Versão:** 2.0
+**Documento:** ROADMAP CRM Tigre (Baseado no Whaticket)
+**Versão:** 3.0
 **Data:** 14 de janeiro de 2026
+**Economia de tempo:** 60+ horas

@@ -4,98 +4,85 @@ Sistema completo de prospecção, atendimento e agendamento para clínicas de es
 
 ---
 
-## 🆕 UPGRADE: CRM TIGRE v2.0
+## 🐯 CRM TIGRE v3.0 (ATUALIZADO)
 
-Este repositório foi atualizado para incluir o **CRM Tigre** - um sistema de gestão empresarial completo e profissional.
+O CRM Tigre agora usa o **Whaticket como base**, economizando 60+ horas de desenvolvimento.
 
 ### 📁 Estrutura do Repositório
 
 ```
 estetica-sales-system/
 │
-├── crm-tigre/              # 🆕 NOVO SISTEMA COMPLETO
-│   ├── docs/               # Documentação completa (8 arquivos)
-│   ├── frontend/           # Next.js 14 + React + TailwindCSS
-│   ├── backend/            # Node.js + tRPC + TypeScript
-│   ├── prisma/             # Schema PostgreSQL
-│   ├── ROADMAP_CRM_TIGRE.md
-│   └── PROMPTS_CLAUDE_CODE_TIGRE.md
+├── crm-tigre/                  # 🐯 SISTEMA PRINCIPAL
+│   ├── docs/                   # Documentação (8 arquivos)
+│   ├── ROADMAP_CRM_TIGRE.md    # ⭐ COMECE AQUI
+│   ├── PROMPTS_CLAUDE_CODE_TIGRE.md  # Prompts para Claude Code
+│   └── .env.example            # Variáveis de ambiente
 │
-├── ferramentas/            # Ferramentas de automação Windows
-│   ├── wacrm/              # CRM WhatsApp
-│   ├── wasender/           # Disparador WhatsApp
-│   ├── jarvee/             # Automação Instagram
-│   └── whaticket/          # Atendimento multi-usuário
+├── ferramentas/                # Ferramentas de automação
+│   ├── whaticket/              # 📦 BASE DO CRM TIGRE
+│   ├── wacrm/                  # CRM WhatsApp
+│   ├── wasender/               # Disparador
+│   └── jarvee/                 # Instagram
 │
-├── backend/                # API FastAPI (versão antiga)
-├── scripts/                # Scripts de integração
-├── n8n-workflows/          # Fluxos de automação
-└── docs/                   # Documentação geral
+├── backend/                    # API FastAPI (versão antiga)
+├── scripts/                    # Scripts de integração
+└── n8n-workflows/              # Fluxos N8N
 ```
 
 ---
 
-## 🐯 CRM TIGRE - O Novo Sistema
+## ⚡ COMO COMEÇAR
 
-O CRM Tigre é um upgrade massivo que transforma sua operação:
+### 1. Leia o ROADMAP
+```
+crm-tigre/ROADMAP_CRM_TIGRE.md
+```
 
-| Aspecto | Sistema Antigo | CRM Tigre |
-|---------|----------------|-----------|
-| **Frontend** | HTML básico | Next.js 14 + React |
-| **Backend** | FastAPI (Python) | Node.js + tRPC |
-| **Banco** | SQLite | PostgreSQL + Redis |
-| **IA** | OpenAI básico | GPT-4 + Análise Sentimento |
-| **WhatsApp** | WaSender (não-oficial) | WhatsApp Business API |
-| **Pagamentos** | Nenhum | Stripe + Pix |
-| **Calendário** | Manual | Google Calendar API |
+### 2. Execute os Prompts
+```
+crm-tigre/PROMPTS_CLAUDE_CODE_TIGRE.md
+```
+São 8 prompts para o Claude Code executar. Rode na ordem.
 
-### Resultados Esperados
-
-| Métrica | Antes | Depois | Melhoria |
-|---------|-------|--------|----------|
-| **Faturamento** | R$ 30k | R$ 75k | **↑ 150%** |
-| **Conversão** | 12.5% | 62-65% | **↑ 5x** |
-| **No-show** | 20% | 2-5% | **↓ 90%** |
-| **Seu Tempo** | 25h/sem | 4h/sem | **↓ 84%** |
-
-### Como Começar
-
-1. **Leia o ROADMAP:** `crm-tigre/ROADMAP_CRM_TIGRE.md`
-2. **Execute os prompts:** `crm-tigre/PROMPTS_CLAUDE_CODE_TIGRE.md`
-3. **Configure o .env:** `crm-tigre/.env.example`
+### 3. Faça Deploy
+```bash
+docker-compose up -d
+```
 
 ---
 
-## 🔧 Ferramentas de Automação (Windows)
+## 📊 ECONOMIA COM WHATICKET
 
-Para prospecção e disparos em massa, use as ferramentas na pasta `ferramentas/`:
+| Abordagem | Tempo | Custo |
+|-----------|-------|-------|
+| Do zero | 160h | R$ 16k |
+| Com Whaticket | 40h | R$ 4k |
+| **Economia** | **120h** | **R$ 12k** |
 
-- **WaCRM** - Gestão de atendimento WhatsApp
-- **WaSender** - Extração e disparos em massa
-- **Jarvee** - Automação Instagram
-- **Whaticket** - Atendimento multi-usuário
-
-⚠️ **Atenção:** Essas ferramentas usam APIs não-oficiais e podem resultar em banimento.
+O Whaticket já tem: Auth, WhatsApp, Chat, Kanban, Multi-tenant, Filas.
+Você só adiciona: Pacientes, Agendamentos, Financeiro, Anna IA, Dashboard.
 
 ---
 
-## 📅 Timeline de Implementação
+## 📅 TIMELINE: 8 SEMANAS
 
 | Fase | Semanas | Entregáveis |
 |------|---------|-------------|
-| **MVP** | 1-4 | Pacientes, Agendamentos, Lembretes |
-| **IA** | 5-8 | Anna Chatbot, Pagamentos, NPS |
-| **Avançado** | 9-16 | Fidelidade, ML, Relatórios 360° |
+| Fundação | 1-2 | Pacientes + Agendamentos |
+| Monetização | 3-4 | Financeiro + Anna IA |
+| Automação | 5-6 | Lembretes + Dashboard |
+| Produção | 7-8 | Deploy + Testes |
 
 ---
 
 ## 👥 Contribuidores
 
 - **lucastigrereal-dev** - Proprietário
-- **claude** - Claude Code (desenvolvimento)
-- **Manus AI** - Arquitetura e orquestração
+- **claude** - Claude Code
+- **Manus AI** - Arquitetura
 
 ---
 
-**Versão:** 2.0  
+**Versão:** 3.0  
 **Data:** 14 de janeiro de 2026
