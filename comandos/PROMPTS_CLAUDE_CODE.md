@@ -1,6 +1,20 @@
 # 🤖 PROMPTS PARA CLAUDE CODE (CMD)
 
-**Como usar:** Abra o Claude Code no terminal, cole o prompt e deixe ele executar.
+**Como usar:** 
+1. Clone o repositório no seu PC
+2. Abra o CMD na pasta do projeto
+3. Cole o prompt no Claude Code
+4. Ele cria os arquivos automaticamente
+
+---
+
+## 🚀 SETUP INICIAL (Rodar uma vez)
+
+```bash
+# No CMD do Windows:
+git clone https://github.com/lucastigrereal-dev/estetica-sales-system.git
+cd estetica-sales-system
+```
 
 ---
 
@@ -20,11 +34,9 @@
 ## CC1: API BACKEND (FastAPI)
 
 ```
-Crie a API backend completa para o sistema de clínica de estética.
+Estou na pasta do projeto "estetica-sales-system". Crie a API backend completa.
 
-DIRETÓRIO: /home/ubuntu/estetica-sales-system/backend/
-
-CRIAR ARQUIVOS:
+CRIAR ESTES ARQUIVOS (caminhos relativos à pasta atual):
 
 1. backend/requirements.txt:
 fastapi==0.109.0
@@ -34,43 +46,50 @@ pydantic==2.5.3
 python-dotenv==1.0.0
 openpyxl==3.1.2
 
-2. backend/app/database.py:
-- SQLite em ../database/estetica.db
+2. backend/app/__init__.py:
+(arquivo vazio)
+
+3. backend/app/database.py:
+- SQLite em ../database/estetica.db (caminho relativo)
 - Engine e SessionLocal
 - Base declarativa
+- Função get_db()
 
-3. backend/app/models.py:
+4. backend/app/models.py:
 - Lead (id, nome, telefone, email, origem, interesse, status, created_at)
 - Paciente (id, nome, telefone, email, lead_id, created_at)
 - Agendamento (id, paciente_id, procedimento_id, data, profissional, status, confirmado)
 - Procedimento (id, nome, preco, duracao_min)
 
-4. backend/app/schemas.py:
+5. backend/app/schemas.py:
 - Pydantic schemas para cada model (Create, Update, Response)
 
-5. backend/app/routers/leads.py:
-- POST /leads
-- GET /leads (filtros: status, origem)
-- GET /leads/{id}
-- PUT /leads/{id}/status
-- POST /leads/{id}/convert
+6. backend/app/routers/__init__.py:
+(arquivo vazio)
 
-6. backend/app/routers/agendamentos.py:
-- POST /agendamentos
-- GET /agendamentos (filtros: data, profissional)
+7. backend/app/routers/leads.py:
+- POST /leads - criar lead
+- GET /leads - listar com filtros (status, origem)
+- GET /leads/{id} - detalhes
+- PUT /leads/{id}/status - mudar status
+- POST /leads/{id}/convert - converter em paciente
+
+8. backend/app/routers/agendamentos.py:
+- POST /agendamentos - criar
+- GET /agendamentos - listar com filtros (data, profissional)
 - PUT /agendamentos/{id}/confirmar
 - PUT /agendamentos/{id}/cancelar
 
-7. backend/app/routers/dashboard.py:
-- GET /dashboard/stats (leads_hoje, agendamentos_hoje, taxa_conversao)
+9. backend/app/routers/dashboard.py:
+- GET /dashboard/stats - retorna leads_hoje, agendamentos_hoje, taxa_conversao
 
-8. backend/app/main.py:
+10. backend/app/main.py:
 - FastAPI app
-- CORS para localhost:3000
-- Include routers
+- CORS habilitado para localhost:3000
+- Include todos os routers com prefixo /api
 - Criar tabelas on startup
 
-Após criar, execute: cd backend && pip install -r requirements.txt && python -m uvicorn app.main:app --reload
+Após criar os arquivos, me mostre os comandos para testar.
 ```
 
 ---
@@ -78,45 +97,51 @@ Após criar, execute: cd backend && pip install -r requirements.txt && python -m
 ## CC2: SCRIPTS KOMMO
 
 ```
-Crie os scripts de integração com Kommo para exportar e importar leads.
+Estou na pasta do projeto "estetica-sales-system". Crie os scripts de integração com Kommo.
 
-DIRETÓRIO: /home/ubuntu/estetica-sales-system/scripts/kommo/
+CRIAR ESTES ARQUIVOS:
 
-CRIAR ARQUIVOS:
+1. scripts/kommo/__init__.py:
+(arquivo vazio)
 
-1. scripts/kommo/config.py:
-- Carregar .env (KOMMO_SUBDOMAIN, KOMMO_API_KEY)
-- Classe KommoClient com métodos para API
+2. scripts/kommo/config.py:
+- Carregar variáveis do .env (KOMMO_SUBDOMAIN, KOMMO_API_KEY)
+- Classe KommoClient com métodos para chamar a API
 
-2. scripts/kommo/kommo_export.py:
+3. scripts/kommo/kommo_export.py:
 - Argparse: --status (default: sem_resposta), --limit (default: 500)
-- Buscar leads na API Kommo
-- Filtrar por status
+- Conectar na API Kommo
+- Buscar leads pelo status
+- Filtrar apenas com telefone válido
 - Exportar para Excel: exports/leads_YYYYMMDD.xlsx
 - Colunas: Nome, Telefone, Email, Tags, Data
 
-3. scripts/kommo/prepare_campaign.py:
+4. scripts/kommo/prepare_campaign.py:
 - Argparse: --input (arquivo xlsx), --lote (default: 50)
-- Ler Excel
-- Validar telefones (formato BR)
-- Dividir em lotes
+- Ler o Excel
+- Validar telefones brasileiros
+- Remover duplicados
+- Dividir em lotes de N números
 - Salvar: exports/lote_01.xlsx, lote_02.xlsx, etc
-- Printar resumo: total leads, total lotes
+- Printar resumo no console
 
-4. scripts/kommo/track_responses.py:
-- Argparse: --watch (modo contínuo), --input (arquivo específico)
+5. scripts/kommo/track_responses.py:
+- Argparse: --watch (monitora contínuo), --input (arquivo específico)
 - Monitorar pasta responses/
 - Identificar números que responderam
-- Salvar: responses/responderam.xlsx
+- Gerar: responses/responderam.xlsx
 
-5. scripts/kommo/kommo_import.py:
+6. scripts/kommo/kommo_import.py:
 - Argparse: --input (arquivo xlsx), --tag (default: Respondeu_WaSender)
-- Ler Excel com números
+- Ler Excel com números que responderam
 - Buscar lead na Kommo por telefone
-- Adicionar tag
-- Logar operações
+- Adicionar tag ao lead
+- Logar cada operação
 
-Todos os scripts devem ter logging configurado e tratamento de erros.
+Todos os scripts devem ter:
+- Logging configurado
+- Tratamento de erros
+- Mensagens claras no console
 ```
 
 ---
@@ -124,32 +149,44 @@ Todos os scripts devem ter logging configurado e tratamento de erros.
 ## CC3: DOCKER E CONFIGURAÇÕES
 
 ```
-Crie a configuração Docker para rodar todo o sistema.
+Estou na pasta do projeto "estetica-sales-system". Crie as configurações Docker.
 
-DIRETÓRIO: /home/ubuntu/estetica-sales-system/
-
-CRIAR ARQUIVOS:
+CRIAR ESTES ARQUIVOS:
 
 1. docker-compose.yml:
+version: '3.8'
 services:
   backend:
     build: ./backend
-    ports: 8000:8000
-    volumes: ./backend:/app, ./database:/database
-    environment: DATABASE_PATH=/database/estetica.db
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/app
+      - ./database:/database
+    environment:
+      - DATABASE_PATH=/database/estetica.db
     
   frontend:
     build: ./frontend
-    ports: 3000:3000
-    volumes: ./frontend:/app
-    depends_on: backend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    depends_on:
+      - backend
     
   n8n:
     image: n8nio/n8n
-    ports: 5678:5678
-    volumes: n8n_data:/home/node/.n8n
-    environment: N8N_BASIC_AUTH_ACTIVE=true
-    
+    ports:
+      - "5678:5678"
+    volumes:
+      - n8n_data:/home/node/.n8n
+    environment:
+      - N8N_BASIC_AUTH_ACTIVE=true
+      - N8N_BASIC_AUTH_USER=admin
+      - N8N_BASIC_AUTH_PASSWORD=admin123
+
 volumes:
   n8n_data:
 
@@ -157,9 +194,10 @@ volumes:
 FROM python:3.11-slim
 WORKDIR /app
 COPY requirements.txt .
-RUN pip install -r requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+EXPOSE 8000
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
 
 3. frontend/Dockerfile:
 FROM node:18-alpine
@@ -167,26 +205,20 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY . .
-CMD ["npm", "run", "dev", "--", "--host"]
+EXPOSE 3000
+CMD ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
 
-4. .env (atualizar o existente):
-# API
-DATABASE_PATH=./database/estetica.db
-API_HOST=0.0.0.0
-API_PORT=8000
-
-# Kommo
-KOMMO_SUBDOMAIN=sua-empresa
-KOMMO_API_KEY=seu_token
-
-# OpenAI
-OPENAI_API_KEY=sk-xxx
+4. Atualizar o arquivo .env.example existente, adicionando:
+# Docker
+COMPOSE_PROJECT_NAME=estetica-sales
 
 # N8N
 N8N_BASIC_AUTH_USER=admin
-N8N_BASIC_AUTH_PASSWORD=senha123
+N8N_BASIC_AUTH_PASSWORD=admin123
 
-5. Makefile:
+5. Makefile (para facilitar comandos):
+.PHONY: up down logs restart
+
 up:
 	docker-compose up -d
 
@@ -199,8 +231,11 @@ logs:
 restart:
 	docker-compose restart
 
-backend-shell:
-	docker-compose exec backend bash
+backend-logs:
+	docker-compose logs -f backend
+
+frontend-logs:
+	docker-compose logs -f frontend
 ```
 
 ---
@@ -208,73 +243,71 @@ backend-shell:
 ## CC4: FRONTEND DASHBOARD (React)
 
 ```
-Crie o frontend dashboard completo em React + TypeScript + TailwindCSS.
+Estou na pasta do projeto "estetica-sales-system". Crie o frontend dashboard.
 
-DIRETÓRIO: /home/ubuntu/estetica-sales-system/frontend/
-
-EXECUTAR PRIMEIRO:
-cd /home/ubuntu/estetica-sales-system/frontend
-npm create vite@latest . -- --template react-ts
-npm install tailwindcss postcss autoprefixer @tanstack/react-query react-router-dom axios date-fns lucide-react
+PASSO 1 - INICIALIZAR (execute estes comandos primeiro):
+cd frontend
+npm create vite@latest . -- --template react-ts -y
+npm install
+npm install -D tailwindcss postcss autoprefixer
 npx tailwindcss init -p
+npm install @tanstack/react-query react-router-dom axios date-fns lucide-react
 
-CRIAR/MODIFICAR ARQUIVOS:
+PASSO 2 - CRIAR/MODIFICAR ARQUIVOS:
 
-1. tailwind.config.js:
-content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"]
+1. frontend/tailwind.config.js:
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: { extend: {} },
+  plugins: [],
+}
 
-2. src/index.css:
+2. frontend/src/index.css:
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-3. src/services/api.ts:
-- Axios instance base http://localhost:8000
-- Funções: getLeads, createLead, updateLeadStatus, getAgendamentos, getDashboardStats
+3. frontend/src/services/api.ts:
+- Criar axios instance com baseURL http://localhost:8000/api
+- Funções: getLeads(), createLead(), updateLeadStatus(), getAgendamentos(), getDashboardStats()
 
-4. src/types/index.ts:
-- Lead, Paciente, Agendamento, Procedimento, DashboardStats
+4. frontend/src/types/index.ts:
+- Interface Lead { id, nome, telefone, email, origem, interesse, status, created_at }
+- Interface Agendamento { id, paciente_id, procedimento_id, data, profissional, status }
+- Interface DashboardStats { leads_hoje, agendamentos_hoje, taxa_conversao }
 
-5. src/components/Layout/Sidebar.tsx:
-- Links: Dashboard, Leads, Agendamentos, Pacientes
-- Ícones do lucide-react
-- Estilo dark com TailwindCSS
+5. frontend/src/components/Layout/Sidebar.tsx:
+- Menu lateral fixo com links: Dashboard, Leads, Agendamentos
+- Usar ícones do lucide-react
+- Estilo escuro com Tailwind
 
-6. src/components/Layout/Layout.tsx:
-- Sidebar fixa à esquerda
-- Área de conteúdo à direita
-- Outlet do react-router
+6. frontend/src/components/Layout/Layout.tsx:
+- Wrapper com Sidebar + área de conteúdo
+- Usar Outlet do react-router
 
-7. src/components/Cards/StatCard.tsx:
-- Props: title, value, icon, trend
-- Estilo card com sombra
+7. frontend/src/components/Cards/StatCard.tsx:
+- Props: title, value, icon
+- Card com sombra e estilo moderno
 
-8. src/components/Table/DataTable.tsx:
-- Props: columns, data, onRowClick
-- Paginação simples
-- Ordenação por coluna
+8. frontend/src/pages/Dashboard.tsx:
+- 3 StatCards: Leads Hoje, Agendamentos Hoje, Taxa Conversão
+- Usar useQuery para buscar dados da API
 
-9. src/pages/Dashboard.tsx:
-- 4 StatCards: Leads Hoje, Agendamentos, Conversões, Faturamento
-- Lista: Próximos 5 agendamentos
-- useQuery para buscar dados
+9. frontend/src/pages/Leads.tsx:
+- Tabela com lista de leads
+- Filtro por status (select)
+- Busca por nome/telefone
 
-10. src/pages/Leads.tsx:
-- Filtros: status (select), busca (input)
-- DataTable com leads
-- Botão: Novo Lead (abre modal)
-- Ações: Ver, Mudar Status, Converter
-
-11. src/pages/Agendamentos.tsx:
+10. frontend/src/pages/Agendamentos.tsx:
+- Lista de agendamentos
 - Filtro por data
-- Lista de agendamentos do dia
-- Ações: Confirmar, Cancelar
+- Botões: Confirmar, Cancelar
 
-12. src/App.tsx:
-- BrowserRouter
+11. frontend/src/App.tsx:
+- BrowserRouter com Routes
 - QueryClientProvider
-- Routes: /, /leads, /agendamentos, /pacientes
-- Layout wrapper
+- Rotas: / (Dashboard), /leads, /agendamentos
+- Layout como wrapper
 
 Após criar, execute: npm run dev
 ```
@@ -284,44 +317,36 @@ Após criar, execute: npm run dev
 ## CC5: FLUXOS N8N
 
 ```
-Crie os workflows N8N em formato JSON para automação.
+Estou na pasta do projeto "estetica-sales-system". Crie os workflows N8N em JSON.
 
-DIRETÓRIO: /home/ubuntu/estetica-sales-system/n8n-workflows/
-
-CRIAR ARQUIVOS:
+CRIAR ESTES ARQUIVOS:
 
 1. n8n-workflows/01-whatsapp-receiver.json:
-Workflow que:
-- Webhook recebe mensagem do WhatsApp (POST /webhook/whatsapp)
-- Extrai: from, message, timestamp
-- Chama OpenAI para classificar intenção (interesse, agendar, preco, duvida)
-- Salva no banco SQLite
-- Retorna resposta
+Workflow N8N que:
+- Node 1: Webhook (POST /webhook/whatsapp)
+- Node 2: Set - extrair campos (from, message, timestamp)
+- Node 3: HTTP Request - chamar OpenAI para classificar intenção
+- Node 4: Switch - rotear por intenção (interesse, agendar, preco, duvida)
+- Node 5: HTTP Request - gerar resposta com OpenAI
+- Node 6: Respond to Webhook - retornar resposta
 
-2. n8n-workflows/02-lead-qualifier.json:
-Workflow que:
-- Trigger: novo lead no banco
-- Busca histórico do contato
-- Calcula score (0-100)
-- Atualiza status do lead
-- Se score > 70: notifica equipe
+2. n8n-workflows/02-appointment-reminder.json:
+Workflow N8N que:
+- Node 1: Cron Trigger (todo dia 9h)
+- Node 2: HTTP Request - buscar agendamentos próximas 24h
+- Node 3: Loop - para cada agendamento
+- Node 4: HTTP Request - enviar lembrete WhatsApp
+- Node 5: HTTP Request - marcar lembrete_enviado = true
 
-3. n8n-workflows/03-appointment-reminder.json:
-Workflow que:
-- Cron: roda todo dia às 9h
-- Busca agendamentos das próximas 24h
-- Para cada: envia lembrete via WhatsApp
-- Atualiza: lembrete_enviado = true
+3. n8n-workflows/03-followup-sequence.json:
+Workflow N8N que:
+- Node 1: Cron Trigger (todo dia 10h)
+- Node 2: HTTP Request - buscar leads sem resposta há 3 dias
+- Node 3: Loop - para cada lead
+- Node 4: HTTP Request - enviar follow-up WhatsApp
+- Node 5: HTTP Request - atualizar último_contato
 
-4. n8n-workflows/04-followup-sequence.json:
-Workflow que:
-- Trigger: lead sem resposta há 3 dias
-- Envia mensagem de follow-up
-- Se não responder em +3 dias: segunda mensagem
-- Se não responder em +7 dias: marca como perdido
-
-Cada JSON deve ser válido e importável no N8N.
-Incluir nodes: Webhook, HTTP Request, OpenAI, SQLite, IF, Set.
+Cada arquivo deve ser um JSON válido importável no N8N.
 ```
 
 ---
@@ -329,38 +354,50 @@ Incluir nodes: Webhook, HTTP Request, OpenAI, SQLite, IF, Set.
 ## CC6: INTEGRAÇÃO WHATICKET
 
 ```
-Crie o serviço de integração entre Whaticket e N8N.
+Estou na pasta do projeto "estetica-sales-system". Crie o serviço de integração Whaticket.
 
-DIRETÓRIO: /home/ubuntu/estetica-sales-system/integrations/
-
-CRIAR ARQUIVOS:
+CRIAR ESTES ARQUIVOS:
 
 1. integrations/package.json:
 {
   "name": "whaticket-bridge",
-  "scripts": { "start": "node src/index.js", "dev": "nodemon src/index.js" },
-  "dependencies": { "express": "^4.18.2", "axios": "^1.6.0", "dotenv": "^16.0.0" }
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "axios": "^1.6.0",
+    "dotenv": "^16.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
 }
 
 2. integrations/src/index.js:
-- Express server porta 3001
+- Express server na porta 3001
+- Carregar dotenv
 - POST /webhook/whaticket - recebe eventos do Whaticket
 - POST /callback/n8n - recebe resposta do N8N
-- Formata e roteia mensagens
+- Logar todas as requisições
 
 3. integrations/src/services/whaticket.js:
 - Classe WhaticketAPI
-- Métodos: sendMessage(ticketId, message), updateTicket(ticketId, data)
-- Usa axios com WHATICKET_API_URL e WHATICKET_TOKEN do .env
+- Constructor recebe URL e Token do .env
+- Método sendMessage(ticketId, message)
+- Método updateTicket(ticketId, data)
 
 4. integrations/src/services/n8n.js:
 - Classe N8NClient
-- Método: sendEvent(eventType, data)
-- Envia para N8N_WEBHOOK_URL
+- Constructor recebe webhook URL do .env
+- Método sendEvent(eventType, payload)
 
 5. integrations/.env.example:
 WHATICKET_API_URL=https://seu-whaticket.com/api
-WHATICKET_TOKEN=xxx
+WHATICKET_TOKEN=seu_token_aqui
 N8N_WEBHOOK_URL=http://localhost:5678/webhook/whaticket
 PORT=3001
 
@@ -369,52 +406,35 @@ Após criar, execute: cd integrations && npm install && npm run dev
 
 ---
 
-## 🎯 COMO RODAR (4 ABAS CMD)
-
-```
-ABA 1 - BACKEND:
-cd /home/ubuntu/estetica-sales-system
-claude "Execute o prompt CC1 do arquivo comandos/PROMPTS_CLAUDE_CODE.md"
-
-ABA 2 - SCRIPTS:
-cd /home/ubuntu/estetica-sales-system
-claude "Execute o prompt CC2 do arquivo comandos/PROMPTS_CLAUDE_CODE.md"
-
-ABA 3 - DOCKER:
-cd /home/ubuntu/estetica-sales-system
-claude "Execute o prompt CC3 do arquivo comandos/PROMPTS_CLAUDE_CODE.md"
-
-ABA 4 - FRONTEND:
-cd /home/ubuntu/estetica-sales-system
-claude "Execute o prompt CC4 do arquivo comandos/PROMPTS_CLAUDE_CODE.md"
-```
-
----
-
 ## ✅ APÓS CADA PROMPT
 
-```bash
-# Verificar o que foi criado
-git status
+No CMD, na pasta do projeto:
 
-# Commitar
+```bash
+git status
 git add .
-git commit -m "feat: [nome do que foi criado]"
+git commit -m "feat: [descreva o que foi criado]"
 git push
 ```
 
 ---
 
-## 🔄 FLUXO DE TRABALHO
+## 🎯 RESUMO DO FLUXO
 
 ```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│  Claude     │────▶│   GitHub    │────▶│   Manus     │
-│  Code       │     │   (commit)  │     │  (revisão)  │
-│  (cria)     │     │             │     │             │
-└─────────────┘     └─────────────┘     └─────────────┘
-      │                                        │
-      │                                        │
-      └────────────────────────────────────────┘
-                    (próximo prompt)
+1. Você clona o repo no seu PC
+2. Abre 4 abas do CMD na pasta do projeto
+3. Em cada aba, cola um prompt (CC1, CC2, CC3, CC4)
+4. Claude Code cria os arquivos
+5. Você faz commit e push
+6. Avisa o Manus (eu) para revisar
+7. Repete para os próximos prompts
 ```
+
+---
+
+## 🆘 SE DER ERRO
+
+1. Cola o erro de volta no Claude Code
+2. Ou me manda aqui que eu ajudo
+3. Ou pesquisa no Perplexity
