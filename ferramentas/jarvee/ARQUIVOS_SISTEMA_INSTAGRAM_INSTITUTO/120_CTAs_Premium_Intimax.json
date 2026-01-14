@@ -1,0 +1,680 @@
+[
+  {
+    "categoria": "Salvamento",
+    "texto": "Salva esse post 📌 — você vai precisar depois",
+    "formato": "Reels",
+    "observacao": "CTA simplificado, funciona melhor em vídeos educativos. Alto volume de saves = autoridade"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Marca esse aqui ⭐ para rever depois",
+    "formato": "Carrossel",
+    "observacao": "Variação para carousel com múltiplos slides educativos"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Guarde esse conteúdo — referência importante",
+    "formato": "Stories",
+    "observacao": "Tom mais profissional, elegante, sem apelo visual gritante"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Esse é o tipo de informação que você salva e volta a consultar",
+    "formato": "Reels",
+    "observacao": "Mais longo, conversacional, humaniza a marca"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Coloca nos favoritos 📌 — material de consulta",
+    "formato": "Carrossel",
+    "observacao": "Variação casual porém profissional"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Esse conteúdo merece estar nos seus salvos",
+    "formato": "Reels",
+    "observacao": "Implícito, sutil, tira o tom comercial direto"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Verdade que você quer guardar?",
+    "formato": "Stories",
+    "observacao": "Pergunta retórica, engaja subconsciente"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Material que vale voltar a ler",
+    "formato": "Carrossel",
+    "observacao": "Reforça autoridade educativa"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Comenta aqui: já conhecia essa informação?",
+    "formato": "Reels",
+    "observacao": "Pergunta aberta, baixa pressão para responder, gera conversa genuína"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Deixa sua dúvida nos comentários 👇",
+    "formato": "Carrossel",
+    "observacao": "Convite direto, específico (dúvida), qualifica quem comenta"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Qual é a sua experiência? Comenta abaixo",
+    "formato": "Stories",
+    "observacao": "Humaniza, solicita prova social indireta"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Isso acontece com você também? (Comenta SIM ou NÃO)",
+    "formato": "Reels",
+    "observacao": "Binária e direta, gera alto engajamento com baixa fricção"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Conte aqui: qual foi sua descoberta?",
+    "formato": "Carrossel",
+    "observacao": "Abre espaço para story sharing, diferencia comentários genéricos"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Debate aqui nos comentários — concordam?",
+    "formato": "Reels",
+    "observacao": "Cria tensão produtiva (debate), aumenta tempo na sessão"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "O que você mudaria nessa informação?",
+    "formato": "Stories",
+    "observacao": "Pergunta que valida opinião do seguidor, cria propriedade emocional"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Escreve aqui se você já experimentou",
+    "formato": "Carrossel",
+    "observacao": "Menos diretivo que 'comenta', mais conversacional"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Qual desses pontos más afeta você? (Comenta o número)",
+    "formato": "Reels",
+    "observacao": "Segmenta resposta, qualifica lead por interesse específico"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Sua maior dúvida sobre isso é...? Comenta",
+    "formato": "Stories",
+    "observacao": "Abre espaço para identificar objeções reais"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Compartilha isso com quem você ama 💙",
+    "formato": "Reels",
+    "observacao": "Apela para relação pessoal, não comercial. Indireto mas efetivo"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Manda para aquela pessoa que precisa ler isso",
+    "formato": "Carrossel",
+    "observacao": "Contextualiza compartilhamento (ajudar alguém), não pedir visualizações"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Envia para seu grupo de amigas",
+    "formato": "Stories",
+    "observacao": "Apela para círculo pessoal, segmenta por gênero se relevante"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Seu melhor amigo precisa saber disso?",
+    "formato": "Reels",
+    "observacao": "Pergunta retórica que motiva share sem ser agressivo"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Passa adiante: essa informação é valiosa",
+    "formato": "Carrossel",
+    "observacao": "Reforça valor percebido antes de pedir share"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Compartilha com quem está pensando em fazer isso",
+    "formato": "Stories",
+    "observacao": "Contextualiza para segmento específico (quem está considerando)"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Verdade que merece ser espalhada",
+    "formato": "Reels",
+    "observacao": "Apela para advocacy natural, não força comercial"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Seu partner/amigo merecia ler isso",
+    "formato": "Carrossel",
+    "observacao": "Humaniza relação, motiva share para relacionamento"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Manda DM sua dúvida — vou responder pessoalmente",
+    "formato": "Reels",
+    "observacao": "Promete contato 1:1, qualifica leads, abre conversação"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Alguma dúvida? Chama no DM",
+    "formato": "Carrossel",
+    "observacao": "Curto, acessível, convida intimidade de mensagem privada"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Quer saber mais? Manda mensagem aqui",
+    "formato": "Stories",
+    "observacao": "Abre porta para conversa sem compromisso"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Envie sua história no DM — estou aqui para ouvir",
+    "formato": "Reels",
+    "observacao": "Valida experiência pessoal, cria espaço seguro"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Fale comigo nos DM — sem pressa, sem pressão",
+    "formato": "Carrossel",
+    "observacao": "Remove fricção, deixa claro que não é sales call agressivo"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Bate um papo comigo lá nos DM",
+    "formato": "Stories",
+    "observacao": "Tom casual, humanizado, encoraja interação informal"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Quer trocar uma ideia? Vem no privado",
+    "formato": "Reels",
+    "observacao": "Posiciona como conversa entre pares, não palestra"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Sua questão é pessoal? Manda no DM",
+    "formato": "Carrossel",
+    "observacao": "Reconhece privacidade, segmenta conversas sensíveis"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Clica aqui e manda mensagem no WhatsApp",
+    "formato": "Stories",
+    "observacao": "Botão direto, conversacional, baixa fricção"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Quer falar agora? Link do WhatsApp nos links da bio 💬",
+    "formato": "Reels",
+    "observacao": "CTA que reconhece perfil mobile-first"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Me encontre no WhatsApp — é mais rápido",
+    "formato": "Carrossel",
+    "observacao": "Reforça benefício (velocidade) da escolha de canal"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Bora conversar? Whatsapp aberto aqui",
+    "formato": "Stories",
+    "observacao": "Tom informal, convida para conversa não-formal"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Interesse? Clica no link do WhatsApp e manda oi",
+    "formato": "Reels",
+    "observacao": "Guia passo a passo, remove dúvida sobre o que fazer"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Prefere conversar ali? Estou no WhatsApp",
+    "formato": "Carrossel",
+    "observacao": "Oferece escolha de canal, reconhece preferências"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Seu horário é melhor lá no WhatsApp",
+    "formato": "Stories",
+    "observacao": "Apela para conveniência, valida timing do usuário"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Quer saber se é pra você? Agendam uma consulta",
+    "formato": "Reels",
+    "observacao": "Qualifica interesse antes de agendamento (baixa fricção)"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Pronto para saber mais? Agende sua avaliação",
+    "formato": "Carrossel",
+    "observacao": "Movimento natural (educação → avaliação), reforça passo seguinte"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Consultoria sem compromisso — agende aqui",
+    "formato": "Stories",
+    "observacao": "Remove objeção ('sem compromisso'), facilita agendamento"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Vamos conversar sobre seu caso específico?",
+    "formato": "Reels",
+    "observacao": "Personaliza linguagem ('seu caso'), não genérica"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Marca uma conversa comigo — primeiro passo é entender você",
+    "formato": "Carrossel",
+    "observacao": "Reforça abordagem centrada no paciente"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Quer uma orientação personalizada? Agende comigo",
+    "formato": "Stories",
+    "observacao": "Posiciona consulta como benefício personalizado"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Curiosa? Podemos tirar as dúvidas juntas",
+    "formato": "Reels",
+    "observacao": "Tom conversacional, reduz ansiedade ('tirar dúvidas')"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Seu momento é agora? Encontro você marcado",
+    "formato": "Carrossel",
+    "observacao": "Apela para momentum ('seu momento'), cria urgência suave"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Salva essa dica para aplicar hoje mesmo",
+    "formato": "Reels",
+    "observacao": "Posiciona como ação prática, não teoria pura"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Aqui você entende por que isso funciona",
+    "formato": "Carrossel",
+    "observacao": "Reforça aprendizado educativo (WHY), não venda"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Essa informação mudou a cabeça de muita gente",
+    "formato": "Stories",
+    "observacao": "Prova social implícita, valida autoridade conteúdo"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Entender isso é transformador",
+    "formato": "Reels",
+    "observacao": "Elevado tom, posiciona conhecimento como transformativo"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Você vai rever seus conceitos sobre esse tema",
+    "formato": "Carrossel",
+    "observacao": "Promete nova perspectiva, reforça educação authentica"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Prepare-se para uma verdade incômoda",
+    "formato": "Stories",
+    "observacao": "Cria curiosidade, sinaliza conteúdo honesto não superficial"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Biomédica, pesquisadora, realidade — tudo aqui",
+    "formato": "Reels",
+    "observacao": "Reforça credenciais + conteúdo = autoridade"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "O conhecimento que ninguém te dá está aqui",
+    "formato": "Carrossel",
+    "observacao": "Apela para informação exclusiva, diferenciadora"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Ouça quem já passou por isso",
+    "formato": "Stories",
+    "observacao": "Convida para escuta depoimento (áudio), prova social"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Resultados reais de pacientes reais",
+    "formato": "Reels",
+    "observacao": "Enfatiza autenticidade, não marketing genérico"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Aquilo que você não vê nos stories — bastidores",
+    "formato": "Carrossel",
+    "observacao": "Apela para conteúdo autêntico, 'realidade' não polida"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Histórias que vão te inspirar",
+    "formato": "Stories",
+    "observacao": "Narrativo, não transacional, posiciona como histórias reais"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Pacientes falam melhor que eu",
+    "formato": "Reels",
+    "observacao": "Reconhece valor prova social > vendedor"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Atrás de cada resultado, existe uma história",
+    "formato": "Carrossel",
+    "observacao": "Humaniza resultados, não reduz a números/fotos"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Transparência total: mostramos o processo inteiro",
+    "formato": "Stories",
+    "observacao": "Reforça confiança via transparência, diferencia de concorrentes"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Você vai se reconhecer nessas histórias",
+    "formato": "Reels",
+    "observacao": "Apela para identificação pessoal (você se vê), não distância"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Marca aqui ⭐ — você volta a esse post",
+    "formato": "Reels",
+    "observacao": "Variação com emoji, visual, para reels de alta retenção"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Comenta aqui qual foi tua maior descoberta",
+    "formato": "Reels",
+    "observacao": "Segmenta resposta, qualifica engajamento por aprendizado"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Replica essa mensagem pros teus amigos",
+    "formato": "Stories",
+    "observacao": "Pede ação específica (replicar), não vago (compartilhar)"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Tem uma história pra me contar? Vem no DM",
+    "formato": "Carrossel",
+    "observacao": "Abre espaço para narrativas pessoais, não interrogatório"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Conversa rápida e sem complicação? Whatsapp aqui",
+    "formato": "Reels",
+    "observacao": "Reforça benefício de canal (velocidade, simplicidade)"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Pode ser hoje, pode ser outro dia — agende quando preferir",
+    "formato": "Stories",
+    "observacao": "Remove pressão temporal, aumenta taxa agendamento"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Tudo que você precisa entender está nesse vídeo",
+    "formato": "Reels",
+    "observacao": "Posiciona como recurso educativo completo"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Veja o dia a dia da clínica aqui",
+    "formato": "Stories",
+    "observacao": "Convida para conhecer operação, aumenta confiança"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Essas dicas você segue para sempre",
+    "formato": "Carrossel",
+    "observacao": "Reforça valor duradouro, não conteúdo descartável"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Qual desses mitos você acreditava? Comenta",
+    "formato": "Stories",
+    "observacao": "Apela para desconstrução de crenças, gera engajamento"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Se você conhece alguém que precisa disso, compartilha",
+    "formato": "Reels",
+    "observacao": "Motiva share por ajuda a terceiro, não por você"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Me manda suas dúvidas — vou responder com atenção",
+    "formato": "Carrossel",
+    "observacao": "Promete qualidade resposta, não bot automático"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Quer falar com a gente? Ativa o WhatsApp aqui",
+    "formato": "Stories",
+    "observacao": "CTA clara, reconhece preferência de canal"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Primeira consulta: você conhece a gente, a gente conhece você",
+    "formato": "Reels",
+    "observacao": "Redefine primeira consulta como bidirecional, não venda one-way"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Profundidade é a marca desse espaço aqui",
+    "formato": "Carrossel",
+    "observacao": "Posiciona como recurso aprofundado, premium, não superficial"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Esses são os verdadeiros feedbacks dos pacientes",
+    "formato": "Stories",
+    "observacao": "Reforça autenticidade, qualifica como 'verdadeiro' não filtrado"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Quando tiver dúvida, volta nesse post aqui",
+    "formato": "Reels",
+    "observacao": "Posiciona como referência futura, aumenta propensão a save"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Conta sua experiência — cada história é importante",
+    "formato": "Carrossel",
+    "observacao": "Valida story pessoal, remove julgamento"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Esse conhecimento merecia estar com mais gente",
+    "formato": "Stories",
+    "observacao": "Apela para advocacy, não comercial"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Questão delicada? Manda no privado, sem constrangimento",
+    "formato": "Reels",
+    "observacao": "Remove ansiedade sobre privacidade, incentiva DM"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Prefere um contato direto? Chama lá no WhatsApp",
+    "formato": "Carrossel",
+    "observacao": "Oferece escolha, reconhece perfil individual"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Vamos explorar o que é possível pra você?",
+    "formato": "Stories",
+    "observacao": "Posiciona consulta como exploração, não decisão"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Siga esses passos e você vai notar diferença",
+    "formato": "Reels",
+    "observacao": "Posiciona como acionável, prático, não teórico"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Pacientes que transformaram a vida — ouça aqui",
+    "formato": "Carrossel",
+    "observacao": "Apela para transformação, não resultado cosmético"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Uma aula inteira em 60 segundos — salva para rever",
+    "formato": "Stories",
+    "observacao": "Reforça valor concentrado, incentiva revisita"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Você concorda ou discorda? Deixa sua opinião",
+    "formato": "Reels",
+    "observacao": "Cria debate, aumenta time on app"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Repassa para o grupo que tá em dúvida",
+    "formato": "Carrossel",
+    "observacao": "Contextualiza compartilhamento (ajudar grupo), motiva share"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Quer parar de ter dúvida? Manda mensagem e vamos resolver",
+    "formato": "Stories",
+    "observacao": "Promete resolução, não sales pitch"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Tempo do WhatsApp é agora — estou aqui",
+    "formato": "Reels",
+    "observacao": "Cria urgência suave, disponibilidade"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Quer conhecer opcões? Marca sua consulta",
+    "formato": "Carrossel",
+    "observacao": "Reposiciona consulta como discovery, não venda"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Você merecia ouvir a verdade completa — está aqui",
+    "formato": "Stories",
+    "observacao": "Apela para confiança, honestidade, diferencia de marketing vazio"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Vários casos, vários resultados — tudo documentado aqui",
+    "formato": "Reels",
+    "observacao": "Reforça amplitude de casos, não cherry-picking"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Guarda isso — a gente volta aqui sempre que precisar",
+    "formato": "Carrossel",
+    "observacao": "Posiciona como recurso contínuo, referência duradoura"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Qual dessas frases te tocou mais? Escreve aqui",
+    "formato": "Stories",
+    "observacao": "Segmenta resposta por emoção, qualifica engajamento"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Tá vendo? Compartilha esse insight com quem precisa",
+    "formato": "Reels",
+    "observacao": "Cria urgência suave, motiva share"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Tá com receio? Vem conversar sem pressão lá",
+    "formato": "Carrossel",
+    "observacao": "Reconhece objeção emocional, remove fricção"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Número tá aí, manda um oi — a gente responde rápido",
+    "formato": "Stories",
+    "observacao": "Cria expectativa de velocidade, incentiva ação"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Seu primeiro passo para entender melhor é aqui",
+    "formato": "Reels",
+    "observacao": "Posiciona consulta como primeiro passo, não decisão"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "Esse conteúdo é para quem quer saber a realidade",
+    "formato": "Carrossel",
+    "observacao": "Apela para busca de autenticidade, diferencia audiência"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Histórias reais, sem filtro, sem edição mentirosa",
+    "formato": "Stories",
+    "observacao": "Reforça autenticidade total, confiança"
+  },
+  {
+    "categoria": "Salvamento",
+    "texto": "Cada ponto aqui merecia uma aula separada — salva",
+    "formato": "Reels",
+    "observacao": "Reforça densidade de valor, incentiva save"
+  },
+  {
+    "categoria": "Comentário (Engajamento)",
+    "texto": "Você tinha essa informação aí? Comenta o que sabia",
+    "formato": "Carrossel",
+    "observacao": "Apela para comparação pessoal, engaja por aprendizado"
+  },
+  {
+    "categoria": "Compartilhamento",
+    "texto": "Spread: essa verdade com gente que ama você",
+    "formato": "Stories",
+    "observacao": "Apela para cuidado de terceiros (não venda), motiva share"
+  },
+  {
+    "categoria": "Direct (Mensagem)",
+    "texto": "Seu medo é legítimo — vem falar disso no DM",
+    "formato": "Reels",
+    "observacao": "Valida medo, cria espaço seguro para conversa"
+  },
+  {
+    "categoria": "WhatsApp (Clique)",
+    "texto": "Aqui é rápido, honesto e sem vender ilusão",
+    "formato": "Carrossel",
+    "observacao": "Reforça valores (rapidez, honestidade), incentiva contato"
+  },
+  {
+    "categoria": "Agendamento (Consulta/Avaliação)",
+    "texto": "Vamos mapear o melhor caminho para você?",
+    "formato": "Stories",
+    "observacao": "Posiciona consulta como planejamento customizado"
+  },
+  {
+    "categoria": "Autoridade (Educação)",
+    "texto": "A verdade dói? Talvez. Mas é transformadora",
+    "formato": "Reels",
+    "observacao": "Apela para honestidade, diferencia de marketing raso"
+  },
+  {
+    "categoria": "Prova Social (Depoimentos/Bastidores)",
+    "texto": "Pacientes que decidiram confiar — resultados falam sozinhos",
+    "formato": "Carrossel",
+    "observacao": "Posiciona resultado como consequência de confiança"
+  }
+]

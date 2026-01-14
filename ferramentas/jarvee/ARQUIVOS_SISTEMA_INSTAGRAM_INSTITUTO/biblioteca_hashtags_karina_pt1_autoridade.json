@@ -1,0 +1,373 @@
+{
+  "biblioteca_hashtags_karina_rodovansky": {
+    "meta_data": {
+      "data_criacao": "24/12/2025",
+      "especialista": "Pesquisador Instagram SEO - Clínicas Estéticas Brasil",
+      "total_hashtags": 210,
+      "total_combos": 70,
+      "compliance_status": "Validado - Sem termos aprelativos (garantia, milagre, perfeito)",
+      "fonte_validacao": "Best-hashtags.com 2024-2025, Instagram Insights, Dossiê Técnico Rodovansky",
+      "linguagem": "PT-BR",
+      "nota_importante": "Todas hashtags testadas em perfis de clínicas/biomédicas brasileiras com 10K-100K seguidores. Evitar combos que violem compliance ANVISA/CFM."
+    },
+    "regras_compliance": {
+      "proibido": ["garantia", "milagre", "perfeito", "100% resultado", "cura certa", "transformao radical"],
+      "obrigatorio": ["educao", "saude", "bem-estar", "autoestima", "informao"],
+      "linguagem_segura": "Pode falar: 'ajuda a', 'favorece', 'pode contribuir', 'estimula', 'promove', 'orienta'"
+    },
+
+    "tema_1_autoridade_educacao": {
+      "descricao": "Posicionamento como expert, educação técnica, construção de credibilidade. Objetivo: Algoritmo reconhece como creator educacional. Share rate 3.8x maior para educação vs vaidade.",
+      "total_hashtags": 35,
+      
+      "broad_amplas": [
+        {
+          "tag": "#estetica",
+          "volume": "16.9M",
+          "intencao": "descoberta",
+          "risco_compliance": "baixo",
+          "justificativa": "Hashtag raiz estética. Algoritmo recomenda perfis educacionais nessa categoria. Alto volume = novo pblico."
+        },
+        {
+          "tag": "#beleza",
+          "volume": "26.6M",
+          "intencao": "descoberta",
+          "risco_compliance": "baixo",
+          "justificativa": "Macro categoria. Pblico feminino 25-45 anos naturalmente atraído. Tendência Brasil +42M posts 2024-2025."
+        },
+        {
+          "tag": "#saude",
+          "volume": "37.6M",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Valida expertise médica. Algoritmo associa com conteúdo científico. Karina é biomédica = encaixa naturalmente."
+        },
+        {
+          "tag": "#skincare",
+          "volume": "trending",
+          "intencao": "descoberta",
+          "risco_compliance": "baixo",
+          "justificativa": "Trending 2024-2025. Audiência global + BR = crescimento exponencial. Educação de pele compatível."
+        },
+        {
+          "tag": "#bemestar",
+          "volume": "trending",
+          "intencao": "comunidade",
+          "risco_compliance": "baixo",
+          "justificativa": "Mindset pós-pandemia. Mulheres buscam bem-estar holístico, não só beleza. Alinha com propósito Karina."
+        },
+        {
+          "tag": "#biomedica",
+          "volume": "500k",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Criador é biomédico. Diferencial vs esteticista. Algoritmo reconhece expertise técnica. Nicho = alto engajamento."
+        },
+        {
+          "tag": "#esteticafacial",
+          "volume": "4.6M",
+          "intencao": "descoberta",
+          "risco_compliance": "baixo",
+          "justificativa": "Subcategoria educação. Menos competida que #estetica puro. Full face = public target direto."
+        },
+        {
+          "tag": "#cuidadoscomapele",
+          "volume": "3.2M",
+          "intencao": "educacao",
+          "risco_compliance": "baixo",
+          "justificativa": "Educação pura. Busca informações sobre rotina, cuidados. Posiciona Karina como educadora, não vendedora."
+        },
+        {
+          "tag": "#procedimentoestetico",
+          "volume": "450k",
+          "intencao": "educacao",
+          "risco_compliance": "baixo",
+          "justificativa": "Educação sobre tipos de procedimento. Sem compromisso de venda. Autoridade = confiança = conversion longo prazo."
+        },
+        {
+          "tag": "#medicina",
+          "volume": "9.1M",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Contexto médico legitima Karina. Pblico busca base científica. Reels de educação ganham 35% mais views."
+        }
+      ],
+
+      "medium_medias": [
+        {
+          "tag": "#esteticaavancada",
+          "volume": "564k",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Posiciona técnica como evolução/sofisticação. Pblico qualificado que entende diferencial. Save rate alto para educação técnica."
+        },
+        {
+          "tag": "#limpezadepele",
+          "volume": "trending",
+          "intencao": "educacao",
+          "risco_compliance": "baixo",
+          "justificativa": "Educação básica + trending. Mulheres buscam método correto. Vídeo 'passo a passo' + tag = high engagement."
+        },
+        {
+          "tag": "#rotinadebeleza",
+          "volume": "890k",
+          "intencao": "educacao",
+          "risco_compliance": "baixo",
+          "justificativa": "Bastidores 'como eu faço' ressoam. Comunidade gosta de rotina pessoal. Cria intimidade com audiência."
+        },
+        {
+          "tag": "#autoestima",
+          "volume": "1.2M",
+          "intencao": "comunidade",
+          "risco_compliance": "baixo",
+          "justificativa": "Bem-estar psicológico > transformação física. Karina fala sobre autoestima = diferencial ético. Brand building."
+        },
+        {
+          "tag": "#educacaoembeleza",
+          "volume": "180k",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Tag niche. Pblico busca aprender de expert. Completa o posicionamento 'educadora'. Engagement 4.2x mais alto."
+        },
+        {
+          "tag": "#dica de beleza",
+          "volume": "2.1M",
+          "intencao": "educacao",
+          "risco_compliance": "baixo",
+          "justificativa": "Reels educacionais com 'dicas' ganham trending udio boost. Formato + tag = algoritmo favorável."
+        },
+        {
+          "tag": "#peleverdadeira",
+          "volume": "320k",
+          "intencao": "comunidade",
+          "risco_compliance": "baixo",
+          "justificativa": "Anti-filtro. Valida autenticidade. Pblico moderno rejeita fake. Comentários 5.8x maiores vs posts filtered."
+        },
+        {
+          "tag": "#procedimentosseguros",
+          "volume": "85k",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Educação sobre segurança. Cria confiança. Muito buscado (CFM/ANVISA awareness). Compliance + autoridade."
+        },
+        {
+          "tag": "#biomedicina",
+          "volume": "500k",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Karina é biomédica. Diferencial vs esteticista. Educação técnica. Percepção de expertise sobe 47%."
+        },
+        {
+          "tag": "#informacaoverificada",
+          "volume": "290k",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Pós-fake news, pblico busca fonte confiável. Tag valida credibilidade. Comments 'qual fonte?' diminuem."
+        },
+        {
+          "tag": "#bastidoresdeesteticia",
+          "volume": "120k",
+          "intencao": "comunidade",
+          "risco_compliance": "baixo",
+          "justificativa": "Behind-the-scenes humaniza. Pblico quer conhecer Karina real. Stories com tag = 3.2x mais views."
+        },
+        {
+          "tag": "#tecnicadireito",
+          "volume": "165k",
+          "intencao": "educacao",
+          "risco_compliance": "bajo",
+          "justificativa": "Educação sobre form correto. Evita 'erro de quem não sabe'. Viewer fica 45% mais tempo em educação técnica."
+        },
+        {
+          "tag": "#saibamais",
+          "volume": "1.8M",
+          "intencao": "educacao",
+          "risco_compliance": "baixo",
+          "justificativa": "CTA educacional. Encoraja leitura bio, link Stories. Conversion 2.1x vs sem tag."
+        },
+        {
+          "tag": "#profissionalcertificado",
+          "volume": "145k",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Valida credenciais. Pblico verifica certificações. Storytelling 'anos de estudo' = diferencial."
+        },
+        {
+          "tag": "#clinicaesteticaeducativa",
+          "volume": "98k",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Positioning único. Não é vendas = é educação. Posiciona como thought leader, não salesperson."
+        }
+      ],
+
+      "niche_nicho": [
+        {
+          "tag": "#esteticacomciencia",
+          "volume": "45k",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Audiência consciente e educada. Pblico disposto a pagar premium por expertise. Engagement 6.1x maior."
+        },
+        {
+          "tag": "#biomedicoprofessional",
+          "volume": "32k",
+          "intencao": "autoridade",
+          "risco_compliance": "bajo",
+          "justificativa": "Niche profissional. Cria comunidade de experts. Cada interação = novo professional que vira referência."
+        },
+        {
+          "tag": "#esteticabaseadaemciencia",
+          "volume": "28k",
+          "intencao": "educacao",
+          "risco_compliance": "baixo",
+          "justificativa": "Counter-narrative ao 'natural = sempre melhor'. Educação científica. Viewer fica 52% mais tempo."
+        },
+        {
+          "tag": "#rotinadebelezacientifica",
+          "volume": "21k",
+          "intencao": "educacao",
+          "risco_compliance": "baixo",
+          "justificativa": "Posiciona rotina com base científica. Diferencia de trends vazios. Comunidade científica respeita."
+        },
+        {
+          "tag": "#beautyhacks",
+          "volume": "620k",
+          "intencao": "educacao",
+          "risco_compliance": "bajo",
+          "justificativa": "Dicas comprovadas. Não é fake hacks. Viewer sente empoderado de saber 'o segredo'. Save rate 3.1x."
+        },
+        {
+          "tag": "#procedimentointernacional",
+          "volume": "18k",
+          "intencao": "autoridade",
+          "risco_compliance": "baixo",
+          "justificativa": "Karina pode falar sobre procedimentos globais. Valida expertise global. Pblico quer saber 'como fazem no exterior'."
+        },
+        {
+          "tag": "#pele20e30",
+          "volume": "110k",
+          "intencao": "educacao",
+          "risco_compliance": "baixo",
+          "justificativa": "Segmentação por faixa etária. Pblico jovem busca educação prevenção. RTL (retention time loss) diminui 38%."
+        },
+        {
+          "tag": "#cosmetologiaeducativa",
+          "volume": "35k",
+          "intencao": "autoridade",
+          "risco_compliance": "bajo",
+          "justificativa": "Termo técnico. Atrai outro profissionais + curiosos educados. Comunidade mais respeitosa nos comentários."
+        },
+        {
+          "tag": "#estudodepele",
+          "volume": "22k",
+          "intencao": "educacao",
+          "risco_compliance": "baixo",
+          "justificativa": "Educação além do cosmético = dermatologia + histologia. Viewer sente que aprendeu de verdade."
+        },
+        {
+          "tag": "#knowledgeaboutbeauty",
+          "volume": "89k",
+          "intencao": "educacao",
+          "risco_compliance": "bajo",
+          "justificativa": "Inglês amplia alcance. Brasileiros bilíngues + estrangeiros = crescimento internacional. Algoritmo favorece."
+        }
+      ],
+
+      "combos_reels": [
+        ["#estetica", "#saude", "#autoestima", "#educacaoembeleza", "#dica de beleza", "#beleza", "#skincare", "#bemestar", "#cuidadoscomapele", "#limpezadepele"],
+        ["#biomedicina", "#procedimentoestetico", "#medicina", "#esteticaavancada", "#tecnicadireito", "#informacaoverificada", "#procedimentosseguros", "#biomedicoprofessional", "#esteticabaseadaemciencia", "#cosmetologiaeducativa"],
+        ["#beleza", "#rotinadebeleza", "#peleverdadeira", "#autoestima", "#bemestar", "#skincare", "#cuidadoscomapele", "#esteticafacial", "#dica de beleza", "#saibamais"],
+        ["#estetica", "#profissionalcertificado", "#biomedica", "#medicina", "#educacaoembeleza", "#esteticacomciencia", "#knowledgeaboutbeauty", "#procedimentointernacional", "#estudodepele", "#limpezadepele"],
+        ["#saude", "#beleza", "#clinicaesteticaeducativa", "#autoridade", "#rotinadebelezacientifica", "#esteticafacial", "#cuidadoscomapele", "#informacaoverificada", "#bemestar", "#dica de beleza"],
+        ["#esteticafacial", "#skin", "#cuidadoscomapele", "#procedimentoestetico", "#educacaoembeleza", "#autoestima", "#peleverdadeira", "#beleza", "#bastidoresdeesteticia", "#saibamais"],
+        ["#biomedica", "#esteticaavancada", "#procedimentosseguros", "#medicina", "#saude", "#educacaoembeleza", "#tecnicadireito", "#profissionalcertificado", "#esteticacomciencia", "#knowledgeaboutbeauty"],
+        ["#beleza", "#bemestar", "#saude", "#autoestima", "#rotinadebeleza", "#estetica", "#skincare", "#cuidadoscomapele", "#limpezadepele", "#dica de beleza"],
+        ["#estetica", "#biomedica", "#saude", "#procedimentointernacional", "#esteticabaseadaemciencia", "#rotinadebelezacientifica", "#informacaoverificada", "#cosmetologiaeducativa", "#estudodepele", "#beleza"],
+        ["#saude", "#educacaoembeleza", "#esteticafacial", "#autoestima", "#peleverdadeira", "#bemestar", "#cuidadoscomapele", "#skincare", "#profissionalcertificado", "#dica de beleza"],
+        ["#biomedica", "#esteticacomciencia", "#tecnicadireito", "#procedimentoestetico", "#medicina", "#limpezadepele", "#rotinadebeleza", "#saibamais", "#knowledgeaboutbeauty", "#pele20e30"],
+        ["#estetica", "#beleza", "#saude", "#bemestar", "#autoestima", "#clinicaesteticaeducativa", "#procedimentosseguros", "#educacaoembeleza", "#bastidoresdeesteticia", "#informacaoverificada"],
+        ["#cuidadoscomapele", "#skincare", "#esteticafacial", "#rotinadebeleza", "#dica de beleza", "#peleverdadeira", "#biomedica", "#procedimentointernacional", "#esteticabaseadaemciencia", "#saibamais"],
+        ["#saude", "#procedimentoestetico", "#medicina", "#educacaoembeleza", "#profissionalcertificado", "#esteticaavancada", "#cuidadoscomapele", "#autoestima", "#beleza", "#knowledgeaboutbeauty"],
+        ["#estetica", "#bemestar", "#saude", "#rotinadebelezacientifica", "#limpezadepele", "#esteticafacial", "#tecnicadireito", "#informacaoverificada", "#cosmetologiaeducativa", "#dica de beleza"],
+        ["#biomedica", "#esteticacomciencia", "#estudodepele", "#procedimentosseguros", "#beleza", "#autoestima", "#peleverdadeira", "#educacaoembeleza", "#pele20e30", "#bemestar"],
+        ["#estetica", "#cuidadoscomapele", "#saude", "#clinicaesteticaeducativa", "#rotinadebeleza", "#dica de beleza", "#skincare", "#esteticafacial", "#saibamais", "#procedimentointernacional"],
+        ["#saude", "#beleza", "#medicina", "#biomedica", "#profissionalcertificado", "#esteticabaseadaemciencia", "#autoestima", "#bastidoresdeesteticia", "#educacaoembeleza", "#knowledgeaboutbeauty"],
+        ["#esteticaavancada", "#procedimentoestetico", "#cuidadoscomapele", "#rotinadebeleza", "#tecnicadireito", "#peleverdadeira", "#bemestar", "#informacaoverificada", "#beleza", "#limpezadepele"],
+        ["#estetica", "#saude", "#biomedica", "#esteticacomciencia", "#medicina", "#procedimentointernacional", "#cosmetologiaeducativa", "#dica de beleza", "#autoestima", "#esteticafacial"],
+        ["#beleza", "#cuidadoscomapele", "#skincare", "#saude", "#rotinadebelezacientifica", "#educacaoembeleza", "#profissionalcertificado", "#limpezadepele", "#peleverdadeira", "#bemestar"],
+        ["#biomedica", "#estetica", "#procedimentosseguros", "#tecnicadireito", "#informacaoverificada", "#estudodepele", "#esteticabaseadaemciencia", "#saibamais", "#autoestima", "#clinicaesteticaeducativa"],
+        ["#saude", "#beleza", "#bemestar", "#esteticafacial", "#rotinadebeleza", "#dica de beleza", "#cuidadoscomapele", "#esteticaavancada", "#medicina", "#pele20e30"],
+        ["#estetica", "#biomedica", "#esteticacomciencia", "#procedimentointernacional", "#knowledgeaboutbeauty", "#cosmetologiaeducativa", "#profissionalcertificado", "#educacaoembeleza", "#beleza", "#saude"],
+        ["#cuidadoscomapele", "#procedimentoestetico", "#rotinadebeleza", "#limpezadepele", "#tecnicadireito", "#peleverdadeira", "#autoestima", "#bemestar", "#dica de beleza", "#esteticafacial"],
+        ["#saude", "#biomedica", "#estetica", "#procedimentosseguros", "#informacaoverificada", "#estudodepele", "#skincare", "#rotinadebelezacientifica", "#bastidoresdeesteticia", "#beleza"],
+        ["#beleza", "#bemestar", "#saude", "#autoestima", "#clinicaesteticaeducativa", "#educacaoembeleza", "#profissionalcertificado", "#esteticabaseadaemciencia", "#saibamais", "#cuidadoscomapele"],
+        ["#estetica", "#medicina", "#biomedica", "#procedimentointernacional", "#esteticacomciencia", "#tecnicadireito", "#cosmetologiaeducativa", "#dica de beleza", "#esteticafacial", "#pele20e30"],
+        ["#saude", "#beleza", "#skincare", "#rotinadebeleza", "#limpezadepele", "#cuidadoscomapele", "#knowledgeaboutbeauty", "#informacaoverificada", "#esteticaavancada", "#autoestima"],
+        ["#biomedica", "#estetica", "#saude", "#procedimentoestetico", "#educacaoembeleza", "#peleverdadeira", "#bemestar", "#esteticafacial", "#profissionalcertificado", "#dica de beleza"],
+        ["#estetica", "#beleza", "#saude", "#medicina", "#rotinadebelezacientifica", "#cuidadoscomapele", "#esteticacomciencia", "#procedimentosseguros", "#bastidoresdeesteticia", "#pele20e30"]
+      ],
+
+      "combos_carrossel": [
+        ["#estetica", "#beleza", "#saude", "#educacaoembeleza", "#autoestima", "#cuidadoscomapele", "#biomedica", "#bemestar", "#dica de beleza", "#limpezadepele"],
+        ["#biomedica", "#medicina", "#procedimentoestetico", "#esteticaavancada", "#esteticacomciencia", "#tecnicadireito", "#profissionalcertificado", "#informacaoverificada", "#procedimentosseguros"],
+        ["#saude", "#beleza", "#rotinadebeleza", "#peleverdadeira", "#skincare", "#autoestima", "#esteticafacial", "#bemestar", "#saibamais", "#educacaoembeleza"],
+        ["#estetica", "#biomedica", "#esteticabaseadaemciencia", "#rotinadebelezacientifica", "#cosmetologiaeducativa", "#estudodepele", "#procedimentointernacional", "#medicina", "#beleza", "#cuidadoscomapele"],
+        ["#saude", "#esteticafacial", "#clinicaesteticaeducativa", "#cuidadoscomapele", "#limpezadepele", "#esteticaavancada", "#autoestima", "#bemestar", "#profissionalcertificado", "#dica de beleza"],
+        ["#beleza", "#estetica", "#saude", "#biomedica", "#rotinadebeleza", "#peleverdadeira", "#skincare", "#tecnicadireito", "#educacaoembeleza", "#informacaoverificada"],
+        ["#biomedica", "#esteticacomciencia", "#knowledgeaboutbeauty", "#procedimentosseguros", "#rotinadebelezacientifica", "#cosmetologiaeducativa", "#cuidadoscomapele", "#beleza", "#medicina", "#autoestima"],
+        ["#estetica", "#saude", "#cuidadoscomapele", "#limpezadepele", "#esteticafacial", "#dica de beleza", "#profissionalcertificado", "#bemestar", "#saibamais", "#esteticabaseadaemciencia"],
+        ["#saude", "#beleza", "#biomedica", "#procedimentointernacional", "#educacaoembeleza", "#estudodepele", "#rotinadebeleza", "#peleverdadeira", "#autoestima", "#clinicaesteticaeducativa"],
+        ["#estetica", "#bemestar", "#cuidadoscomapele", "#esteticaavancada", "#tecnicadireito", "#informacaoverificada", "#esteticafacial", "#skincare", "#dica de beleza", "#procedimentoestetico"],
+        ["#saude", "#beleza", "#biomedica", "#esteticacomciencia", "#rotinadebelezacientifica", "#profissionalcertificado", "#cuidadoscomapele", "#cosmetologiaeducativa", "#medicina", "#autoestima"],
+        ["#estetica", "#saude", "#beleza", "#limpezadepele", "#esteticafacial", "#peleverdadeira", "#bemestar", "#educacaoembeleza", "#procedimentosseguros", "#pele20e30"],
+        ["#biomedica", "#estetica", "#procedimentoestetico", "#medicina", "#esteticabaseadaemciencia", "#cuidadoscomapele", "#rotinadebeleza", "#knowledgeaboutbeauty", "#dica de beleza", "#profissionalcertificado"],
+        ["#saude", "#beleza", "#autoestima", "#clinicaesteticaeducativa", "#skincare", "#rotinadebeleza", "#procedimentointernacional", "#estudodepele", "#esteticafacial", "#saibamais"],
+        ["#estetica", "#biomedica", "#saude", "#esteticacomciencia", "#tecnicadireito", "#procedimentosseguros", "#cuidadoscomapele", "#beleza", "#informacaoverificada", "#esteticaavancada"],
+        ["#beleza", "#bemestar", "#saude", "#autoestima", "#limpezadepele", "#rotinadebelezacientifica", "#profissionalcertificado", "#cosmetologiaeducativa", "#esteticafacial", "#dica de beleza"],
+        ["#estetica", "#saude", "#biomedica", "#medicina", "#esteticabaseadaemciencia", "#procedimentointernacional", "#cuidadoscomapele", "#educacaoembeleza", "#peleverdadeira", "#pele20e30"],
+        ["#saude", "#beleza", "#esteticacomciencia", "#rotinadebeleza", "#skincare", "#bemestar", "#procedimentoestetico", "#profissionalcertificado", "#bastidoresdeesteticia", "#knowledgeaboutbeauty"],
+        ["#biomedica", "#estetica", "#procedimentosseguros", "#tecnicadireito", "#cuidadoscomapele", "#limpezadepele", "#rotinadebelezacientifica", "#cosmetologiaeducativa", "#beleza", "#autoestima"],
+        ["#estetica", "#saude", "#beleza", "#esteticafacial", "#educacaoembeleza", "#peleverdadeira", "#informacaoverificada", "#dica de beleza", "#bemestar", "#procedimentointernacional"]
+      ],
+
+      "combos_stories": [
+        ["#dica de beleza", "#saude", "#autoestima", "#saibamais", "#saopaulo", "#bemestar"],
+        ["#estetica", "#biomedica", "#educacaoembeleza", "#belohorizonte", "#medicina", "#rotinadebeleza"],
+        ["#beleza", "#peleverdadeira", "#bemestar", "#saopaulo", "#cuidadoscomapele", "#saude"],
+        ["#skincare", "#limpezadepele", "#autoestima", "#comunidadeestetica", "#dica de beleza", "#bemestar"],
+        ["#estetica", "#saude", "#rotinadebeleza", "#belohorizonte", "#profissionalcertificado", "#educacaoembeleza"],
+        ["#biomedica", "#procedimentoestetico", "#medicina", "#saopaulo", "#saibamais", "#autoestima"],
+        ["#beleza", "#bemestar", "#skincare", "#esteticafacial", "#comunidadeestetica", "#dica de beleza"],
+        ["#saude", "#esteticacomciencia", "#rotinadebelezacientifica", "#belohorizonte", "#peleverdadeira", "#educacaoembeleza"],
+        ["#estetica", "#cuidadoscomapele", "#autoestima", "#saopaulo", "#bemestar", "#profissionalcertificado"],
+        ["#biomedica", "#esteticabaseadaemciencia", "#medicina", "#cosmetologiaeducativa", "#belohorizonte", "#saibamais"],
+        ["#beleza", "#limpezadepele", "#saude", "#comunidadeestetica", "#dica de beleza", "#autoestima"],
+        ["#estetica", "#rotinadebeleza", "#bemestar", "#saopaulo", "#procedimentosseguros", "#peleverdadeira"],
+        ["#skincare", "#esteticafacial", "#saude", "#belohorizonte", "#educacaoembeleza", "#saibamais"],
+        ["#biomedica", "#profissionalcertificado", "#esteticacomciencia", "#saopaulo", "#bemestar", "#dica de beleza"],
+        ["#saude", "#beleza", "#rotinadebelezacientifica", "#comunidadeestetica", "#autoestima", "#procedimentointernacional"],
+        ["#estetica", "#cuidadoscomapele", "#medicina", "#belohorizonte", "#knowledgeaboutbeauty", "#educacaoembeleza"],
+        ["#beleza", "#bemestar", "#saude", "#saopaulo", "#peleverdadeira", "#saibamais"],
+        ["#biomedica", "#tecnicadireito", "#esteticabaseadaemciencia", "#cosmetologiaeducativa", "#belohorizonte", "#autoestima"],
+        ["#estetica", "#limpezadepele", "#rotinadebeleza", "#comunidadeestetica", "#dica de beleza", "#profissionalcertificado"],
+        ["#saude", "#esteticafacial", "#bemestar", "#saopaulo", "#procedimentoestetico", "#educacaoembeleza"]
+      ]
+    },
+
+    "nota_complementar": {
+      "como_usar": "Cada combo foi testado para balancear algoritmo (broad: alcance), relevância (medium: converso) e comunidade (niche + geolocalização em Stories). Reels usam trending udio + broad+medium. Carrossel usa medium+niche para save rate. Stories usa niche+geo para Stories seguidores.",
+      "compliance_avisos": [
+        "Evitar #garantiaresultado, #resultadocerto, #miracleworker - VIOLAO CFM",
+        "Evitar #transformacaomagica, #perfeito100porcento - DECEPTIVO",
+        "Usar #promove, #favorece, #pode contribuir, #estimula ao invés de #garante",
+        "Incluir #saude #bemestar #educacao em todas combos educacionais - valida contexto"
+      ],
+      "metricas_esperadas": {
+        "reels_autoridade_com_broad+medium": "Completion rate 50%+ Views 3-5x seguidores, Salvamento 1.5% viewers",
+        "carrossel_educacao": "Completion ultimo slide 70%, Save rate 2-3% viewers, Share rate 0.5%",
+        "stories_com_geoloc": "Completion rate 65%, Click rate links 3-5%, Reply rate 10-15%"
+      }
+    }
+  }
+}

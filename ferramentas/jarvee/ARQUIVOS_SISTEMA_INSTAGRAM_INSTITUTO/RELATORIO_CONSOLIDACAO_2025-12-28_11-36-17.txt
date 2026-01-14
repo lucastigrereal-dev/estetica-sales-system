@@ -1,0 +1,143 @@
+﻿===============================================
+RELATORIO DE CONSOLIDACAO - INSTAGRAM INSTITUTO
+===============================================
+Data/Hora: 28/12/2025 11:36:17
+Total de arquivos na lista: 109
+
+===============================================
+RESUMO
+===============================================
+Arquivos COPIADOS: 9
+Arquivos JA EXISTIAM (pulados): 64
+Arquivos NAO ENCONTRADOS: 36
+Erros: 0
+
+===============================================
+ARQUIVOS COPIADOS (9)
+===============================================
+INDICE_CONSOLIDADO_Todos_Arquivos.md -> INDICE_CONSOLIDADO_Todos_Arquivos.md (de: C:\Users\lucas\Downloads\Downloads_COMET)
+Guia_Uso_Hashtags_Karina_2024-2025.md -> Guia_Uso_Hashtags_Karina_2024-2025.md (de: C:\Users\lucas\Desktop\ARQUIVOS_SISTEMA_INSTAGRAM_INSTITUTO\2_ARQUIVOS_SOLTOS\Markdowns)
+biblioteca_hashtags_karina_pt1_autoridade.json -> biblioteca_hashtags_karina_pt1_autoridade.json (de: C:\Users\lucas\Desktop\ARQUIVOS_SISTEMA_INSTAGRAM_INSTITUTO\2_ARQUIVOS_SOLTOS\JSONs)
+biblioteca_hashtags_karina_pt2_temas2e3.json -> biblioteca_hashtags_karina_pt2_temas2e3.json (de: C:\Users\lucas\Desktop\ARQUIVOS_SISTEMA_INSTAGRAM_INSTITUTO\2_ARQUIVOS_SOLTOS\JSONs)
+biblioteca_hashtags_karina_pt3_temas4e5.json -> biblioteca_hashtags_karina_pt3_temas4e5.json (de: C:\Users\lucas\Desktop\ARQUIVOS_SISTEMA_INSTAGRAM_INSTITUTO\2_ARQUIVOS_SOLTOS\JSONs)
+biblioteca_hashtags_karina_pt4_tema6_completo.json -> biblioteca_hashtags_karina_pt4_tema6_completo.json (de: C:\Users\lucas\Desktop\ARQUIVOS_SISTEMA_INSTAGRAM_INSTITUTO\2_ARQUIVOS_SOLTOS\JSONs)
+120_CTAs_Premium_Intimax.json -> 120_CTAs_Premium_Intimax.json (de: C:\Users\lucas\Desktop\ARQUIVOS_SISTEMA_INSTAGRAM_INSTITUTO\2_ARQUIVOS_SOLTOS\JSONs)
+120_CTAs_Guia_Completo.md -> 120_CTAs_Guia_Completo.md (de: C:\Users\lucas\Downloads\Downloads_COMET)
+SQL-PARTE-2-DADOS-COMPLETOS.sql -> SQL-PARTE-2-DADOS-COMPLETOS.sql (de: C:\Users\lucas\Desktop)
+
+===============================================
+ARQUIVOS JA EXISTIAM (64)
+===============================================
+mapa-puro-protocolos-ig.md
+instagram-growth-map-2025.md
+ARQUITETURA-BANCO-DADOS.md
+SISTEMA-FINAL-INTEGRADO-COMPLETO.md
+SISTEMA-COMPLETO-80-FUNCIONALIDADES.md
+RELATORIO-COMPLETO-PORTUGUES.md
+instagram_branding_completo.md
+exemplos_praticos_implementacao.md
+protocolo-1-2-reels-alcance.md
+protocolo-1-3-reels-seguidores.md
+protocolo-1-4-reels-viralizacao.md
+protocolo-1-5-reels-educacional.md
+protocolo-operacional-reels-viralizacao.md
+protocolo-2-1-carrossel-geral.md
+protocolo-2-2-carrossel-salvamento.md
+protocolo-2-3-carrossel-alcance.md
+protocolo-2-4-carrossel-seguidores.md
+protocolo-3-1-stories-geral.md
+protocolo-3-2-stories-highlights.md
+protocolo-3-3-stories-interativo.md
+protocolo-3-4-stories-seguidores.md
+protocolo-4-1-legendas-geral.md
+protocolo-4-2-legendas-valor.md
+protocolo-4-3-legendas-conversao.md
+protocolo-5-1-estrategia-calendario.md
+protocolo-5-2-kpis-analytics.md
+protocolo-5-3-escalacao-30-60-90.md
+protocolo-5-3-escalacao-30-60-90__1_.md
+protocolo-6-1-replies-strategy.md
+protocolo-6-2-dm-strategy.md
+protocolo-6-3-community-rituals.md
+protocolo-7-1-produtos-proprios.md
+protocolo-7-2-afiliados.md
+protocolo-7-3-brand-deals.md
+protocolo-10-1-crisis-prevention.md
+protocolo-10-2-crisis-response.md
+protocolo-10-3-recovery.md
+protocolo-11-1-niche-positioning.md
+protocolo-11-2-authority-building.md
+protocolo-11-3-niche-monetization.md
+protocolo-12-1-paid-ads-strategy.md
+protocolo-12-2-instagram-facebook-ads.md
+protocolo-12-3-ads-optimization.md
+BLOCO-6-RESUMO-EXECUTIVO.md
+BLOCO-7-RESUMO-EXECUTIVO.md
+BLOCO-8-RESUMO-EXECUTIVO.md
+BLOCO-9-RESUMO-EXECUTIVO.md
+BLOCO-11-RESUMO-EXECUTIVO.md
+BLOCO-12-RESUMO-EXECUTIVO.md
+MODULO-2-RESUMO-EXECUTIVO.md
+MODULO-3-RESUMO-EXECUTIVO.md
+MODULO-4-RESUMO-EXECUTIVO.md
+MODULO-5-RESUMO-EXECUTIVO.md
+QUICK-START-IMPRIMIVEL.md
+QUICK-REFERENCE-GUIDE.md
+20_posts_validados_karina.md
+20_ideias_virais_bonus.md
+30_posts_dra_karina_planilha.xlsx
+estrategia_conteudo_estetico_2025.md
+CALENDARIO-90-DIAS-SUPER-DETALHADO.md
+CALENDARIO-90-DIAS-DETALHADO.md
+GROK_PROTOCOLOS_E_HACKS.docx
+ChatGPT_Image_27_de_dez__de_2025_19_28_24.png
+ChatGPT_Image_27_de_dez__de_2025_19_28_26.png
+
+===============================================
+ARQUIVOS NAO ENCONTRADOS (36)
+===============================================
+mapa-fluxos-tabelas.md
+RESUMO-CHAMADA-3.md
+protocolo-1-1-reels-geral.md
+BLOCO-1-RESUMO-EXECUTIVO.md
+BLOCO-2-RESUMO-EXECUTIVO.md
+BLOCO-3-RESUMO-EXECUTIVO.md
+BLOCO-4-RESUMO-EXECUTIVO.md
+BLOCO-5-RESUMO-EXECUTIVO.md
+BLOCO-10-RESUMO-EXECUTIVO.md
+CTAs_Eficazes_no_Instagram_para_Publico_Brasileiro_grok.docx
+planilha_de_postagens_grok.csv
+melhores_paginas_no_instagram_de_auto_estima_femin.md
+instagram-system-schema-v1.sql
+instagram-data-inserts.sql
+OPERACAO_EMBAIXADORAS_DO_IMPERIO_RODOVANSKY____VER.pdf
+DOSSIE_DE_AUTORIDADE_DIGITAL_Harmonizacao_Intima_Ninfoplastia__Aurora_Tigre_.docx
+Checklist_Pendente_-_Implementacao.docx
+informacoes_grok_instagram__1_.docx
+HASTASGS_GROK__1_.docx
+Manual_Social_Selling_2025.docx
+Guia_Completo_de_Automacao_do_Instagram_2025__20_F.docx
+Guia_completo_do_Instagram_para_o_seu_negocio_desde_os_primeiros.pdf
+Instagram_Black_Belt_Como_deixar_seu_instagram_em_alto_nivel_Dan.pdf
+Como_crescer_no_instagram_hackeando_o_algoritmo.pdf
+Manual_Completo_das_Redes_Sociais__Instagram_Marke.pdf
+Estrategias_de_Marketing_para_Clinicas__Batch_2_.pdf
+Relatorio_de_Inteligencia__Analise_da_Plataforma_F.pdf
+Analise_de_fontes_NotebookLM__Clinicas_de_Estetic.pdf
+QUAIS_PROCEDIMENTOS_SAO_MAIS_BUSCADOS_VENDIDOS_NAO.pdf
+ENGAJANDO_INSTAGRAM_2.pdf
+BONUS_13_PASSOS_PARA_BOMBAR_NO_INSTAGRAM.pdf
+ESTRATEGIA_ULTRAOTIMIZADA_PARA_REPOST_NO_INSTAGRA.pdf
+Metodos_de_Venda_e_Especializacoes__Batch_9__Face.pdf
+Atrair_Clientes_e_Fidelizacao__Batch_4__COMO_LOTA.pdf
+Topics_Complementares__Batch_10__Marketing_para_C.pdf
+Voce_nao_vai_ter_um_penis__Voce_vai_ter_um_Rodovanski_.pdf
+
+===============================================
+ERROS (0)
+===============================================
+
+
+===============================================
+FIM DO RELATORIO
+===============================================

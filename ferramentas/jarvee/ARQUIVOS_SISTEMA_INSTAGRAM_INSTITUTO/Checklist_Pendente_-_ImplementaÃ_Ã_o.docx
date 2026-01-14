@@ -1,0 +1,350 @@
+**CHECKLIST DE IMPLEMENTAÇÃO PENDENTE**
+
+**Dossiê Técnico Instagram --- Clínica de Estética Karina**
+
+**Data**: Dezembro 2025\
+**Status**: Análise de gaps técnicos\
+**Próximo**: Converter para HTML interativo + Sistema de Postagem
+
+**BLOCO 1: ITENS FALTANTES NO DOSSIÊ (Teórico → Prático)**
+
+**1.1 --- Dados Específicos de Karina (Ausentes)**
+
+❌ **Seguidores atuais**: Dossiê diz \"\~50K\" --- precisa confirmação\
+❌ **Demográfico real**: Idade/gênero público (assumido 25--45 F, mas
+precisa verificar Insights)\
+❌ **Horário pico comprovado**: Formulário diz \"melhor 9--11h AM\",
+precisa teste 14 dias\
+❌ **Padrão vencedor até agora**: Nenhum Reel/post analisado ainda\
+❌ **Procedimentos top 3**: \"Íntima masculina\" é mencionado, mas qual
+é #1 em conversão?\
+❌ **Concorrentes diretos** (Brasil): Qual clínica compete? Qual
+performance delas?
+
+**Ação necessária**:
+
+-   \[ \] Acessar Insights e preencher demográfico real
+
+-   \[ \] Testar 14 dias (horários) antes de fixar \"melhor horário\"
+
+-   \[ \] Analisar últimos 10 posts: quais tiveram melhor engagement?
+
+-   \[ \] Listar top 3 procedimentos por conversion (DMs geradas)
+
+**1.2 --- Criação de Conteúdo (Ausente)**
+
+❌ **Templates visuais**: Dossiê não tem designs prontos (Canva/Figma)\
+❌ **Biblioteca de áudios**: Quais trending áudios \"funcionam\" para
+estética?\
+❌ **Antes/depois padrão**: Qual pose, iluminação, fundo padronizado?\
+❌ **Depoimentos de pacientes**: Precisa coletar 5--10 (com
+consentimento)\
+❌ **Scripts de voiceover**: Texto pronto para Karina gravar\
+❌ **B-roll da clínica**: Procedimento, ambiente, transformação (vídeos
+curtos)
+
+**Ação necessária**:
+
+-   \[ \] Montar template Canva (Reel autoridade, Reel conversão,
+    Carrossel)
+
+-   \[ \] Gravar 3--5 Reels piloto (testar estrutura do dossiê)
+
+-   \[ \] Coletar depoimentos de 3 pacientes (escrito ou vídeo curto)
+
+-   \[ \] Criar \"biblioteca\" de trending áudios que funcionam
+    (estética)
+
+-   \[ \] Padronizar iluminação/pose antes-depois
+
+**1.3 --- Infraestrutura de Automação (Ausente)**
+
+❌ **Autoresponder DM**: Nenhum bot/template mencionado\
+❌ **Calendário publicação**: Nenhum sistema (agora é manual?)\
+❌ **Monitoramento de métricas**: Spreadsheet não existe ainda\
+❌ **Pipeline conversão**: DM → WhatsApp → Calendly (como funciona?)\
+❌ **Template WhatsApp**: Resposta automática padrão?
+
+**Ação necessária**:
+
+-   \[ \] Setup ManyChat ou automação equivalente (DM → resposta
+    automática)
+
+-   \[ \] Criar Calendly (ou equivalente) para agendamento
+
+-   \[ \] Setup spreadsheet Google Sheets (template do bloco 7)
+
+-   \[ \] Definir pipeline exato: DM → resposta template → WhatsApp →
+    link Calendly
+
+-   \[ \] Template WhatsApp pronto para colar (múltiplas respostas)
+
+**1.4 --- Execução Semanal (Ausente)**
+
+❌ **Produção de conteúdo**: Quem grava? Quando? Qual ritmo?\
+❌ **Edição**: Quem edita? Software? Tempo por vídeo?\
+❌ **Aprovação**: Karina vê antes de postar?\
+❌ **Responsabilidade**: Quem cuida de Stories, DMs, comentários?\
+❌ **Horários de trabalho**: Quando tudo isso acontece?
+
+**Ação necessária**:
+
+-   \[ \] Definir \"Dia de gravação\" (ex: segunda-feira, 2h)
+
+-   \[ \] Definir \"Dia de edição\" (ex: terça-feira, 1.5h)
+
+-   \[ \] Definir \"Dia de postagem\" (ex: calendário semanal fixo)
+
+-   \[ \] Atribuir responsáveis (Karina, estagiário, agência?)
+
+-   \[ \] Tempo semanal estimado: \~8--10 horas (gravação + edição +
+    monitoramento)
+
+**BLOCO 2: ITENS QUE REQUEREM PESQUISA/VALIDAÇÃO**
+
+**2.1 --- Concorrência (Pesquisa de Mercado)**
+
+❌ **Top 3 clínicas estética Brasil** (IG analytics)\
+❌ **Qual é o padrão de hooks vencedor** (nicho estética)?\
+❌ **Qual é a taxa de conversão média** (procedimento específico)?\
+❌ **Quais trending áudios funcionam melhor** (para estética)?
+
+**Ação necessária**:
+
+-   \[ \] Analisar 3 clínicas similares: hooks, duração, CTA, engagement
+
+-   \[ \] Testar 5 trending áudios diferentes (semana teste)
+
+-   \[ \] Monitorar completion rate de 3 clínicas concorrentes
+
+**2.2 --- Validação de Dados (Dossiê teórico → realidade)**
+
+❌ **\"Tempo assistido = 40% do peso\"** --- Meta confirmou 2025?\
+❌ **\"Resposta em \<5 min = +30--50% views\"** --- testou em teu
+perfil?\
+❌ **\"Trending áudio = +40--50% boost\"** --- permanece 2025?\
+❌ **\"Reposte Stories = +200--500 views\"** --- baseline realmente
+esse?
+
+**Ação necessária**:
+
+-   \[ \] Citar fontes Meta oficiais (BLOCO 0 reclama fonte)
+
+-   \[ \] Testar cada \"hack\" em 2--3 posts antes de generalizar
+
+-   \[ \] Anota: isso é \"baseado em padrão\" ou \"testado em teu
+    perfil\"?
+
+**BLOCO 3: ITENS TÉCNICOS (Sistema)**
+
+**3.1 --- HTML + Sistema de Postagem (Próximo)**
+
+❌ **Converter dossiê em HTML interativo**\
+❌ **Dashboard visual** (calendario, status posts, métricas)\
+❌ **Checklist semanal** (checkboxes, progress bar)\
+❌ **Integração calendário** (Google Sheets → HTML?)\
+❌ **Export PDF/print** (relatório semanal para cliente/chefe)
+
+**Ação necessária**:
+
+-   \[ \] Desenhar wireframe HTML (dashboard, calendar, checklist)
+
+-   \[ \] Integrar dados Insights (se API disponível) ou manual input
+
+-   \[ \] Criar \"planner visual\" (semana modelo)
+
+-   \[ \] Exportar relatório (últimas métricas, padrões)
+
+**3.2 --- Integração com Instagram/Meta (API)**
+
+❌ **Conexão automática Insights** (pulls métricas ao vivo?)\
+❌ **Agendamento de posts** (via Meta/third-party?)\
+❌ **Analytics automático** (coleta dados 24h sem manual?)
+
+**Ação necessária** (COMPLEXA):
+
+-   \[ \] Pesquisar API Meta Insights (permissões necessárias)
+
+-   \[ \] Alternativa simples: Input manual (spreadsheet)
+
+-   \[ \] Alternativa intermediária: ferramenta (Buffer, Later, Meta
+    Business Suite)
+
+**BLOCO 4: GAPS NO DOSSIÊ (Teórico, Precisa Contexto)**
+
+**4.1 --- Não Mencionado no Dossiê**
+
+❌ **Hashtag strategy 2025** (mudou muito)\
+❌ **Link na bio** (qual tipo funciona melhor? Calendly? WhatsApp?)\
+❌ **Destaques (Highlights)** de Stories (como estruturar?)\
+❌ **Colabs** (qual tipo colaborador buscar? Como identificar?)\
+❌ **Conteúdo errado** (qual é exatamente \"público errado\" para
+clínica?)\
+❌ **Monetização** (affiliate? parceria? fora do escopo clínica)\
+❌ **Crises/negative** (como gerenciar comentário ruim de paciente?)\
+❌ **Reels saved/removidos** (se um post \"flopa\", deleta ou deixa?)
+
+**Ação necessária**:
+
+-   \[ \] Pesquisar hashtag strategy 2025 (pode estar desatualizado)
+
+-   \[ \] Estruturar Highlights (Autoridade, FAQ, Provas, Agenda)
+
+-   \[ \] Definir resposta padrão a comentário negativo
+
+**4.2 --- Fora do Escopo Dossiê (Mas Relevante)**
+
+❌ **Tema criativo** (qual é a \"vibe\" visual de Karina? Cores? Tom?)\
+❌ **Brand voice** (profissional? Descontraído? Médico formal?)\
+❌ **Diferencial** (por que escolher Karina vs concorrente?)\
+❌ **Público-alvo secundário** (homens? Mulheres? Idade spread?)\
+❌ **Preço/valores** (deve mencionar em posts? Fora de DM?)
+
+**Ação necessária**:
+
+-   \[ \] Definir \"brand voice\" (tom dos posts)
+
+-   \[ \] Definir \"aesthetic\" (cores, fontes, estilo visual)
+
+-   \[ \] Definir diferencial (expertise, resultados, atendimento?)
+
+**BLOCO 5: PRIORIZAÇÃO (O Que Fazer Primeiro)**
+
+**CRÍTICO (Semana 1--2)**
+
+1.  **Preencher dados reais de Karina**
+
+    -   Seguidores, demográfico, horário pico
+
+    -   Top 3 procedimentos
+
+    -   Padrão vencedor até agora
+
+2.  **Criar conteúdo piloto**
+
+    -   3 Reels (testar estrutura dossiê)
+
+    -   1 Carrossel (testar hook)
+
+    -   Gravar 5 min (teste antes de escalar)
+
+3.  **Setup infraestrutura básica**
+
+    -   Spreadsheet Insights
+
+    -   Calendário semanal fixo
+
+    -   Template WhatsApp resposta rápida
+
+**IMPORTANTE (Semana 3--4)**
+
+4.  **Produção em ritmo**
+
+    -   Gravação: segunda-feira
+
+    -   Edição: terça-feira
+
+    -   Postagem: calendário semanal
+
+5.  **Monitoramento de padrão**
+
+    -   Análise 24h de cada post
+
+    -   Identificar vencedor
+
+    -   Replicar próximos 70%
+
+6.  **Automação DM → Agendamento**
+
+    -   ManyChat ou equivalente
+
+    -   Template resposta
+
+    -   Pipeline definido
+
+**BONUS (Semana 5+)**
+
+7.  **HTML + Dashboard**
+
+    -   Converter dossiê em visual
+
+    -   Integrar métricas
+
+    -   Exportar relatório semanal
+
+8.  **Refino de hacks**
+
+    -   Testar \"colabs\"
+
+    -   Testar \"trending áudio\" relevante
+
+    -   Testar \"reposte Stories timing\"
+
+**BLOCO 6: TEMPO ESTIMADO**
+
+  ----------------- ----------------- ----------------- -----------------
+  Item              Tempo             Quem              Quando
+
+  Preencher dados   30 min            Karina/admin      Hoje
+  Karina                                                
+
+  Gravar 3 Reels    2h                Karina + editor   Segunda
+  piloto                                                
+
+  Editar 3 Reels    1.5h              Editor            Terça
+
+  Setup spreadsheet 30 min            Admin             Hoje
+
+  Setup automação   1h                Admin/tech        Esta semana
+  DM                                                    
+
+  Postar +          1h                Admin             Diária (30 min)
+  monitorar 24h                                         
+
+  **Total semana    **\~8--10h**      Distribuído       
+  1**                                                   
+  ----------------- ----------------- ----------------- -----------------
+
+**BLOCO 7: PRÓXIMA AÇÃO IMEDIATA**
+
+**Hoje/Esta semana**:\
+☐ Confirmar: Quantos seguidores Karina tem NOW?\
+☐ Confirmar: Qual procedimento gera MAIS DMs?\
+☐ Confirmar: Qual horário público está online (Insights)?\
+☐ Confirmar: Últimos 3 posts --- quais foram vencedores?\
+☐ Criar: Spreadsheet monitoramento\
+☐ Gravar: 1 Reel teste (testar hook do dossiê)\
+☐ Postar: Reel teste + monitorar 24h
+
+**Semana 2**:\
+☐ Analisar resultado Reel teste\
+☐ Replicar estrutura vencedora\
+☐ Gravar + editar 2 posts próximas\
+☐ Setup automação DM
+
+**Semana 3+**:\
+☐ Ritmo semanal fixo (5 posts)\
+☐ Constância + refinamento\
+☐ Análise padrão semanal
+
+**BLOCO 8: PERGUNTAS PARA KARINA/CLIENTE**
+
+**Antes de escalar produção**:
+
+1.  **Capacidade produção**: Consegue gravar 3--5 Reels/semana?
+
+2.  **Tempo dedicado**: Quanto tempo/dia pode investir pessoalmente?
+
+3.  **Orçamento**: Precisa de editor? Agência? DIY?
+
+4.  **Objetivo**: Crescimento puro ou conversão agendamentos?
+
+5.  **Procedimentos**: Qual é top 1 que quer promover? (foco 80%)
+
+6.  **Público-alvo**: Mulheres 25--45? Homens crescente? Mix?
+
+7.  **Valores**: Quer mostrar preço em posts ou só em DM?
+
+8.  **Timeline**: Quando espera ver resultado? (1 mês? 3 meses?)
+
+**Pronto para converter em HTML + iniciar produção.**

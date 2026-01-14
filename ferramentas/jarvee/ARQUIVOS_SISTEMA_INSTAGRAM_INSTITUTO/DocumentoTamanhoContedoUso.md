@@ -1,0 +1,7 @@
+# DocumentoTamanhoContedoUso
+
+| Documento                   | Tamanho      | Conteúdo                                                                      | Uso                                       |
+|:----------------------------|:-------------|:------------------------------------------------------------------------------|:------------------------------------------|
+| PRE_CALENDARIO_4_SEMANAS    | 803 linhas   | Calendário dia-a-dia (Conservadora + Agressiva), 5 pilares, compliance, funil | LER PRIMEIRO — Te diz o quê postar quando |
+| EXEMPLOS_PRONTOS_CONTEUDO   | 1.047 linhas | 15 roteiros prontos (hooks, scripts, captions, timing)                        | USAR DURANTE A PRODUÇÃO — Copia e adapta  |
+| RESUMO_EXECUTIVO_CALENDARIO | 407 linhas   | Visão alto nível, métricas, checklist, benchmarks                             | REFERÊNCIA RÁPIDA — Decide fácil          |

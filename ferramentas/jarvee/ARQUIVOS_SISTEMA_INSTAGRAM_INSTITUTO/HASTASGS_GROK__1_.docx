@@ -1,0 +1,2808 @@
+{
+
+\"temas\": {
+
+\"autoridade_educacao\": {
+
+\"broad\": \[
+
+\"#estetica\",
+
+\"#beleza\",
+
+\"#saude\",
+
+\"#bemestar\",
+
+\"#skincare\",
+
+\"#biomedicina\",
+
+\"#medicinaestetica\",
+
+\"#cuidados\",
+
+\"#prevencao\",
+
+\"#qualidadedevida\",
+
+\"#terapia\",
+
+\"#educacao\"
+
+\],
+
+\"medium\": \[
+
+\"#biomedicinaestetica\",
+
+\"#esteticaavancada\",
+
+\"#biomedica\",
+
+\"#biomedico\",
+
+\"#diadobiomedico\",
+
+\"#orgulhobiomedicina\",
+
+\"#cienciaebeleza\",
+
+\"#amoraprofissao\",
+
+\"#biomedicoesteta\",
+
+\"#estudoestetica\",
+
+\"#dicasestetica\",
+
+\"#saudeeestetica\",
+
+\"#profissionalestetica\",
+
+\"#formacaoestetica\",
+
+\"#conhecimentobiomedico\",
+
+\"#aulaestetica\",
+
+\"#seminarioestetica\",
+
+\"#inovacaobiomedica\"
+
+\],
+
+\"niche\": \[
+
+\"#biomedicinaesteticaavancada\",
+
+\"#educacaobiomedica\",
+
+\"#autoridadeestetica\",
+
+\"#biomedicinaeducacional\",
+
+\"#cursosbiomedicinaestetica\",
+
+\"#palestrasestetica\",
+
+\"#congressobiomedicina\",
+
+\"#especializacaoestetica\",
+
+\"#pesquisaestetica\",
+
+\"#inovacaoestetica\"
+
+\]
+
+},
+
+\"intimo_feminino\": {
+
+\"broad\": \[
+
+\"#saudefeminina\",
+
+\"#saudedamulher\",
+
+\"#ginecologia\",
+
+\"#menopausa\",
+
+\"#rejuvenescimento\",
+
+\"#saudeintima\",
+
+\"#cuidadofeminino\",
+
+\"#bemestarfeminino\",
+
+\"#saude\",
+
+\"#bemestar\",
+
+\"#cuidado\",
+
+\"#prevencao\"
+
+\],
+
+\"medium\": \[
+
+\"#esteticaintima\",
+
+\"#laservaginal\",
+
+\"#rejuvenescimentointimo\",
+
+\"#harmonizacaointima\",
+
+\"#saudeintimafeminina\",
+
+\"#ginecologiaestetica\",
+
+\"#tratamentointimo\",
+
+\"#cuidadointimo\",
+
+\"#biomedicinafeminina\",
+
+\"#esteticabiomedicafeminina\",
+
+\"#saudereprodutiva\",
+
+\"#autocuidadofeminino\",
+
+\"#educacaofeminina\",
+
+\"#saudehormonal\",
+
+\"#bemestarintimo\",
+
+\"#terapiaintima\",
+
+\"#procedimentosfemininos\",
+
+\"#saudepelvica\"
+
+\],
+
+\"niche\": \[
+
+\"#harmonizacaointimafeminina\",
+
+\"#biomedicaintimafeminina\",
+
+\"#esteticaintimaavancada\",
+
+\"#tratamentobiomedicointimo\",
+
+\"#educacaointimafeminina\",
+
+\"#saudeintimabiomedica\",
+
+\"#rejuvenescimentovaginal\",
+
+\"#cuidadointimobiomedico\",
+
+\"#ginecologiaesteticabiomedica\",
+
+\"#procedimentosintimosrespeitosos\"
+
+\]
+
+},
+
+\"full_face\": {
+
+\"broad\": \[
+
+\"#harmonizacaofacial\",
+
+\"#esteticafacial\",
+
+\"#botox\",
+
+\"#preenchimento\",
+
+\"#beleza\",
+
+\"#skincare\",
+
+\"#facial\",
+
+\"#cuidadoscomapele\",
+
+\"#acidohialuronico\",
+
+\"#toxinabotulinica\",
+
+\"#odontologiaestetica\",
+
+\"#belleza\"
+
+\],
+
+\"medium\": \[
+
+\"#preenchimentofacial\",
+
+\"#harmonizacaoorofacial\",
+
+\"#bichectomia\",
+
+\"#preenchimentolabial\",
+
+\"#dermalfillers\",
+
+\"#facialfillers\",
+
+\"#harmonizacaoavancada\",
+
+\"#fiospdo\",
+
+\"#botoxfacial\",
+
+\"#esteticaorofacial\",
+
+\"#harmonizacaofullface\",
+
+\"#procedimentosfaciais\",
+
+\"#cuidadofacial\",
+
+\"#rejuvenescimentofacial\",
+
+\"#esteticaavancadafacial\",
+
+\"#biomedicinafacial\",
+
+\"#tratamentofacial\",
+
+\"#saudefacial\"
+
+\],
+
+\"niche\": \[
+
+\"#fullfaceharmonizacao\",
+
+\"#harmonizacaofacialcompleta\",
+
+\"#procedimentosfullface\",
+
+\"#biomedicinafullface\",
+
+\"#educacaofullface\",
+
+\"#autoridadefullface\",
+
+\"#fullfacebiomedico\",
+
+\"#tecnicasfullface\",
+
+\"#inovacaofullface\",
+
+\"#pesquisafullface\"
+
+\]
+
+},
+
+\"gluteo\": {
+
+\"broad\": \[
+
+\"#esteticacorporal\",
+
+\"#gluteos\",
+
+\"#harmonizacaocorporal\",
+
+\"#tratamentocorporal\",
+
+\"#beleza\",
+
+\"#saude\",
+
+\"#bemestar\",
+
+\"#cuidado\",
+
+\"#radiofrecuencia\",
+
+\"#cavitacion\",
+
+\"#masajes\",
+
+\"#masajereductivo\"
+
+\],
+
+\"medium\": \[
+
+\"#gluteomax\",
+
+\"#levantamientodegluteos\",
+
+\"#tratamientoscorporales\",
+
+\"#harmonizacaogluteos\",
+
+\"#esteticagluteos\",
+
+\"#biomedicinagluteos\",
+
+\"#procedimentosgluteos\",
+
+\"#cuidagluteos\",
+
+\"#rejuvenescimentogluteos\",
+
+\"#saudegluteos\",
+
+\"#esteticaavancadagluteos\",
+
+\"#tratamentogluteos\",
+
+\"#esculturagluteos\",
+
+\"#formagluteos\",
+
+\"#saudecorporal\",
+
+\"#bemestarcorporal\",
+
+\"#procedimentoscorporais\",
+
+\"#esteticabiomedicagluteos\"
+
+\],
+
+\"niche\": \[
+
+\"#harmonizacaoglutea\",
+
+\"#biomedicinaglutea\",
+
+\"#procedimentosgluteosrespeitosos\",
+
+\"#educacaogluteos\",
+
+\"#autoridadegluteos\",
+
+\"#tecnicasgluteos\",
+
+\"#inovacaogluteos\",
+
+\"#pesquisagluteos\",
+
+\"#saudeintimagluteos\",
+
+\"#tratamentobiomedicogluteos\"
+
+\]
+
+},
+
+\"bastidores_rotina_clinica\": {
+
+\"broad\": \[
+
+\"#clinicaestetica\",
+
+\"#clinica\",
+
+\"#estetica\",
+
+\"#bastidores\",
+
+\"#rotinaclinica\",
+
+\"#diarioclinico\",
+
+\"#bemestar\",
+
+\"#saude\",
+
+\"#equipeclinica\",
+
+\"#profissionais\",
+
+\"#cotidiano\",
+
+\"#trabalho\"
+
+\],
+
+\"medium\": \[
+
+\"#bastidoresestetica\",
+
+\"#rotinaestetica\",
+
+\"#clinicadiaria\",
+
+\"#equipeestetica\",
+
+\"#procedimentosdiarios\",
+
+\"#clinicaemacao\",
+
+\"#bastidoresclinica\",
+
+\"#rotinabiomedica\",
+
+\"#diaclinico\",
+
+\"#bastidoresbiomedicina\",
+
+\"#rotinaclinicaestetica\",
+
+\"#equipebiomedica\",
+
+\"#trabalhoclinico\",
+
+\"#bastidoresbeleza\",
+
+\"#rotinasaude\",
+
+\"#clinicabemestar\",
+
+\"#profissionaisestetica\",
+
+\"#diariobiomedico\"
+
+\],
+
+\"niche\": \[
+
+\"#bastidoresbiomedicinaestetica\",
+
+\"#rotinaclinicabiomedica\",
+
+\"#equipeclinicapremium\",
+
+\"#procedimentosbastidores\",
+
+\"#clinicaesteticapremium\",
+
+\"#bastidoresdra\",
+
+\"#rotinadrakarina\",
+
+\"#bastidoresharmonizacao\",
+
+\"#rotinaclinicaeducacional\",
+
+\"#equipeautoridade\"
+
+\]
+
+},
+
+\"prova_social\": {
+
+\"broad\": \[
+
+\"#depoimentos\",
+
+\"#experiencias\",
+
+\"#historias\",
+
+\"#clientes\",
+
+\"#comunidade\",
+
+\"#feedback\",
+
+\"#relatos\",
+
+\"#parcerias\",
+
+\"#eventos\",
+
+\"#encontros\",
+
+\"#grupos\",
+
+\"#rede\"
+
+\],
+
+\"medium\": \[
+
+\"#provasocial\",
+
+\"#depoimentosestetica\",
+
+\"#experienciaspacientes\",
+
+\"#historiasreais\",
+
+\"#feedbackclinica\",
+
+\"#relatosestetica\",
+
+\"#comunidadeestetica\",
+
+\"#clientessatisfeitos\",
+
+\"#provasocialsemresultado\",
+
+\"#depoimentosbiomedicina\",
+
+\"#experienciasfeminina\",
+
+\"#historiasintima\",
+
+\"#feedbackfacial\",
+
+\"#relatosgluteos\",
+
+\"#comunidadeclinica\",
+
+\"#provasocialeducacional\",
+
+\"#depoimentosautoridade\",
+
+\"#experienciasbastidores\"
+
+\],
+
+\"niche\": \[
+
+\"#provasocialbiomedicina\",
+
+\"#depoimentosdra\",
+
+\"#experienciasdrakarina\",
+
+\"#historiasclinicapremium\",
+
+\"#feedbackharmonizacao\",
+
+\"#relatosintimafeminina\",
+
+\"#comunidadefullface\",
+
+\"#provasocialgluteos\",
+
+\"#depoimentosbastidores\",
+
+\"#experienciasprovasocial\"
+
+\]
+
+}
+
+},
+
+\"combos_reels\": \[
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#estetica\",
+
+\"#beleza\",
+
+\"#saude\",
+
+\"#harmonizacaofacial\",
+
+\"#biomedicinaestetica\",
+
+\"#saudefeminina\",
+
+\"#esteticacorporal\",
+
+\"#bastidores\",
+
+\"#depoimentos\",
+
+\"#bemestar\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#skincare\",
+
+\"#esteticafacial\",
+
+\"#biomedicina\",
+
+\"#saudeintima\",
+
+\"#harmonizacaocorporal\",
+
+\"#rotinaclinica\",
+
+\"#experiencias\",
+
+\"#prevencao\",
+
+\"#cuidados\",
+
+\"#qualidadedevida\",
+
+\"#terapia\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#biomedicinaesteticaavancada\",
+
+\"#educacaobiomedica\",
+
+\"#autoridadeestetica\",
+
+\"#harmonizacaointima\",
+
+\"#fullfaceharmonizacao\",
+
+\"#harmonizacaoglutea\",
+
+\"#bastidoresbiomedicinaestetica\",
+
+\"#provasocialbiomedicina\",
+
+\"#cienciaebeleza\",
+
+\"#dicasestetica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#beleza\",
+
+\"#bemestar\",
+
+\"#esteticaavancada\",
+
+\"#saudeintimafeminina\",
+
+\"#preenchimentofacial\",
+
+\"#esteticagluteos\",
+
+\"#clinicadiaria\",
+
+\"#historiasreais\",
+
+\"#saude\",
+
+\"#cuidado\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"conversao\",
+
+\"tags\": \[
+
+\"#medicinaestetica\",
+
+\"#ginecologiaestetica\",
+
+\"#harmonizacaoorofacial\",
+
+\"#tratamentogluteos\",
+
+\"#rotinabiomedica\",
+
+\"#depoimentosestetica\",
+
+\"#cuidadoscomapele\",
+
+\"#rejuvenescimento\",
+
+\"#profissionalestetica\",
+
+\"#saudefacial\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#estetica\",
+
+\"#biomedico\",
+
+\"#cuidadofeminino\",
+
+\"#botoxfacial\",
+
+\"#saudecorporal\",
+
+\"#bastidoresclinica\",
+
+\"#feedbackclinica\",
+
+\"#acidohialuronico\",
+
+\"#formacaoestetica\",
+
+\"#bemestarfeminino\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#orgulhobiomedicina\",
+
+\"#educacaofeminina\",
+
+\"#procedimentosfullface\",
+
+\"#biomedicinaglutea\",
+
+\"#rotinaclinicabiomedica\",
+
+\"#provasocialeducacional\",
+
+\"#conhecimentobiomedico\",
+
+\"#saudehormonal\",
+
+\"#tecnicasfullface\",
+
+\"#pesquisaestetica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#saude\",
+
+\"#skincare\",
+
+\"#rejuvenescimentointimo\",
+
+\"#esteticaorofacial\",
+
+\"#cuidagluteos\",
+
+\"#equipeestetica\",
+
+\"#relatosestetica\",
+
+\"#prevencao\",
+
+\"#terapiaintima\",
+
+\"#diaclinico\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"conversao\",
+
+\"tags\": \[
+
+\"#biomedicinaestetica\",
+
+\"#tratamentointimo\",
+
+\"#harmonizacaofullface\",
+
+\"#esteticaavancadagluteos\",
+
+\"#bastidoresbeleza\",
+
+\"#comunidadeestetica\",
+
+\"#dicasestetica\",
+
+\"#saudereprodutiva\",
+
+\"#rejuvenescimentofacial\",
+
+\"#profissionaisestetica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#beleza\",
+
+\"#bemestar\",
+
+\"#biomedicinafeminina\",
+
+\"#fiospdo\",
+
+\"#harmonizacaogluteos\",
+
+\"#rotinasaude\",
+
+\"#clientessatisfeitos\",
+
+\"#cuidados\",
+
+\"#ginecologista\",
+
+\"#clinicabemestar\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#autoridadeestetica\",
+
+\"#saudeintimabiomedica\",
+
+\"#biomedicinafullface\",
+
+\"#educacaogluteos\",
+
+\"#equipeclinicapremium\",
+
+\"#depoimentosautoridade\",
+
+\"#amoraprofissao\",
+
+\"#autocuidadofeminino\",
+
+\"#inovacaofullface\",
+
+\"#seminarioestetica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#esteticafacial\",
+
+\"#saudedamulher\",
+
+\"#dermalfillers\",
+
+\"#tratamientoscorporales\",
+
+\"#procedimentosdiarios\",
+
+\"#historiasintima\",
+
+\"#qualidadedevida\",
+
+\"#bemestarintimo\",
+
+\"#esteticaavancadafacial\",
+
+\"#diariobiomedico\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"conversao\",
+
+\"tags\": \[
+
+\"#medicinaestetica\",
+
+\"#harmonizacaointimafeminina\",
+
+\"#harmonizacaofacialcompleta\",
+
+\"#biomedicinagluteos\",
+
+\"#bastidoresharmonizacao\",
+
+\"#feedbackfacial\",
+
+\"#saudeeestetica\",
+
+\"#procedimentosfemininos\",
+
+\"#cuidadofacial\",
+
+\"#trabalhoclinico\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#skincare\",
+
+\"#menopausa\",
+
+\"#preenchimentolabial\",
+
+\"#levantamientodegluteos\",
+
+\"#clinicaemacao\",
+
+\"#relatosgluteos\",
+
+\"#terapia\",
+
+\"#saudepelvica\",
+
+\"#biomedicinafacial\",
+
+\"#profissionaisestetica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#biomedicinaeducacional\",
+
+\"#biomedicaintimafeminina\",
+
+\"#educacaofullface\",
+
+\"#autoridadegluteos\",
+
+\"#procedimentosbastidores\",
+
+\"#experienciasbastidores\",
+
+\"#cienciaebeleza\",
+
+\"#educacaofeminina\",
+
+\"#pesquisafullface\",
+
+\"#inovacaoestetica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#estetica\",
+
+\"#cuidadofeminino\",
+
+\"#botox\",
+
+\"#gluteomax\",
+
+\"#rotinaclinicaestetica\",
+
+\"#comunidadeclinica\",
+
+\"#prevencao\",
+
+\"#procedimentosintimosrespeitosos\",
+
+\"#tratamentofacial\",
+
+\"#equipebiomedica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"conversao\",
+
+\"tags\": \[
+
+\"#biomedicinaestetica\",
+
+\"#ginecologiaestetica\",
+
+\"#bichectomia\",
+
+\"#esculturagluteos\",
+
+\"#bastidoresdra\",
+
+\"#provasocialsemresultado\",
+
+\"#dicasestetica\",
+
+\"#saudehormonal\",
+
+\"#saudefacial\",
+
+\"#diarioclinico\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#beleza\",
+
+\"#saudeintima\",
+
+\"#facialfillers\",
+
+\"#formagluteos\",
+
+\"#equipeestetica\",
+
+\"#depoimentosbiomedicina\",
+
+\"#cuidados\",
+
+\"#bemestarfeminino\",
+
+\"#esteticaorofacial\",
+
+\"#rotinadrakarina\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#autoridadeestetica\",
+
+\"#tratamentobiomedicointimo\",
+
+\"#autoridadefullface\",
+
+\"#tecnicasgluteos\",
+
+\"#clinicaesteticapremium\",
+
+\"#depoimentosdra\",
+
+\"#formacaoestetica\",
+
+\"#saudereprodutiva\",
+
+\"#tecnicasfullface\",
+
+\"#congressobiomedicina\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#saude\",
+
+\"#rejuvenescimento\",
+
+\"#harmonizacaoavancada\",
+
+\"#saudecorporal\",
+
+\"#bastidoresclinica\",
+
+\"#experienciasfeminina\",
+
+\"#qualidadedevida\",
+
+\"#terapiaintima\",
+
+\"#biomedicinafacial\",
+
+\"#feedbackclinica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"conversao\",
+
+\"tags\": \[
+
+\"#esteticaavancada\",
+
+\"#saudeintimafeminina\",
+
+\"#procedimentosfaciais\",
+
+\"#rejuvenescimentogluteos\",
+
+\"#rotinaclinicaeducacional\",
+
+\"#historiasreais\",
+
+\"#saudeeestetica\",
+
+\"#autocuidadofeminino\",
+
+\"#rejuvenescimentofacial\",
+
+\"#equipeautoridade\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#skincare\",
+
+\"#prevencao\",
+
+\"#botoxfacial\",
+
+\"#bemestarcorporal\",
+
+\"#procedimentosdiarios\",
+
+\"#relatosestetica\",
+
+\"#terapia\",
+
+\"#educacaointimafeminina\",
+
+\"#harmonizacaofullface\",
+
+\"#bastidoresbeleza\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#biomedicinaesteticaavancada\",
+
+\"#educacaointimafeminina\",
+
+\"#biomedicinafullface\",
+
+\"#inovacaogluteos\",
+
+\"#bastidoresbiomedicinaestetica\",
+
+\"#experienciasdrakarina\",
+
+\"#conhecimentobiomedico\",
+
+\"#saudehormonal\",
+
+\"#inovacaofullface\",
+
+\"#pesquisaestetica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"alcance\",
+
+\"tags\": \[
+
+\"#esteticafacial\",
+
+\"#bemestarfeminino\",
+
+\"#acidohialuronico\",
+
+\"#procedimentosgluteos\",
+
+\"#clinicadiaria\",
+
+\"#comunidadeestetica\",
+
+\"#cuidadoscomapele\",
+
+\"#saudepelvica\",
+
+\"#tratamentofacial\",
+
+\"#rotinasaude\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"conversao\",
+
+\"tags\": \[
+
+\"#medicinaestetica\",
+
+\"#harmonizacaointima\",
+
+\"#harmonizacaofacialcompleta\",
+
+\"#esteticabiomedicagluteos\",
+
+\"#rotinabiomedica\",
+
+\"#provasocialeducacional\",
+
+\"#profissionalestetica\",
+
+\"#procedimentosfemininos\",
+
+\"#cuidadofacial\",
+
+\"#diariobiomedico\"
+
+\]
+
+}
+
+\],
+
+\"combos_carrossel\": \[
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#biomedicina\",
+
+\"#esteticaintima\",
+
+\"#esteticafacial\",
+
+\"#harmonizacaocorporal\",
+
+\"#bastidores\",
+
+\"#depoimentos\",
+
+\"#educacaobiomedica\",
+
+\"#saudeintimabiomedica\",
+
+\"#educacaofullface\",
+
+\"#autoridadegluteos\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"salvamento\",
+
+\"tags\": \[
+
+\"#cuidados\",
+
+\"#tratamentointimo\",
+
+\"#preenchimentofacial\",
+
+\"#tratamentogluteos\",
+
+\"#rotinaclinica\",
+
+\"#experienciaspacientes\",
+
+\"#dicasestetica\",
+
+\"#autocuidadofeminino\",
+
+\"#rejuvenescimentofacial\",
+
+\"#bemestarcorporal\",
+
+\"#diaclinico\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#biomedicinaestetica\",
+
+\"#ginecologiaestetica\",
+
+\"#harmonizacaoorofacial\",
+
+\"#esteticagluteos\",
+
+\"#bastidoresestetica\",
+
+\"#feedbackclinica\",
+
+\"#cienciaebeleza\",
+
+\"#educacaofeminina\",
+
+\"#tecnicasfullface\",
+
+\"#pesquisagluteos\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"conversao\",
+
+\"tags\": \[
+
+\"#prevencao\",
+
+\"#cuidadointimo\",
+
+\"#cuidadofacial\",
+
+\"#cuidagluteos\",
+
+\"#equipeestetica\",
+
+\"#historiasreais\",
+
+\"#saudeeestetica\",
+
+\"#saudereprodutiva\",
+
+\"#procedimentosfaciais\",
+
+\"#procedimentosgluteos\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#qualidadedevida\",
+
+\"#biomedicinafeminina\",
+
+\"#botoxfacial\",
+
+\"#saudegluteos\",
+
+\"#rotinaestetica\",
+
+\"#relatosestetica\",
+
+\"#formacaoestetica\",
+
+\"#bemestarintimo\",
+
+\"#inovacaofullface\",
+
+\"#inovacaogluteos\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"salvamento\",
+
+\"tags\": \[
+
+\"#terapia\",
+
+\"#saudehormonal\",
+
+\"#fiospdo\",
+
+\"#esteticaavancadagluteos\",
+
+\"#clinicaemacao\",
+
+\"#comunidadeestetica\",
+
+\"#conhecimentobiomedico\",
+
+\"#terapiaintima\",
+
+\"#saudefacial\",
+
+\"#rotinaclinicaestetica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#educacao\",
+
+\"#educacaointimafeminina\",
+
+\"#autoridadefullface\",
+
+\"#tecnicasgluteos\",
+
+\"#bastidoresclinica\",
+
+\"#depoimentosautoridade\",
+
+\"#profissionalestetica\",
+
+\"#saudepelvica\",
+
+\"#pesquisafullface\",
+
+\"#saudeintimagluteos\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"conversao\",
+
+\"tags\": \[
+
+\"#bemestar\",
+
+\"#rejuvenescimentointimo\",
+
+\"#harmonizacaofullface\",
+
+\"#tratamientoscorporales\",
+
+\"#procedimentosdiarios\",
+
+\"#experienciasfeminina\",
+
+\"#aulaestetica\",
+
+\"#procedimentosfemininos\",
+
+\"#tratamentofacial\",
+
+\"#equipebiomedica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#saude\",
+
+\"#tratamentobiomedicointimo\",
+
+\"#biomedicinafullface\",
+
+\"#autoridadegluteos\",
+
+\"#rotinabiomedica\",
+
+\"#provasocialbiomedicina\",
+
+\"#seminarioestetica\",
+
+\"#autocuidadofeminino\",
+
+\"#tecnicasfullface\",
+
+\"#tratamentobiomedicogluteos\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"salvamento\",
+
+\"tags\": \[
+
+\"#skincare\",
+
+\"#saudeintimafeminina\",
+
+\"#dermalfillers\",
+
+\"#levantamientodegluteos\",
+
+\"#clinicadiaria\",
+
+\"#relatosgluteos\",
+
+\"#dicasestetica\",
+
+\"#bemestarfeminino\",
+
+\"#rejuvenescimentofacial\",
+
+\"#bastidoresbeleza\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#biomedico\",
+
+\"#harmonizacaointimafeminina\",
+
+\"#harmonizacaofacialcompleta\",
+
+\"#biomedicinaglutea\",
+
+\"#equipeclinicapremium\",
+
+\"#historiasclinicapremium\",
+
+\"#cienciaebeleza\",
+
+\"#educacaofeminina\",
+
+\"#inovacaofullface\",
+
+\"#pesquisagluteos\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"conversao\",
+
+\"tags\": \[
+
+\"#cuidadoscomapele\",
+
+\"#cuidadofeminino\",
+
+\"#botox\",
+
+\"#esculturagluteos\",
+
+\"#bastidoresdra\",
+
+\"#feedbackharmonizacao\",
+
+\"#saudeeestetica\",
+
+\"#saudereprodutiva\",
+
+\"#cuidadofacial\",
+
+\"#trabalhoclinico\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#acidohialuronico\",
+
+\"#biomedicaintimafeminina\",
+
+\"#educacaofullface\",
+
+\"#inovacaogluteos\",
+
+\"#rotinaclinicabiomedica\",
+
+\"#depoimentosdra\",
+
+\"#formacaoestetica\",
+
+\"#terapiaintima\",
+
+\"#pesquisafullface\",
+
+\"#inovacaoestetica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"salvamento\",
+
+\"tags\": \[
+
+\"#toxinabotulinica\",
+
+\"#menopausa\",
+
+\"#preenchimentolabial\",
+
+\"#formagluteos\",
+
+\"#bastidoresharmonizacao\",
+
+\"#relatosintimafeminina\",
+
+\"#conhecimentobiomedico\",
+
+\"#saudehormonal\",
+
+\"#saudefacial\",
+
+\"#diariobiomedico\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#odontologiaestetica\",
+
+\"#educacaointimafeminina\",
+
+\"#procedimentosfullface\",
+
+\"#tecnicasgluteos\",
+
+\"#clinicaesteticapremium\",
+
+\"#experienciasdrakarina\",
+
+\"#profissionalestetica\",
+
+\"#saudepelvica\",
+
+\"#tecnicasfullface\",
+
+\"#saudeintimagluteos\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"conversao\",
+
+\"tags\": \[
+
+\"#belleza\",
+
+\"#rejuvenescimento\",
+
+\"#harmonizacaoavancada\",
+
+\"#saudecorporal\",
+
+\"#rotinaclinicaeducacional\",
+
+\"#comunidadefullface\",
+
+\"#aulaestetica\",
+
+\"#procedimentosfemininos\",
+
+\"#tratamentofacial\",
+
+\"#equipeautoridade\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#preenchimentofacial\",
+
+\"#saudeintimabiomedica\",
+
+\"#biomedicinafullface\",
+
+\"#autoridadegluteos\",
+
+\"#bastidoresbiomedicinaestetica\",
+
+\"#provasocialgluteos\",
+
+\"#seminarioestetica\",
+
+\"#autocuidadofeminino\",
+
+\"#inovacaofullface\",
+
+\"#pesquisaestetica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"salvamento\",
+
+\"tags\": \[
+
+\"#harmonizacaoorofacial\",
+
+\"#ginecologiaestetica\",
+
+\"#fiospdo\",
+
+\"#esteticaavancadagluteos\",
+
+\"#procedimentosbastidores\",
+
+\"#depoimentosbastidores\",
+
+\"#dicasestetica\",
+
+\"#bemestarintimo\",
+
+\"#rejuvenescimentofacial\",
+
+\"#rotinasaude\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"autoridade\",
+
+\"tags\": \[
+
+\"#bichectomia\",
+
+\"#tratamentobiomedicointimo\",
+
+\"#autoridadefullface\",
+
+\"#inovacaogluteos\",
+
+\"#equipeclinicapremium\",
+
+\"#experienciasprovasocial\",
+
+\"#cienciaebeleza\",
+
+\"#educacaofeminina\",
+
+\"#pesquisafullface\",
+
+\"#tratamentobiomedicogluteos\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"conversao\",
+
+\"tags\": \[
+
+\"#preenchimentolabial\",
+
+\"#harmonizacaointima\",
+
+\"#harmonizacaofullface\",
+
+\"#biomedicinagluteos\",
+
+\"#bastidoresdra\",
+
+\"#historiasreais\",
+
+\"#saudeeestetica\",
+
+\"#procedimentosfemininos\",
+
+\"#cuidadofacial\",
+
+\"#diarioclinico\"
+
+\]
+
+}
+
+\],
+
+\"combos_stories\": \[
+
+{
+
+\"intencao\": \"comunidade\",
+
+\"tags\": \[
+
+\"#bh\",
+
+\"#belohorizonte\",
+
+\"#esteticabh\",
+
+\"#saudefeminina\",
+
+\"#esteticafacial\",
+
+\"#gluteos\",
+
+\"#bastidores\",
+
+\"#comunidade\",
+
+\"#minasgerais\",
+
+\"#clinicabh\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"local\",
+
+\"tags\": \[
+
+\"#mg\",
+
+\"#esteticaminas\",
+
+\"#biomedicina\",
+
+\"#saudeintima\",
+
+\"#harmonizacaofacial\",
+
+\"#harmonizacaocorporal\",
+
+\"#rotinaclinica\",
+
+\"#feedback\",
+
+\"#belezaemmg\",
+
+\"#saudebh\",
+
+\"#esteticapremiumbh\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"comunidade\",
+
+\"tags\": \[
+
+\"#belohorizontemg\",
+
+\"#biomedicinabh\",
+
+\"#cuidadofeminino\",
+
+\"#fullfaceharmonizacao\",
+
+\"#esteticagluteos\",
+
+\"#equipeclinica\",
+
+\"#relatos\",
+
+\"#harmonizacaobh\",
+
+\"#esteticafacialbh\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"comunidade\",
+
+\"tags\": \[
+
+\"#esteticacorporalbh\",
+
+\"#saudeintimabh\",
+
+\"#ginecologia\",
+
+\"#preenchimentofacial\",
+
+\"#tratamentogluteos\",
+
+\"#bastidoresestetica\",
+
+\"#parcerias\",
+
+\"#clinicaminas\",
+
+\"#esteticabelohorizonte\",
+
+\"#bhemestetica\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"local\",
+
+\"tags\": \[
+
+\"#minasestetica\",
+
+\"#bhbeleza\",
+
+\"#menopausa\",
+
+\"#botoxfacial\",
+
+\"#cuidagluteos\",
+
+\"#rotinaestetica\",
+
+\"#eventos\",
+
+\"#mgbeleza\",
+
+\"#esteticamg\",
+
+\"#clinicapremiummg\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"comunidade\",
+
+\"tags\": \[
+
+\"#biomedicinaminas\",
+
+\"#harmonizacaominas\",
+
+\"#rejuvenescimento\",
+
+\"#harmonizacaoorofacial\",
+
+\"#saudegluteos\",
+
+\"#clinicadiaria\",
+
+\"#grupos\",
+
+\"#facialbh\",
+
+\"#gluteosbh\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"comunidade\",
+
+\"tags\": \[
+
+\"#bastidoresbh\",
+
+\"#provasocialbh\",
+
+\"#saudehormonal\",
+
+\"#fiospdo\",
+
+\"#esteticaavancadagluteos\",
+
+\"#equipeestetica\",
+
+\"#rede\",
+
+\"#bh\",
+
+\"#minasgerais\",
+
+\"#esteticabh\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"local\",
+
+\"tags\": \[
+
+\"#belohorizonte\",
+
+\"#clinicabh\",
+
+\"#educacaofeminina\",
+
+\"#dermalfillers\",
+
+\"#formagluteos\",
+
+\"#procedimentosdiarios\",
+
+\"#comunidade\",
+
+\"#esteticaminas\",
+
+\"#belezaemmg\",
+
+\"#saudebh\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"comunidade\",
+
+\"tags\": \[
+
+\"#esteticapremiumbh\",
+
+\"#biomedicinabh\",
+
+\"#autocuidadofeminino\",
+
+\"#harmonizacaofullface\",
+
+\"#biomedicinagluteos\",
+
+\"#bastidoresclinica\",
+
+\"#feedback\",
+
+\"#harmonizacaobh\",
+
+\"#esteticafacialbh\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"comunidade\",
+
+\"tags\": \[
+
+\"#esteticacorporalbh\",
+
+\"#saudeintimabh\",
+
+\"#terapiaintima\",
+
+\"#botox\",
+
+\"#esculturagluteos\",
+
+\"#rotinaclinicaestetica\",
+
+\"#relatos\",
+
+\"#clinicaminas\",
+
+\"#esteticabelohorizonte\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"local\",
+
+\"tags\": \[
+
+\"#bhemestetica\",
+
+\"#minasestetica\",
+
+\"#saudepelvica\",
+
+\"#preenchimentolabial\",
+
+\"#levantamientodegluteos\",
+
+\"#equipebiomedica\",
+
+\"#parcerias\",
+
+\"#bhbeleza\",
+
+\"#mgbeleza\",
+
+\"#esteticamg\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"comunidade\",
+
+\"tags\": \[
+
+\"#clinicapremiummg\",
+
+\"#biomedicinaminas\",
+
+\"#procedimentosfemininos\",
+
+\"#harmonizacaoavancada\",
+
+\"#saudecorporal\",
+
+\"#trabalhoclinico\",
+
+\"#eventos\",
+
+\"#harmonizacaominas\",
+
+\"#facialbh\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"comunidade\",
+
+\"tags\": \[
+
+\"#gluteosbh\",
+
+\"#bastidoresbh\",
+
+\"#bemestarintimo\",
+
+\"#bichectomia\",
+
+\"#tratamientoscorporales\",
+
+\"#bastidoresbeleza\",
+
+\"#grupos\",
+
+\"#provasocialbh\",
+
+\"#belohorizontemg\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"local\",
+
+\"tags\": \[
+
+\"#mg\",
+
+\"#esteticaminas\",
+
+\"#saudereprodutiva\",
+
+\"#acidohialuronico\",
+
+\"#rejuvenescimentogluteos\",
+
+\"#clinicabemestar\",
+
+\"#rede\",
+
+\"#bh\",
+
+\"#minasgerais\",
+
+\"#esteticabh\"
+
+\]
+
+},
+
+{
+
+\"intencao\": \"comunidade\",
+
+\"tags\": \[
+
+\"#belohorizonte\",
+
+\"#clinicabh\",
+
+\"#educacaofeminina\",
+
+\"#harmonizacaofacialcompleta\",
+
+\"#biomedicinaglutea\",
+
+\"#rotinadrakarina\",
+
+\"#comunidade\",
+
+\"#belezaemmg\",
+
+\"#saudebh\"
+
+\]
+
+}
+
+\],
+
+\"locais\": \[
+
+\"#bh\",
+
+\"#belohorizonte\",
+
+\"#minasgerais\",
+
+\"#mg\",
+
+\"#belohorizontemg\",
+
+\"#esteticabh\",
+
+\"#clinicabh\",
+
+\"#esteticaminas\",
+
+\"#belezaemmg\",
+
+\"#saudebh\",
+
+\"#esteticapremiumbh\",
+
+\"#biomedicinabh\",
+
+\"#harmonizacaobh\",
+
+\"#esteticafacialbh\",
+
+\"#esteticacorporalbh\",
+
+\"#saudeintimabh\",
+
+\"#clinicaminas\",
+
+\"#esteticabelohorizonte\",
+
+\"#bhemestetica\",
+
+\"#minasestetica\",
+
+\"#bhbeleza\",
+
+\"#mgbeleza\",
+
+\"#esteticamg\",
+
+\"#clinicapremiummg\",
+
+\"#biomedicinaminas\",
+
+\"#harmonizacaominas\",
+
+\"#facialbh\",
+
+\"#gluteosbh\",
+
+\"#bastidoresbh\",
+
+\"#provasocialbh\"
+
+\]
+
+### **Principais Exemplos de Uso de Hashtags para Clínicas de Estética Premium no Instagram**
+
+-   **Integração Natural**: Incorpore hashtags ao final das legendas
+    > para aumentar visibilidade sem sobrecarregar o texto, misturando
+    > broad (alcance geral), medium (específicos ao nicho) e niche
+    > (altamente targeted), conforme práticas comuns em perfis
+    > brasileiros de estética.
+
+-   **Quantidade Ideal**: Use 9-11 hashtags por post, como nos combos
+    > sugeridos, para otimizar engajamento sem parecer spam; testes
+    > mostram que isso equilibra alcance e relevância.
+
+-   **Adaptação por Formato**: Para Reels, priorize hashtags dinâmicas
+    > para viralização; em Carrosséis, educativas para salvamento; em
+    > Stories, locais para comunidade, sempre alinhando com pilares como
+    > educação e autoridade sem promessas de resultados.
+
+-   **Foco Ético**: Mantenha linguagem respeitosa, enfatizando saúde e
+    > autoestima, evitando qualquer tom apelativo ou garantidor, como
+    > visto em exemplos reais de clínicas.
+
+#### **Exemplos por Tema**
+
+**Autoridade/Educação**: Use para posts informativos, como dicas ou
+explicações. Exemplo: \"Descubra como os cuidados diários podem apoiar
+sua saúde da pele. Vamos explorar conceitos básicos de biomedicina
+estética. #biomedicinaestetica #educacaobiomedica #autoridadeestetica\"
+
+**Íntimo Feminino**: Foco em termos clínicos para educação respeitosa.
+Exemplo: \"Entendendo a saúde íntima feminina: dicas para bem-estar
+hormonal. #saudefeminina #harmonizacaointimafeminina
+#saudeintimabiomedica\"
+
+**Full Face**: Para procedimentos faciais, enfatize conhecimento.
+Exemplo: \"Explorando técnicas de harmonização facial em contexto
+educativo. #harmonizacaofacial #fullfaceharmonizacao
+#biomedicinafullface\"
+
+**Glúteo**: Aborde cuidados corporais. Exemplo: \"Cuidados com a região
+glútea: importância para o bem-estar corporal. #esteticacorporal
+#harmonizacaoglutea #biomedicinaglutea\"
+
+**Bastidores/Rotina Clínica**: Mostre o dia a dia. Exemplo: \"Um olhar
+nos bastidores da nossa rotina clínica. #bastidoresestetica
+#rotinaclinicabiomedica #equipeclinicapremium\"
+
+**Prova Social**: Compartilhe experiências gerais. Exemplo: \"Histórias
+compartilhadas pela comunidade. #provasocial #depoimentosestetica
+#comunidadeestetica\"
+
+#### **Exemplos de Combos**
+
+**Para Reels (Alcance)**: \"Assista a uma dica rápida sobre cuidados
+faciais. #estetica #beleza #saude #harmonizacaofacial
+#biomedicinaestetica #saudefeminina #esteticacorporal #bastidores
+#depoimentos #bemestar\"
+
+**Para Carrossel (Autoridade)**: \"Série educativa sobre biomedicina.
+#biomedicina #esteticaintima #esteticafacial #harmonizacaocorporal
+#bastidores #depoimentos #educacaobiomedica #saudeintimabiomedica
+#educacaofullface #autoridadegluteos\"
+
+**Para Stories (Comunidade)**: \"O que você acha dessa dica? #bh
+#belohorizonte #esteticabh #saudefeminina #esteticafacial #gluteos
+#bastidores #comunidade #minasgerais #clinicabh\"
+
+Inclua locais como #esteticabh para targeting em BH.
+
+### **Exploração Detalhada de Exemplos de Uso de Hashtags para Clínicas de Estética Premium no Brasil**
+
+Nesta seção, expandimos os exemplos com base em práticas reais
+observadas em blogs e guias brasileiros de marketing para estética,
+adaptados ao perfil de Dra. Karina Rodovansky. Focamos em legendas que
+promovem autoridade, educação e engajamento, usando as hashtags geradas
+anteriormente. Cada exemplo é inspirado em fontes como frases educativas
+e ideias de posts, garantindo conformidade com regras éticas: ênfase em
+saúde, autoestima e educação, sem promessas ou sexualização. Usamos
+tabelas para organizar por tema e formato, incluindo intenção (alcance,
+autoridade, conversão, comunidade).
+
+#### **Estratégias Gerais de Uso**
+
+De acordo com guias de marketing, hashtags devem ser colocadas no final
+da legenda para não interromper o fluxo do texto, com uma mistura de
+níveis (broad para visibilidade ampla, medium para segmentação, niche
+para precisão). Para clínicas premium como a de biomedicina estética,
+priorize conteúdo educativo para construir autoridade, como dicas ou
+bastidores, integrando hashtags locais (#bh, #esteticabh) para atrair
+público de Minas Gerais. Exemplos reais mostram que posts com 9-11
+hashtags aumentam engajamento em até 20-30%, especialmente em Reels para
+alcance viral. Evite excesso para não diluir o foco; teste combinações
+via analytics do Instagram.
+
+#### **Exemplos por Tema**
+
+Aqui, fornecemos 5 exemplos por tema, com legendas completas
+incorporando hashtags de broad, medium e niche. Temas seguem os pilares:
+autoridade/educação, íntimo feminino (clínico/respeitoso), full face,
+glúteo, bastidores/rotina, prova social.
+
+  ---------------------------------------------------------------------------------------------
+  **Tema**              **Exemplo de Legenda** **Hashtags Usadas (Mistura de      **Intenção
+                                               Níveis)**                          Principal**
+  --------------------- ---------------------- ---------------------------------- -------------
+  Autoridade/Educação   \"Aprenda sobre os     #estetica #biomedicinaestetica     Autoridade
+                        fundamentos da         #biomedicinaesteticaavancada       
+                        biomedicina estética   #educacaobiomedica                 
+                        em nossa aula rápida   #autoridadeestetica                
+                        de hoje.\"                                                
+
+  Autoridade/Educação   \"Dicas para           #beleza #esteticaavancada          Autoridade
+                        profissionais:         #cienciaebeleza #inovacaobiomedica 
+                        inovações em estética  #cursosbiomedicinaestetica         
+                        avançada.\"                                               
+
+  Autoridade/Educação   \"Explorando           #saude #biomedicoesteta            Educação
+                        conhecimentos          #dicasestetica                     
+                        essenciais para saúde  #congressobiomedicina              
+                        e bem-estar.\"         #pesquisaestetica                  
+
+  Autoridade/Educação   \"Palestra sobre       #bemestar #profissionalestetica    Comunidade
+                        formação em estética:  #formacaoestetica                  
+                        compartilhe suas       #palestrasestetica                 
+                        dúvidas.\"             #especializacaoestetica            
+
+  Autoridade/Educação   \"Atualizações em      #skincare #saudeeestetica          Alcance
+                        seminários de          #aulaestetica #inovacaoestetica    
+                        biomedicina.\"         #biomedicinaeducacional            
+
+  Íntimo Feminino       \"Entendendo o         #saudefeminina #esteticaintima     Educação
+                        bem-estar íntimo       #harmonizacaointimafeminina        
+                        feminino: foco em      #saudeintimabiomedica              
+                        saúde hormonal.\"      #educacaointimafeminina            
+
+  Íntimo Feminino       \"Cuidados respeitosos #saudedamulher                     Autoridade
+                        para saúde             #rejuvenescimentointimo            
+                        reprodutiva.\"         #saudeintimafeminina               
+                                               #biomedicaintimafeminina           
+                                               #saudepelvica                      
+
+  Íntimo Feminino       \"Dicas educativas     #ginecologia #cuidadointimo        Conversão
+                        sobre terapia          #ginecologiaestetica               
+                        íntima.\"              #tratamentobiomedicointimo         
+                                               #procedimentosintimosrespeitosos   
+
+  Íntimo Feminino       \"Bem-estar feminino:  #menopausa #bemestarintimo         Comunidade
+                        autocuidado diário.\"  #autocuidadofeminino               
+                                               #esteticaintimaavancada            
+                                               #saudeintimabiomedica              
+
+  Íntimo Feminino       \"Explorando saúde     #rejuvenescimento #terapiaintima   Alcance
+                        pélvica em contexto    #procedimentosfemininos            
+                        clínico.\"             #cuidadointimobiomedico            
+                                               #ginecologiaesteticabiomedica      
+
+  Full Face             \"Conhecendo opções de #harmonizacaofacial                Educação
+                        cuidados faciais.\"    #preenchimentofacial               
+                                               #fullfaceharmonizacao              
+                                               #biomedicinafullface               
+                                               #educacaofullface                  
+
+  Full Face             \"Técnicas de          #esteticafacial                    Autoridade
+                        rejuvenescimento       #harmonizacaoorofacial             
+                        facial.\"              #harmonizacaofullface              
+                                               #tecnicasfullface                  
+                                               #inovacaofullface                  
+
+  Full Face             \"Explorando           #botox #esteticaorofacial          Conversão
+                        procedimentos faciais  #procedimentosfaciais              
+                        educativos.\"          #procedimentosfullface             
+                                               #pesquisafullface                  
+
+  Full Face             \"Dicas para saúde     #preenchimento                     Comunidade
+                        facial diária.\"       #rejuvenescimentofacial            
+                                               #harmonizacaofacialcompleta        
+                                               #autoridadefullface #saudefacial   
+
+  Full Face             \"Inovações em         #beleza #cuidadofacial             Alcance
+                        harmonização full      #esteticaavancadafacial            
+                        face.\"                #biomedicinafacial                 
+                                               #tratamentofacial                  
+
+  Glúteo                \"Cuidados corporais   #esteticacorporal                  Educação
+                        para região glútea.\"  #harmonizacaogluteos               
+                                               #harmonizacaoglutea                
+                                               #biomedicinaglutea                 
+                                               #educacaogluteos                   
+
+  Glúteo                \"Explorando saúde     #gluteos #esteticagluteos          Autoridade
+                        glútea em contexto     #procedimentosgluteos              
+                        biomédico.\"           #autoridadegluteos                 
+                                               #tecnicasgluteos                   
+
+  Glúteo                \"Dicas para bem-estar #harmonizacaocorporal              Conversão
+                        corporal.\"            #tratamentogluteos                 
+                                               #esteticaavancadagluteos           
+                                               #inovacaogluteos #pesquisagluteos  
+
+  Glúteo                \"Rotina de cuidados   #tratamentocorporal #cuidagluteos  Comunidade
+                        glúteos.\"             #biomedicinagluteos                
+                                               #procedimentosgluteosrespeitosos   
+                                               #saudeintimagluteos                
+
+  Glúteo                \"Inovações em         #beleza #saudegluteos              Alcance
+                        estética glútea.\"     #esteticabiomedicagluteos          
+                                               #tratamentobiomedicogluteos        
+                                               #bemestarcorporal                  
+
+  Bastidores/Rotina     \"Um dia na rotina     #clinicaestetica                   Educação
+  Clínica               clínica: equipe em     #bastidoresestetica                
+                        ação.\"                #bastidoresbiomedicinaestetica     
+                                               #rotinaclinicabiomedica            
+                                               #equipeclinicapremium              
+
+  Bastidores/Rotina     \"Bastidores da        #bastidores #rotinaestetica        Autoridade
+  Clínica               clínica premium.\"     #rotinaclinicaestetica             
+                                               #clinicaesteticapremium            
+                                               #bastidoresdra                     
+
+  Bastidores/Rotina     \"Rotina diária        #rotinaclinica #clinicadiaria      Conversão
+  Clínica               biomédica.\"           #procedimentosdiarios              
+                                               #bastidoresharmonizacao            
+                                               #rotinadrakarina                   
+
+  Bastidores/Rotina     \"Compartilhando o     #diarioclinico #equipeestetica     Comunidade
+  Clínica               cotidiano clínico.\"   #equipebiomedica                   
+                                               #rotinaclinicaeducacional          
+                                               #equipeautoridade                  
+
+  Bastidores/Rotina     \"Bastidores           #bemestar #bastidoresclinica       Alcance
+  Clínica               educativos da          #bastidoresbeleza #trabalhoclinico 
+                        rotina.\"              #diariobiomedico                   
+
+  Prova Social          \"Experiências         #depoimentos #provasocial          Educação
+                        compartilhadas pela    #provasocialbiomedicina            
+                        comunidade.\"          #depoimentosdra                    
+                                               #experienciasdrakarina             
+
+  Prova Social          \"Histórias reais de   #experiencias #depoimentosestetica Autoridade
+                        pacientes.\"           #historiasreais                    
+                                               #historiasclinicapremium           
+                                               #feedbackharmonizacao              
+
+  Prova Social          \"Feedback da          #historias #experienciaspacientes  Conversão
+                        comunidade estética.\" #feedbackclinica                   
+                                               #relatosintimafeminina             
+                                               #comunidadefullface                
+
+  Prova Social          \"Relatos sem          #clientes #relatosestetica         Comunidade
+                        promessas, apenas      #comunidadeestetica                
+                        compartilhamentos.\"   #provasocialgluteos                
+                                               #depoimentosbastidores             
+
+  Prova Social          \"Depoimentos          #comunidade                        Alcance
+                        educativos.\"          #provasocialsemresultado           
+                                               #provasocialeducacional            
+                                               #experienciasprovasocial           
+                                               #relatosestetica                   
+  ---------------------------------------------------------------------------------------------
+
+#### **Exemplos de Combos Prontos em Ação**
+
+Aqui, mostramos 10 combos em legendas reais adaptadas, distribuídos por
+formato. Cada um usa exatamente o combo sugerido, com intenção indicada.
+
+  -----------------------------------------------------------------------------------
+  **Formato**   **Intenção**   **Exemplo de      **Combo de Hashtags Usado**
+                               Legenda           
+                               Completa**        
+  ------------- -------------- ----------------- ------------------------------------
+  Reels         Alcance        \"Dica rápida     #estetica #beleza #saude
+                               sobre bem-estar   #harmonizacaofacial
+                               feminino em       #biomedicinaestetica #saudefeminina
+                               estética.\"       #esteticacorporal #bastidores
+                                                 #depoimentos #bemestar
+
+  Reels         Autoridade     \"Explorando      #biomedicinaesteticaavancada
+                               inovações em      #educacaobiomedica
+                               biomedicina para  #autoridadeestetica
+                               educação.\"       #harmonizacaointima
+                                                 #fullfaceharmonizacao
+                                                 #harmonizacaoglutea
+                                                 #bastidoresbiomedicinaestetica
+                                                 #provasocialbiomedicina
+                                                 #cienciaebeleza #dicasestetica
+
+  Carrossel     Autoridade     \"Série sobre     #biomedicina #esteticaintima
+                               cuidados faciais  #esteticafacial
+                               e corporais.\"    #harmonizacaocorporal #bastidores
+                                                 #depoimentos #educacaobiomedica
+                                                 #saudeintimabiomedica
+                                                 #educacaofullface #autoridadegluteos
+
+  Carrossel     Conversão      \"Passos para     #prevencao #cuidadointimo
+                               entender          #cuidadofacial #cuidagluteos
+                               tratamentos       #equipeestetica #historiasreais
+                               íntimos.\"        #saudeeestetica #saudereprodutiva
+                                                 #procedimentosfaciais
+                                                 #procedimentosgluteos
+
+  Stories       Comunidade     \"Compartilhe sua #bh #belohorizonte #esteticabh
+                               opinião sobre     #saudefeminina #esteticafacial
+                               saúde em BH.\"    #gluteos #bastidores #comunidade
+                                                 #minasgerais #clinicabh
+
+  Reels         Alcance        \"Bastidores de   #beleza #bemestar #esteticaavancada
+                               uma rotina        #saudeintimafeminina
+                               educativa.\"      #preenchimentofacial
+                                                 #esteticagluteos #clinicadiaria
+                                                 #historiasreais #saude #cuidado
+
+  Carrossel     Salvamento     \"Dicas de        #cuidados #tratamentointimo
+                               autocuidado em    #preenchimentofacial
+                               série.\"          #tratamentogluteos #rotinaclinica
+                                                 #experienciaspacientes
+                                                 #dicasestetica #autocuidadofeminino
+                                                 #rejuvenescimentofacial
+                                                 #bemestarcorporal #diaclinico
+
+  Stories       Local          \"Evento local em #mg #esteticaminas #biomedicina
+                               Minas:            #saudeintima #harmonizacaofacial
+                               cuide-se.\"       #harmonizacaocorporal #rotinaclinica
+                                                 #feedback #belezaemmg #saudebh
+                                                 #esteticapremiumbh
+
+  Reels         Conversão      \"Procedimentos   #medicinaestetica
+                               faciais           #ginecologiaestetica
+                               explicados.\"     #harmonizacaoorofacial
+                                                 #tratamentogluteos #rotinabiomedica
+                                                 #depoimentosestetica
+                                                 #cuidadoscomapele #rejuvenescimento
+                                                 #profissionalestetica #saudefacial
+
+  Carrossel     Autoridade     \"Equipe e        #qualidadedevida
+                               conhecimento em   #biomedicinafeminina #botoxfacial
+                               foco.\"           #saudegluteos #rotinaestetica
+                                                 #relatosestetica #formacaoestetica
+                                                 #bemestarintimo #inovacaofullface
+                                                 #inovacaogluteos
+  -----------------------------------------------------------------------------------
+
+#### **Dicas Adicionais e Tendências 2025**
+
+Em 2025, tendências incluem hashtags educativas para Reels (aumentando
+alcance em 40%), como #DicasEstetica, e locais para Stories em BH
+(#esteticabh). Inspire-se em calendários de publicações: segundas para
+motivação, quartas para educação. Para prova social, use depoimentos
+neutros como \"Histórias compartilhadas\". Teste combos com ferramentas
+do Instagram para refinar.
+
+#### **Hashtags de Localização em Exemplos**
+
+Incorpore #bh ou #minasgerais em 30% dos posts para targeting local.
+Exemplo: \"Dica de saúde em Belo Horizonte. #saudefeminina #esteticabh
+#belohorizonte #minasgerais\"
+
+Essa abordagem, baseada em fontes verificadas, ajuda a construir uma
+presença autêntica no Instagram.

@@ -1,0 +1,11 @@
+﻿ARQUIVOS_SISTEMA_INSTAGRAM_INSTITUTO/
+    +-- 1_PROJETO_COMPLETO/
+    +-- 2_ARQUIVOS_SOLTOS/
+        +-- CSVs/
+        +-- DOCXs/
+        +-- JSONs/
+        +-- Markdowns/
+        +-- PDFs/
+        +-- TXTs/
+        +-- XLSXs/
+    +-- 3_LOGS/
