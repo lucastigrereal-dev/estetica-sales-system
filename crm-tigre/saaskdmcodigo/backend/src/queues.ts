@@ -25,6 +25,12 @@ import Plan from "./models/Plan";
 const nodemailer = require('nodemailer');
 const CronJob = require('cron').CronJob;
 
+// Importar jobs de automação
+import { LembreteJob } from "./jobs/LembreteJob";
+import { Lembrete2hJob } from "./jobs/Lembrete2hJob";
+import { NpsJob } from "./jobs/NpsJob";
+import { ReativacaoJob } from "./jobs/ReativacaoJob";
+
 const connection = process.env.REDIS_URI || "";
 const limiterMax = process.env.REDIS_OPT_LIMITER_MAX || 1;
 const limiterDuration = process.env.REDIS_OPT_LIMITER_DURATION || 3000;
@@ -724,4 +730,25 @@ export async function startQueueProcess() {
       removeOnComplete: true
     }
   );
+
+  // Iniciar jobs de automação
+  logger.info("🚀 Iniciando jobs de automação...");
+
+  // Lembrete 24h - a cada hora
+  LembreteJob.start();
+  logger.info("✅ LembreteJob (24h) iniciado - Cron: 0 * * * *");
+
+  // Lembrete 2h - a cada 30 minutos
+  Lembrete2hJob.start();
+  logger.info("✅ Lembrete2hJob (2h) iniciado - Cron: */30 * * * *");
+
+  // NPS - todos os dias às 20:00
+  NpsJob.start();
+  logger.info("✅ NpsJob iniciado - Cron: 0 20 * * *");
+
+  // Reativação - toda segunda-feira às 10:00
+  ReativacaoJob.start();
+  logger.info("✅ ReativacaoJob iniciado - Cron: 0 10 * * 1");
+
+  logger.info("✨ Todos os jobs de automação foram iniciados com sucesso!");
 }

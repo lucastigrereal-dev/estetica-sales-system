@@ -37,6 +37,7 @@ import SendWhatsAppMessage from "./SendWhatsAppMessage";
 import moment from "moment";
 import Queue from "../../models/Queue";
 import QueueOption from "../../models/QueueOption";
+import AnnaService from "../AnnaService";
 import FindOrCreateATicketTrakingService from "../TicketServices/FindOrCreateATicketTrakingService";
 import VerifyCurrentSchedule from "../CompanyService/VerifyCurrentSchedule";
 import Campaign from "../../models/Campaign";
@@ -1736,6 +1737,34 @@ const handleMessage = async (
 
     }
 
+    // ANNA (IA): Processar mensagem com IA se Anna está ativa
+    if (ticket.annaActive && !msg.key.fromMe) {
+      try {
+        const bodyMessage = getBodyMessage(msg);
+        const resultado = await AnnaService.processarMensagem(
+          ticket.id,
+          bodyMessage,
+          companyId
+        );
+
+        if (!resultado.deveContinuar) {
+          if (resultado.transferirPara === "chatbot") {
+            // Transferir para chatbot de árvore
+            await ticket.update({ chatbot: true, queueOptionId: null });
+            await handleChartbot(ticket, msg, wbot, false);
+          } else if (resultado.transferirPara === "humano") {
+            // Transferir para atendente
+            await ticket.update({ status: "pending", userId: null });
+          }
+        }
+
+        return; // Anna processou, não continuar para chatbot
+      } catch (error) {
+        logger.error("Erro ao processar Anna:", error);
+        // Em caso de erro, desativar Anna e continuar fluxo normal
+        await ticket.update({ annaActive: false });
+      }
+    }
 
     if (whatsapp.queues.length == 1 && ticket.queue) {
       if (ticket.chatbot && !msg.key.fromMe) {

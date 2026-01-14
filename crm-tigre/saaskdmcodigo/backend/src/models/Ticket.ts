@@ -86,6 +86,14 @@ class Ticket extends Model<Ticket> {
   @Column
   chatbot: boolean;
 
+  @Default(false)
+  @Column
+  annaActive: boolean;
+
+  @Default(0)
+  @Column
+  annaStage: number;
+
   @ForeignKey(() => QueueOption)
   @Column
   queueOptionId: number;

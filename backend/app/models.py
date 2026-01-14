@@ -1,7 +1,30 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, String, Float, DateTime, Boolean, ForeignKey, Text, Index
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from .database import Base
+
+class Clinica(Base):
+    __tablename__ = "clinicas"
+
+    id = Column(Integer, primary_key=True, index=True)
+    nome = Column(String(200), nullable=False)
+    cnpj = Column(String(14), unique=True, nullable=False)
+    telefone = Column(String(20), nullable=False)
+    email = Column(String(100), nullable=False)
+
+    # Credenciais criptografadas
+    gerencianet_client_id_encrypted = Column(String, nullable=True)
+    gerencianet_client_secret_encrypted = Column(String, nullable=True)
+    gerencianet_pix_cert_path = Column(String, nullable=True)
+    gerencianet_pix_key = Column(String, nullable=True)
+    asaas_token_encrypted = Column(String, nullable=True)
+
+    created_at = Column(DateTime, default=datetime.utcnow)
+
+    # Relacionamentos
+    pacientes = relationship("Paciente", back_populates="clinica")
+    agendamentos = relationship("Agendamento", back_populates="clinica")
+    pagamentos = relationship("Pagamento", back_populates="clinica")
 
 class Lead(Base):
     __tablename__ = "leads"
@@ -26,11 +49,18 @@ class Paciente(Base):
     telefone = Column(String, nullable=False)
     email = Column(String)
     lead_id = Column(Integer, ForeignKey("leads.id"))
+    clinica_id = Column(Integer, ForeignKey("clinicas.id"), nullable=False)
     created_at = Column(DateTime, default=datetime.utcnow)
 
     # Relacionamentos
     lead = relationship("Lead", back_populates="paciente")
+    clinica = relationship("Clinica", back_populates="pacientes")
     agendamentos = relationship("Agendamento", back_populates="paciente")
+    pagamentos = relationship("Pagamento", back_populates="paciente")
+
+__table_args__ = (
+    Index('idx_paciente_clinica', 'clinica_id'),
+)
 
 class Procedimento(Base):
     __tablename__ = "procedimentos"
@@ -49,6 +79,7 @@ class Agendamento(Base):
     id = Column(Integer, primary_key=True, index=True)
     paciente_id = Column(Integer, ForeignKey("pacientes.id"), nullable=False)
     procedimento_id = Column(Integer, ForeignKey("procedimentos.id"), nullable=False)
+    clinica_id = Column(Integer, ForeignKey("clinicas.id"), nullable=False)
     data = Column(DateTime, nullable=False)
     profissional = Column(String)
     status = Column(String, default="pendente")  # "pendente", "confirmado", "cancelado", "realizado"
@@ -57,3 +88,59 @@ class Agendamento(Base):
     # Relacionamentos
     paciente = relationship("Paciente", back_populates="agendamentos")
     procedimento = relationship("Procedimento", back_populates="agendamentos")
+    clinica = relationship("Clinica", back_populates="agendamentos")
+    pagamentos = relationship("Pagamento", back_populates="agendamento")
+
+__table_args__ = (
+    Index('idx_agendamento_clinica', 'clinica_id'),
+)
+
+class Pagamento(Base):
+    __tablename__ = "pagamentos"
+
+    id = Column(Integer, primary_key=True, index=True)
+    agendamento_id = Column(Integer, ForeignKey("agendamentos.id"), nullable=True)
+    paciente_id = Column(Integer, ForeignKey("pacientes.id"), nullable=False)
+    clinica_id = Column(Integer, ForeignKey("clinicas.id"), nullable=False)
+
+    # Valores
+    valor = Column(Float, nullable=False)
+    desconto = Column(Float, default=0.0)
+    valor_final = Column(Float, nullable=False)
+
+    # Método e Status
+    metodo = Column(String, nullable=False)  # CARTAO, PIX, BOLETO, DINHEIRO
+    status = Column(String, nullable=False, default="PENDENTE")  # PENDENTE, APROVADO, RECUSADO, REEMBOLSADO
+
+    # Provider-specific fields
+    gerencianet_payment_id = Column(String, unique=True, nullable=True)
+    gerencianet_txid = Column(String, unique=True, nullable=True)
+    asaas_payment_id = Column(String, unique=True, nullable=True)
+    pix_code = Column(Text, nullable=True)
+    boleto_url = Column(String, nullable=True)
+
+    observacoes = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=datetime.utcnow)
+    data_pagamento = Column(DateTime, nullable=True)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    # Relacionamentos
+    agendamento = relationship("Agendamento", back_populates="pagamentos")
+    paciente = relationship("Paciente", back_populates="pagamentos")
+    clinica = relationship("Clinica", back_populates="pagamentos")
+
+__table_args__ = (
+    Index('idx_pagamento_clinica_status', 'clinica_id', 'status'),
+    Index('idx_pagamento_clinica_created', 'clinica_id', 'created_at'),
+    Index('idx_pagamento_gn_txid', 'gerencianet_txid'),
+    Index('idx_pagamento_asaas_id', 'asaas_payment_id'),
+)
+
+class WebhookLog(Base):
+    __tablename__ = "webhook_logs"
+
+    id = Column(Integer, primary_key=True, index=True)
+    provider = Column(String, nullable=False)  # gerencianet, asaas
+    payload = Column(Text, nullable=False)
+    processed = Column(Boolean, default=False)
+    created_at = Column(DateTime, default=datetime.utcnow)

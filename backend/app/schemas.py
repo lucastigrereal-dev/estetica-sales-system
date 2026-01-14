@@ -37,6 +37,7 @@ class PacienteCreate(BaseModel):
     telefone: str
     email: Optional[str] = None
     lead_id: Optional[int] = None
+    clinica_id: int
 
 class PacienteUpdate(BaseModel):
     nome: Optional[str] = None
@@ -49,6 +50,7 @@ class PacienteResponse(BaseModel):
     telefone: str
     email: Optional[str]
     lead_id: Optional[int]
+    clinica_id: int
     created_at: datetime
 
     class Config:
@@ -78,6 +80,7 @@ class ProcedimentoResponse(BaseModel):
 class AgendamentoCreate(BaseModel):
     paciente_id: int
     procedimento_id: int
+    clinica_id: int
     data: datetime
     profissional: Optional[str] = None
 
@@ -91,6 +94,7 @@ class AgendamentoResponse(BaseModel):
     id: int
     paciente_id: int
     procedimento_id: int
+    clinica_id: int
     data: datetime
     profissional: Optional[str]
     status: str
@@ -104,3 +108,117 @@ class DashboardStats(BaseModel):
     leads_hoje: int
     agendamentos_hoje: int
     taxa_conversao: float
+
+# ========================================
+# Módulo Financeiro - Schemas
+# ========================================
+
+from enum import Enum
+from typing import Dict
+
+# Enums
+class MetodoPagamento(str, Enum):
+    CARTAO = "CARTAO"
+    PIX = "PIX"
+    BOLETO = "BOLETO"
+    DINHEIRO = "DINHEIRO"
+
+class StatusPagamento(str, Enum):
+    PENDENTE = "PENDENTE"
+    APROVADO = "APROVADO"
+    RECUSADO = "RECUSADO"
+    REEMBOLSADO = "REEMBOLSADO"
+
+# Clinica Schemas
+class ClinicaCreate(BaseModel):
+    nome: str
+    cnpj: str
+    telefone: str
+    email: str
+    gerencianet_client_id: Optional[str] = None
+    gerencianet_client_secret: Optional[str] = None
+    gerencianet_pix_cert_path: Optional[str] = None
+    gerencianet_pix_key: Optional[str] = None
+    asaas_token: Optional[str] = None
+
+class ClinicaUpdate(BaseModel):
+    nome: Optional[str] = None
+    telefone: Optional[str] = None
+    email: Optional[str] = None
+    gerencianet_client_id: Optional[str] = None
+    gerencianet_client_secret: Optional[str] = None
+    gerencianet_pix_cert_path: Optional[str] = None
+    gerencianet_pix_key: Optional[str] = None
+    asaas_token: Optional[str] = None
+
+class ClinicaResponse(BaseModel):
+    id: int
+    nome: str
+    cnpj: str
+    telefone: str
+    email: str
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+# Pagamento Schemas
+class PagamentoCreate(BaseModel):
+    agendamento_id: Optional[int] = None
+    paciente_id: int
+    valor: float
+    desconto: float = 0.0
+    metodo: MetodoPagamento
+    observacoes: Optional[str] = None
+
+class PagamentoPixGerencianetCreate(BaseModel):
+    agendamento_id: Optional[int] = None
+    paciente_id: int
+    valor: float
+    desconto: float = 0.0
+
+class PagamentoAsaasCreate(BaseModel):
+    agendamento_id: Optional[int] = None
+    paciente_id: int
+    valor: float
+    desconto: float = 0.0
+    tipo: str  # "PIX" ou "BOLETO"
+    due_date: Optional[str] = None  # YYYY-MM-DD (obrigatório para boleto)
+
+class PagamentoResponse(BaseModel):
+    id: int
+    agendamento_id: Optional[int]
+    paciente_id: int
+    clinica_id: int
+    valor: float
+    desconto: float
+    valor_final: float
+    metodo: MetodoPagamento
+    status: StatusPagamento
+    gerencianet_payment_id: Optional[str]
+    gerencianet_txid: Optional[str]
+    asaas_payment_id: Optional[str]
+    pix_code: Optional[str]
+    boleto_url: Optional[str]
+    observacoes: Optional[str]
+    created_at: datetime
+    data_pagamento: Optional[datetime]
+
+    # Nested objects (optional)
+    paciente: Optional[PacienteResponse] = None
+    agendamento: Optional[AgendamentoResponse] = None
+
+    class Config:
+        from_attributes = True
+
+# Dashboard Financeiro Schema
+class DashboardFinanceiroResponse(BaseModel):
+    receita_total: float
+    receita_hoje: float
+    receita_semana: float
+    receita_mes: float
+    pagamentos_pendentes_count: int
+    pagamentos_pendentes_valor: float
+    pagamentos_aprovados_count: int
+    receita_por_metodo: Dict[str, float]
+    taxa_conversao_pagamento: float
