@@ -1,0 +1,207 @@
+{
+  "name": "Lembrete de Agendamentos - 24h Antecedência",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 9 * * *"
+            }
+          ]
+        }
+      },
+      "id": "cron-trigger-daily",
+      "name": "Cron Trigger - Diário 9h",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=http://localhost:3000/api/appointments/upcoming",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "hours",
+              "value": "24"
+            },
+            {
+              "name": "reminder_sent",
+              "value": "false"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fetch-upcoming-appointments",
+      "name": "Buscar Agendamentos Próximas 24h",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "loop-appointments",
+      "name": "Loop - Para Cada Agendamento",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://localhost:3000/api/whatsapp/send",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": []
+        },
+        "jsonParameters": true,
+        "body": "={\n  \"to\": \"{{ $json.cliente_telefone }}\",\n  \"message\": \"Olá {{ $json.cliente_nome }}! 🌟\\n\\nEste é um lembrete do seu agendamento:\\n\\n📅 Data: {{ $json.data_hora_inicio.split('T')[0].split('-').reverse().join('/') }}\\n⏰ Horário: {{ $json.data_hora_inicio.split('T')[1].substring(0,5) }}\\n💆 Procedimento: {{ $json.procedimento_nome }}\\n\\nEstamos te esperando! 💖\\n\\nQualquer dúvida, estamos à disposição.\\n\\nClínica Estética\",\n  \"type\": \"reminder\"\n}",
+        "options": {}
+      },
+      "id": "send-whatsapp-reminder",
+      "name": "Enviar Lembrete WhatsApp",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=http://localhost:3000/api/appointments/{{ $node['Loop - Para Cada Agendamento'].json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": []
+        },
+        "jsonParameters": true,
+        "body": "={\n  \"lembrete_enviado\": true,\n  \"lembrete_enviado_em\": \"{{ $now.toISO() }}\"\n}",
+        "options": {}
+      },
+      "id": "mark-reminder-sent",
+      "name": "Marcar Lembrete Enviado",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node['Loop - Para Cada Agendamento'].context.noItemsLeft }}",
+              "value2": false
+            }
+          ]
+        }
+      },
+      "id": "check-loop-done",
+      "name": "Verificar Fim do Loop",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1340, 300]
+    }
+  ],
+  "connections": {
+    "Cron Trigger - Diário 9h": {
+      "main": [
+        [
+          {
+            "node": "Buscar Agendamentos Próximas 24h",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Agendamentos Próximas 24h": {
+      "main": [
+        [
+          {
+            "node": "Loop - Para Cada Agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop - Para Cada Agendamento": {
+      "main": [
+        [
+          {
+            "node": "Enviar Lembrete WhatsApp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar Lembrete WhatsApp": {
+      "main": [
+        [
+          {
+            "node": "Marcar Lembrete Enviado",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Marcar Lembrete Enviado": {
+      "main": [
+        [
+          {
+            "node": "Verificar Fim do Loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar Fim do Loop": {
+      "main": [
+        [
+          {
+            "node": "Loop - Para Cada Agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "id": "appointment-reminder-workflow",
+  "meta": {
+    "instanceId": "estetica-sales-system"
+  },
+  "tags": []
+}

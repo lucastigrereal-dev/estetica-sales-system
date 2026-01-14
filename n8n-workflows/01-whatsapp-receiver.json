@@ -1,0 +1,281 @@
+{
+  "name": "WhatsApp Receiver - Classificação e Resposta Inteligente",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "webhook/whatsapp",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-whatsapp",
+      "name": "Webhook WhatsApp",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [240, 300],
+      "webhookId": "whatsapp-receiver"
+    },
+    {
+      "parameters": {
+        "values": {
+          "string": [
+            {
+              "name": "from",
+              "value": "={{ $json.body.from }}"
+            },
+            {
+              "name": "message",
+              "value": "={{ $json.body.message }}"
+            },
+            {
+              "name": "timestamp",
+              "value": "={{ $json.body.timestamp || $now }}"
+            },
+            {
+              "name": "webhook_id",
+              "value": "={{ $json.body.id }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "set-extract-fields",
+      "name": "Extrair Campos",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": []
+        },
+        "jsonParameters": true,
+        "body": "={\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"Você é um classificador de intenções para uma clínica de estética. Analise a mensagem do cliente e classifique em uma das categorias: interesse, agendar, preco, duvida. Responda APENAS com a categoria, sem explicações.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"{{ $json.message }}\"\n    }\n  ],\n  \"temperature\": 0.3\n}",
+        "options": {}
+      },
+      "id": "openai-classify",
+      "name": "Classificar Intenção (OpenAI)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [680, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "openai-api-key",
+          "name": "OpenAI API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "expression",
+        "output": "={{ $json.choices[0].message.content.toLowerCase().trim() }}",
+        "rules": {
+          "rules": [
+            {
+              "output": "interesse",
+              "conditions": {
+                "conditions": [
+                  {
+                    "value1": "={{ $json.choices[0].message.content.toLowerCase() }}",
+                    "operation": "contains",
+                    "value2": "interesse"
+                  }
+                ]
+              }
+            },
+            {
+              "output": "agendar",
+              "conditions": {
+                "conditions": [
+                  {
+                    "value1": "={{ $json.choices[0].message.content.toLowerCase() }}",
+                    "operation": "contains",
+                    "value2": "agendar"
+                  }
+                ]
+              }
+            },
+            {
+              "output": "preco",
+              "conditions": {
+                "conditions": [
+                  {
+                    "value1": "={{ $json.choices[0].message.content.toLowerCase() }}",
+                    "operation": "contains",
+                    "value2": "preco"
+                  }
+                ]
+              }
+            },
+            {
+              "output": "duvida",
+              "conditions": {
+                "conditions": [
+                  {
+                    "value1": "={{ $json.choices[0].message.content.toLowerCase() }}",
+                    "operation": "contains",
+                    "value2": "duvida"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        "fallbackOutput": "duvida"
+      },
+      "id": "switch-intention",
+      "name": "Rotear por Intenção",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 1,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": []
+        },
+        "jsonParameters": true,
+        "body": "={\n  \"model\": \"gpt-4o-mini\",\n  \"messages\": [\n    {\n      \"role\": \"system\",\n      \"content\": \"Você é uma atendente profissional de uma clínica de estética. Seja cordial, objetiva e persuasiva. A intenção detectada é: {{ $node['Rotear por Intenção'].json.output }}. Gere uma resposta apropriada em até 200 caracteres.\"\n    },\n    {\n      \"role\": \"user\",\n      \"content\": \"{{ $node['Extrair Campos'].json.message }}\"\n    }\n  ],\n  \"temperature\": 0.7,\n  \"max_tokens\": 100\n}",
+        "options": {}
+      },
+      "id": "openai-response",
+      "name": "Gerar Resposta (OpenAI)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1120, 300],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "openai-api-key",
+          "name": "OpenAI API Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"from\": \"{{ $node['Extrair Campos'].json.from }}\",\n  \"intention\": \"{{ $node['Rotear por Intenção'].json.output }}\",\n  \"response\": \"{{ $json.choices[0].message.content }}\",\n  \"timestamp\": \"{{ $now.toISO() }}\"\n}",
+        "options": {}
+      },
+      "id": "respond-webhook",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1340, 300]
+    }
+  ],
+  "connections": {
+    "Webhook WhatsApp": {
+      "main": [
+        [
+          {
+            "node": "Extrair Campos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Extrair Campos": {
+      "main": [
+        [
+          {
+            "node": "Classificar Intenção (OpenAI)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Classificar Intenção (OpenAI)": {
+      "main": [
+        [
+          {
+            "node": "Rotear por Intenção",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Rotear por Intenção": {
+      "main": [
+        [
+          {
+            "node": "Gerar Resposta (OpenAI)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gerar Resposta (OpenAI)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gerar Resposta (OpenAI)",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gerar Resposta (OpenAI)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gerar Resposta (OpenAI)": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {},
+  "versionId": "1",
+  "id": "whatsapp-receiver-workflow",
+  "meta": {
+    "instanceId": "estetica-sales-system"
+  },
+  "tags": []
+}
