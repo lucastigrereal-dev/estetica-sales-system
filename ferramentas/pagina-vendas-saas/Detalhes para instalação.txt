@@ -1,0 +1,22 @@
+Informações para hospedagem modificar no servidor de dns caso necessário. ( Na hosting não precisa ) registro.br precisa.
+Obs: Somente se for usar mesmo dominio para script whaticket e o site.
+
+MX 0 mail.seudominio.com.br
+TXT "v=spf1 a mx include:websitewelcome.com ~all"
+A  seudominio.com.br -- para ip da hospedagem
+A  webmail.seudominio.com.br -- para ip da hospedagem
+A  www.seudominio.com.br -- para ip da hospedagem
+A  mail.seudominio.com.br -- para ip da hospedagem
+A  painel.seudominio.com.br -- para ip vps
+A  api.seudominio.com.br --  para ip da vps
+
+Anote aqui essas informações:
+
+https://SEUSITE.COM.BR/wp-admin
+User: 
+Senha: 
+
+Banco de dados:
+User: 
+Banco: 
+Senha: 
