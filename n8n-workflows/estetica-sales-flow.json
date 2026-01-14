@@ -1,0 +1,261 @@
+{
+  "name": "Sistema Vendas Estética - Fluxo Principal",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "webhook/whatsapp-incoming",
+        "responseMode": "responseNode"
+      },
+      "id": "webhook-entrada",
+      "name": "Webhook WhatsApp",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "notes": "Recebe mensagens do WhatsApp via Evolution API ou similar"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.body.message.toLowerCase()}}",
+              "operation": "contains",
+              "value2": "interesse"
+            }
+          ]
+        }
+      },
+      "id": "filtro-interesse",
+      "name": "Filtrar Interesse",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [450, 300],
+      "notes": "Verifica se a mensagem contém palavras de interesse"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT OR IGNORE INTO leads (nome, telefone, origem, status) VALUES ('{{$json.body.pushName}}', '{{$json.body.from}}', 'whatsapp', 'interessado')"
+      },
+      "id": "salvar-lead",
+      "name": "Salvar Lead no DB",
+      "type": "n8n-nodes-base.sqlite",
+      "typeVersion": 1,
+      "position": [650, 200],
+      "notes": "Salva o lead no banco de dados unificado"
+    },
+    {
+      "parameters": {
+        "model": "gpt-4.1-mini",
+        "messages": {
+          "values": [
+            {
+              "role": "system",
+              "content": "Você é uma assistente de uma clínica de estética. Seu objetivo é qualificar o interesse do cliente e agendar uma avaliação. Procedimentos disponíveis: Botox (R$800), Preenchimento Labial (R$1200), Bioestimulador (R$2500), Harmonização Facial (R$3500). Seja simpática e profissional."
+            },
+            {
+              "role": "user",
+              "content": "={{$json.body.message}}"
+            }
+          ]
+        }
+      },
+      "id": "openai-resposta",
+      "name": "Gerar Resposta IA",
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1,
+      "position": [650, 400],
+      "notes": "Usa OpenAI para gerar resposta personalizada"
+    },
+    {
+      "parameters": {
+        "url": "={{$env.WHATSAPP_API_URL}}/message/sendText/{{$env.WHATSAPP_INSTANCE}}",
+        "method": "POST",
+        "body": {
+          "number": "={{$json.body.from}}",
+          "text": "={{$node['Gerar Resposta IA'].json.choices[0].message.content}}"
+        }
+      },
+      "id": "enviar-resposta",
+      "name": "Enviar Resposta WhatsApp",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [850, 400],
+      "notes": "Envia a resposta de volta para o WhatsApp"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.body.message.toLowerCase()}}",
+              "operation": "contains",
+              "value2": "agendar"
+            }
+          ]
+        }
+      },
+      "id": "filtro-agendamento",
+      "name": "Detectar Agendamento",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [850, 200],
+      "notes": "Detecta se o cliente quer agendar"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE leads SET status = 'agendado' WHERE telefone = '{{$json.body.from}}'"
+      },
+      "id": "atualizar-status",
+      "name": "Atualizar Status Lead",
+      "type": "n8n-nodes-base.sqlite",
+      "typeVersion": 1,
+      "position": [1050, 200],
+      "notes": "Marca o lead como agendado"
+    },
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 1
+            }
+          ]
+        }
+      },
+      "id": "cron-lembretes",
+      "name": "Verificar Lembretes",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 550],
+      "notes": "Executa a cada hora para verificar lembretes"
+    },
+    {
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT a.*, p.nome, p.telefone FROM agendamentos a JOIN pacientes p ON a.paciente_id = p.paciente_id WHERE a.status = 'agendado' AND a.lembrete_enviado = 0 AND datetime(a.data_hora) BETWEEN datetime('now') AND datetime('now', '+24 hours')"
+      },
+      "id": "buscar-agendamentos",
+      "name": "Buscar Agendamentos 24h",
+      "type": "n8n-nodes-base.sqlite",
+      "typeVersion": 1,
+      "position": [450, 550],
+      "notes": "Busca agendamentos das próximas 24h"
+    },
+    {
+      "parameters": {
+        "url": "={{$env.WHATSAPP_API_URL}}/message/sendText/{{$env.WHATSAPP_INSTANCE}}",
+        "method": "POST",
+        "body": {
+          "number": "={{$json.telefone}}",
+          "text": "Olá {{$json.nome}}! 😊\n\nLembrando que você tem um agendamento amanhã na nossa clínica.\n\n📅 Data: {{$json.data_hora}}\n\nPor favor, confirme sua presença respondendo SIM.\n\nAté lá! ✨"
+        }
+      },
+      "id": "enviar-lembrete",
+      "name": "Enviar Lembrete",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [650, 550],
+      "notes": "Envia lembrete de agendamento"
+    }
+  ],
+  "connections": {
+    "Webhook WhatsApp": {
+      "main": [
+        [
+          {
+            "node": "Filtrar Interesse",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Filtrar Interesse": {
+      "main": [
+        [
+          {
+            "node": "Salvar Lead no DB",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Gerar Resposta IA",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Gerar Resposta IA",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gerar Resposta IA": {
+      "main": [
+        [
+          {
+            "node": "Enviar Resposta WhatsApp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Salvar Lead no DB": {
+      "main": [
+        [
+          {
+            "node": "Detectar Agendamento",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Detectar Agendamento": {
+      "main": [
+        [
+          {
+            "node": "Atualizar Status Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar Lembretes": {
+      "main": [
+        [
+          {
+            "node": "Buscar Agendamentos 24h",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Agendamentos 24h": {
+      "main": [
+        [
+          {
+            "node": "Enviar Lembrete",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": ["estética", "whatsapp", "vendas", "agendamento"]
+}
