@@ -1,0 +1,71 @@
+Instalação 
+
+sudo apt-get update && sudo apt-get upgrade -y
+
+reboot
+
+Ip da vps: 
+usuário: root
+senha: 
+
+Cor: 
+
+https://MEUSITE.COM.BR/imagens/logo1.png)
+tamanho: 2000x1080 em png
+
+app.MEUSITE.com.br
+api.MEUSITE.com.br
+
+Login: app.MEUSITE.com.br
+User: admin@admin.com
+Senha: 123456
+
+User deploy: 
+instancia: 
+
+
+Token: 
+User: 
+
+Link git: 
+Obs: não precisa ir para pasta home
+
+cd /home
+
+sudo apt install -y git && git clone https://github.com/MEUGIT/instaladorskdm.git install_whaticket && sudo chmod -R 777 install_whaticket && cd install_whaticket && sudo ./install_primaria
+
+Após termina de continuidade com códigos abaixo
+
+cd /home/deploy/MINHAINSTANCIA/backend
+
+npm install -g npm@9.8.1
+
+cd /home/deploy/MINHAINSTANCIA/frontend
+
+npm install
+
+npm audit fix --force
+
+npm install react-query
+
+npm install react-csv
+
+npm run build
+
+sudo reboot now
+
+Fim....
+
+
+Comando para serem execultados em caso de outras mudanças nos CODIGOS DO PAINEL EM SUA VPS. 
+
+cd /home/deploy/MINHASTANCIA/
+
+chmod +x ./update
+
+./update
+
+sudo systemctl restart nginx
+
+sudo reboot now
+

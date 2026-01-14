@@ -1,0 +1,383 @@
+{
+  "name": "Whaticket Integration Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "whaticket",
+        "responseMode": "responseNode",
+        "options": {}
+      },
+      "id": "webhook-whaticket",
+      "name": "Webhook - Whaticket",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "position": [250, 300],
+      "webhookId": "whaticket-webhook"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.eventType}}",
+              "operation": "equals",
+              "value2": "whaticket_event"
+            }
+          ]
+        }
+      },
+      "id": "check-event-type",
+      "name": "Check Event Type",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [450, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.data.type}}",
+              "operation": "equals",
+              "value2": "message"
+            }
+          ]
+        }
+      },
+      "id": "is-new-message",
+      "name": "Is New Message?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 250]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{$json.data.ticket.status}}",
+              "operation": "equals",
+              "value2": "open"
+            }
+          ]
+        }
+      },
+      "id": "is-ticket-open",
+      "name": "Is Ticket Open?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [850, 200]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Extract message data\nconst messageData = $input.item.json.data;\n\nconst ticketId = messageData.ticket?.id;\nconst contactName = messageData.contact?.name || 'Cliente';\nconst messageBody = messageData.body || '';\nconst fromMe = messageData.fromMe || false;\n\n// Only process messages from customers (not from agent)\nif (fromMe) {\n  return { json: { skip: true, reason: 'Message from agent' } };\n}\n\n// Process the message\nconst processedData = {\n  ticketId: ticketId,\n  contactName: contactName,\n  message: messageBody,\n  timestamp: new Date().toISOString(),\n  needsResponse: !fromMe\n};\n\nreturn { json: processedData };"
+      },
+      "id": "process-message",
+      "name": "Process Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 150]
+    },
+    {
+      "parameters": {
+        "jsCode": "// AI Response Logic\nconst data = $input.item.json;\nconst message = data.message.toLowerCase();\n\n// Simple keyword-based responses (you can integrate with OpenAI/Claude here)\nlet response = '';\n\nif (message.includes('olá') || message.includes('oi') || message.includes('bom dia')) {\n  response = `Olá ${data.contactName}! Como posso ajudá-lo hoje? 😊`;\n} else if (message.includes('preço') || message.includes('valor') || message.includes('quanto custa')) {\n  response = 'Nossos preços variam de acordo com o tratamento. Posso agendar uma avaliação gratuita para você? 💆‍♀️';\n} else if (message.includes('agendar') || message.includes('marcar') || message.includes('horário')) {\n  response = 'Perfeito! Temos horários disponíveis. Qual dia seria melhor para você? 📅';\n} else if (message.includes('endereço') || message.includes('localização') || message.includes('onde fica')) {\n  response = 'Estamos localizados na [SEU ENDEREÇO]. Quer que eu envie a localização? 📍';\n} else if (message.includes('obrigado') || message.includes('obrigada')) {\n  response = 'Por nada! Estou aqui para ajudar. 🌟';\n} else {\n  response = `Obrigado pela mensagem, ${data.contactName}! Um de nossos atendentes responderá em breve. ⏰`;\n}\n\nreturn {\n  json: {\n    ticketId: data.ticketId,\n    message: response,\n    action: 'send_message'\n  }\n};"
+      },
+      "id": "generate-response",
+      "name": "Generate AI Response",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1250, 150]
+    },
+    {
+      "parameters": {
+        "url": "=http://localhost:3001/callback/n8n",
+        "authentication": "none",
+        "requestMethod": "POST",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "ticketId",
+              "value": "={{$json.ticketId}}"
+            },
+            {
+              "name": "message",
+              "value": "={{$json.message}}"
+            },
+            {
+              "name": "action",
+              "value": "={{$json.action}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-to-bridge",
+      "name": "Send to Bridge",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1450, 150]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Log the event for debugging\nconst eventData = $input.item.json;\n\nconsole.log('Whaticket Event Received:', JSON.stringify(eventData, null, 2));\n\nreturn { json: { logged: true, eventType: eventData.eventType } };"
+      },
+      "id": "log-event",
+      "name": "Log Event",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [650, 400]
+    },
+    {
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={{ { \"success\": true, \"message\": \"Event processed successfully\" } }}"
+      },
+      "id": "respond-webhook",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1650, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{$json.skip}}",
+              "operation": "notEqual",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "should-respond",
+      "name": "Should Respond?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1050, 250]
+    },
+    {
+      "parameters": {
+        "jsCode": "// Handle ticket status changes\nconst data = $input.item.json.data;\n\nif (data.ticket?.status === 'closed') {\n  return {\n    json: {\n      ticketId: data.ticket.id,\n      action: 'update_ticket',\n      data: {\n        status: 'closed',\n        closedAt: new Date().toISOString()\n      }\n    }\n  };\n}\n\nreturn { json: { skip: true } };"
+      },
+      "id": "handle-status-change",
+      "name": "Handle Status Change",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 350]
+    },
+    {
+      "parameters": {
+        "url": "=http://localhost:3001/callback/n8n",
+        "authentication": "none",
+        "requestMethod": "POST",
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "ticketId",
+              "value": "={{$json.ticketId}}"
+            },
+            {
+              "name": "action",
+              "value": "={{$json.action}}"
+            },
+            {
+              "name": "data",
+              "value": "={{JSON.stringify($json.data)}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "send-status-update",
+      "name": "Send Status Update",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [1050, 350]
+    },
+    {
+      "parameters": {
+        "mode": "combine",
+        "combineBy": "combineAll"
+      },
+      "id": "merge-responses",
+      "name": "Merge Responses",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [1450, 300]
+    }
+  ],
+  "connections": {
+    "Webhook - Whaticket": {
+      "main": [
+        [
+          {
+            "node": "Check Event Type",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Event Type": {
+      "main": [
+        [
+          {
+            "node": "Is New Message?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Log Event",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is New Message?": {
+      "main": [
+        [
+          {
+            "node": "Is Ticket Open?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Handle Status Change",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Ticket Open?": {
+      "main": [
+        [
+          {
+            "node": "Process Message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge Responses",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Process Message": {
+      "main": [
+        [
+          {
+            "node": "Should Respond?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Should Respond?": {
+      "main": [
+        [
+          {
+            "node": "Generate AI Response",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Merge Responses",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Generate AI Response": {
+      "main": [
+        [
+          {
+            "node": "Send to Bridge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send to Bridge": {
+      "main": [
+        [
+          {
+            "node": "Merge Responses",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Log Event": {
+      "main": [
+        [
+          {
+            "node": "Merge Responses",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge Responses": {
+      "main": [
+        [
+          {
+            "node": "Respond to Webhook",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Handle Status Change": {
+      "main": [
+        [
+          {
+            "node": "Send Status Update",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Status Update": {
+      "main": [
+        [
+          {
+            "node": "Merge Responses",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "staticData": null,
+  "tags": [],
+  "triggerCount": 1,
+  "updatedAt": "2026-01-14T00:00:00.000Z",
+  "versionId": "1"
+}

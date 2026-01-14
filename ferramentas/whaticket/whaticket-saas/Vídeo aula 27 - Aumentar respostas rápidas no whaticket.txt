@@ -1,0 +1,32 @@
+Procurar arquivo em /home/deploy/SUAESTANCIA/frontend/src/components/QuickMessageDialog 
+ARQUIVO index.js
+
+alterar somente .max(500, "Too Long!") no código abaixo para .max(9999, "Too Long!") ou qualquer outro valor.
+
+const MessageSchema = Yup.object().shape({
+	shortcode: Yup.string()
+		.min(3, "Too Short!")
+		.max(50, "Too Long!")
+		.required("Required"),
+    message: Yup.string()
+        .min(3, "Too Short!")
+        .max(9999, "Too Long!")
+        .required("Required")
+});
+
+----------------------------------------------------------
+
+Comando para serem execultados em caso de outras mudanças nos CODIGOS DO PAINEL EM SUA VPS. 
+
+cd /home/deploy/empresa01/
+
+chmod +x ./update
+
+./update
+
+sudo systemctl restart nginx
+
+sudo reboot now
+
+-------------------------ou-----------------------------
+

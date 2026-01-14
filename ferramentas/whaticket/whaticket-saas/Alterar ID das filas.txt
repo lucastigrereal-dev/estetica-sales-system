@@ -1,0 +1,13 @@
+Em backend/src/services/WhatsappService/ShowWhatsAppService.ts alterar para linha 14 ou onde estiver order: [["queues", "name", "ASC"]] para order: [["queues", "id", "ASC"]],
+
+Versão com MIDIA NO BOT -
+
+cd /home/deploy/helloclique2k/
+
+chmod +x ./update
+
+./update
+
+sudo systemctl restart nginx
+
+sudo reboot now
