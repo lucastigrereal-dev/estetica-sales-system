@@ -1,6 +1,6 @@
-# 🤖 Anna - Assistente Virtual com IA para CRM Tigre
+# 🤖 Aurora - Assistente Virtual com IA para CRM Tigre
 
-Anna é a assistente virtual inteligente baseada em OpenAI GPT-4 que qualifica leads e agenda procedimentos estéticos de forma conversacional e natural.
+Aurora é a assistente virtual inteligente baseada em OpenAI GPT-4 que qualifica leads e agenda procedimentos estéticos de forma conversacional e natural.
 
 ## 📋 O Que Foi Implementado
 
@@ -8,7 +8,7 @@ Anna é a assistente virtual inteligente baseada em OpenAI GPT-4 que qualifica l
 
 **Modelos de Dados:**
 - ✅ `TicketAnalysis.ts` - Armazena análises de qualificação de leads
-- ✅ `Ticket.ts` - Atualizado com campos `annaActive` e `annaStage`
+- ✅ `Ticket.ts` - Atualizado com campos `auroraActive` e `auroraStage`
 
 **Serviços:**
 - ✅ `OpenAIService.ts` - Cliente OpenAI com 4 funções principais:
@@ -17,7 +17,7 @@ Anna é a assistente virtual inteligente baseada em OpenAI GPT-4 que qualifica l
   - `qualificarLead()` - Extrai informações e gera score 0-100
   - `gerarResumoConversa()` - Resume conversas
 
-- ✅ `AnnaService.ts` - Lógica de qualificação conversacional:
+- ✅ `AuroraService.ts` - Lógica de qualificação conversacional:
   - Processa mensagens do usuário
   - Atualiza histórico em tempo real
   - Decide próximos passos baseado em score
@@ -25,18 +25,18 @@ Anna é a assistente virtual inteligente baseada em OpenAI GPT-4 que qualifica l
   - Sugere agendamento se score > 70
 
 **Controllers e Rotas:**
-- ✅ `AnnaController.ts` - 4 endpoints REST:
-  - `GET /anna/analysis/:ticketId` - Buscar análise do ticket
-  - `GET /anna/resumo/:ticketId` - Gerar resumo da conversa
-  - `POST /anna/converter/:ticketId` - Converter em agendamento
-  - `GET /anna/dashboard` - Métricas da Anna
+- ✅ `AuroraController.ts` - 4 endpoints REST:
+  - `GET /aurora/analysis/:ticketId` - Buscar análise do ticket
+  - `GET /aurora/resumo/:ticketId` - Gerar resumo da conversa
+  - `POST /aurora/converter/:ticketId` - Converter em agendamento
+  - `GET /aurora/dashboard` - Métricas da Aurora
 
-- ✅ `annaRoutes.ts` - Rotas integradas no sistema
-- ✅ Integração no `wbotMessageListener.ts` - Anna intercepta mensagens antes do chatbot
+- ✅ `auroraRoutes.ts` - Rotas integradas no sistema
+- ✅ Integração no `wbotMessageListener.ts` - Aurora intercepta mensagens antes do chatbot
 
 **Migrações:**
 - ✅ `20260114000001-create-ticket-analysis.js` - Tabela TicketAnalyses
-- ✅ `20260114000002-add-anna-fields-to-tickets.js` - Campos Anna no Ticket
+- ✅ `20260114000002-add-aurora-fields-to-tickets.js` - Campos Aurora no Ticket
 
 ---
 
@@ -48,7 +48,7 @@ Anna é a assistente virtual inteligente baseada em OpenAI GPT-4 que qualifica l
 2. Copie o arquivo de exemplo:
 ```bash
 cd crm-tigre/saaskdmcodigo/backend
-cp .env.anna.example .env
+cp .env.aurora.example .env
 ```
 
 3. Edite `.env` e adicione sua chave:
@@ -78,7 +78,7 @@ npm run db:migrate
 
 Isso criará:
 - Tabela `TicketAnalyses` com 14 campos
-- Campos `annaActive` e `annaStage` em `Tickets`
+- Campos `auroraActive` e `auroraStage` em `Tickets`
 
 ### 5. Configurar Procedimentos no Banco
 
@@ -106,7 +106,7 @@ npm run dev:server
 ```
 Novo Ticket via WhatsApp
     ↓
-Anna Ativa Automaticamente (annaActive=true)
+Aurora Ativa Automaticamente (auroraActive=true)
     ↓
 Conversa Natural com GPT-4
     ↓
@@ -132,22 +132,22 @@ A cada 3 mensagens: Calcula Score (0-100)
 
 ```
 Cliente: "Oi"
-Anna: "Olá Maria! 👋 Sou a Anna, assistente da Clínica Beleza.
+Aurora: "Olá Maria! 👋 Sou a Aurora, assistente da Clínica Beleza.
        Como posso te ajudar hoje?"
 
 Cliente: "Queria fazer botox"
-Anna: "Que legal! Botox é excelente para suavizar rugas.
+Aurora: "Que legal! Botox é excelente para suavizar rugas.
        Você já fez botox antes?"
 
 Cliente: "Não, primeira vez"
-Anna: "Entendi! Vou te ajudar. Qual dia da semana é melhor pra você?"
+Aurora: "Entendi! Vou te ajudar. Qual dia da semana é melhor pra você?"
 
 Cliente: "Sexta tarde"
-Anna: "Perfeito! Sexta à tarde funciona bem.
+Aurora: "Perfeito! Sexta à tarde funciona bem.
        Você tem alguma data específica em mente ou urgência?"
 
 Cliente: "Próxima sexta mesmo, tenho um evento"
-Anna: "Ótimo! 🎉 Você está qualificado(a)!
+Aurora: "Ótimo! 🎉 Você está qualificado(a)!
 
        Gostaria de agendar sua avaliação gratuita?
 
@@ -166,7 +166,7 @@ Anna: "Ótimo! 🎉 Você está qualificado(a)!
 
 **1. Análise Individual de Ticket**
 ```bash
-GET /anna/analysis/:ticketId
+GET /aurora/analysis/:ticketId
 Authorization: Bearer {token}
 
 Response:
@@ -183,7 +183,7 @@ Response:
 
 **2. Dashboard com Métricas**
 ```bash
-GET /anna/dashboard
+GET /aurora/dashboard
 Authorization: Bearer {token}
 
 Response:
@@ -228,7 +228,7 @@ Response:
 
 ## 🔧 Troubleshooting
 
-### Anna não está respondendo
+### Aurora não está respondendo
 
 **1. Verificar API Key:**
 ```bash
@@ -239,17 +239,17 @@ OPENAI_API_KEY=sk-proj-...
 **2. Verificar logs:**
 ```bash
 # No terminal do backend
-grep "Erro ao processar Anna" logs/app.log
+grep "Erro ao processar Aurora" logs/app.log
 ```
 
 **3. Verificar ticket:**
 ```sql
-SELECT id, annaActive, annaStage FROM Tickets WHERE id = X;
+SELECT id, auroraActive, auroraStage FROM Tickets WHERE id = X;
 ```
 
-Se `annaActive = false`, ativar manualmente:
+Se `auroraActive = false`, ativar manualmente:
 ```sql
-UPDATE Tickets SET annaActive = true, annaStage = 0 WHERE id = X;
+UPDATE Tickets SET auroraActive = true, auroraStage = 0 WHERE id = X;
 ```
 
 ### Erro "OpenAI API rate limit exceeded"
@@ -284,10 +284,10 @@ mysql -u root -p -e "SHOW TABLES LIKE 'TicketAnalyses';"
 Conforme o plano em `C:\Users\lucas\.claude\plans\elegant-chasing-knuth.md`:
 
 **Componentes a Criar:**
-- `AnnaAnalysis/index.js` - Widget de análise no ticket (200 linhas)
-- `Anna/Dashboard.js` - Dashboard de métricas (150 linhas)
+- `AuroraAnalysis/index.js` - Widget de análise no ticket (200 linhas)
+- `Aurora/Dashboard.js` - Dashboard de métricas (150 linhas)
 - Integrar no `Ticket/index.js`
-- Adicionar rota `/anna` no frontend
+- Adicionar rota `/aurora` no frontend
 
 **Código completo no plano!**
 
@@ -308,18 +308,18 @@ Conforme o plano em `C:\Users\lucas\.claude\plans\elegant-chasing-knuth.md`:
 ### 4. Analytics
 
 - [ ] Dashboard avançado com gráficos (recharts)
-- [ ] A/B testing (Anna vs Chatbot tradicional)
+- [ ] A/B testing (Aurora vs Chatbot tradicional)
 - [ ] Heatmap de horários mais procurados
 - [ ] Análise de objeções frequentes
 
 ---
 
-## 🎓 System Prompt da Anna
+## 🎓 System Prompt da Aurora
 
 Localizado em `OpenAIService.ts`, linha 154:
 
 ```typescript
-`Você é Anna, assistente virtual da ${nomeClinica}.
+`Você é Aurora, assistente virtual da ${nomeClinica}.
 
 Você é simpática, profissional e objetiva.
 Seu objetivo é qualificar leads e coletar informações para agendamento.
@@ -360,16 +360,16 @@ backend/
 │   │   └── TicketAnalysis.ts (70 linhas)
 │   ├── services/
 │   │   ├── OpenAIService.ts (200 linhas)
-│   │   └── AnnaService.ts (180 linhas)
+│   │   └── AuroraService.ts (180 linhas)
 │   ├── controllers/
-│   │   └── AnnaController.ts (80 linhas)
+│   │   └── AuroraController.ts (80 linhas)
 │   ├── routes/
-│   │   └── annaRoutes.ts (15 linhas)
+│   │   └── auroraRoutes.ts (15 linhas)
 │   └── database/
 │       └── migrations/
 │           ├── 20260114000001-create-ticket-analysis.js
-│           └── 20260114000002-add-anna-fields-to-tickets.js
-├── .env.anna.example (documentação completa)
+│           └── 20260114000002-add-aurora-fields-to-tickets.js
+├── .env.aurora.example (documentação completa)
 └── package.json (openai@^4.28.0 adicionado)
 ```
 
@@ -378,11 +378,11 @@ backend/
 backend/
 ├── src/
 │   ├── models/
-│   │   └── Ticket.ts (+5 linhas: annaActive, annaStage)
+│   │   └── Ticket.ts (+5 linhas: auroraActive, auroraStage)
 │   ├── routes/
-│   │   └── index.ts (+2 linhas: import e use annaRoutes)
+│   │   └── index.ts (+2 linhas: import e use auroraRoutes)
 │   └── services/WbotServices/
-│       └── wbotMessageListener.ts (+28 linhas: integração Anna)
+│       └── wbotMessageListener.ts (+28 linhas: integração Aurora)
 ```
 
 **Total: ~800 linhas de código backend!**
@@ -391,7 +391,7 @@ backend/
 
 ## 🎉 Conclusão
 
-A Anna está **100% funcional no backend**!
+A Aurora está **100% funcional no backend**!
 
 **O que funciona agora:**
 ✅ Recebe mensagens via WhatsApp

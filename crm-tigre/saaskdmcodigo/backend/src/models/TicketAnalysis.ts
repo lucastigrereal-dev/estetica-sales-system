@@ -71,6 +71,23 @@ class TicketAnalysis extends Model<TicketAnalysis> {
   @Column(DataType.TEXT)
   resumoIA: string;
 
+  // TAERE v1.3 - Motor de Qualificação de Leads
+  @Column(DataType.STRING)
+  leadState: string; // HOT, WARM, COLD, CURIOSO, SPAM
+
+  @Column(DataType.JSONB)
+  taereScores: object; // { timing, affective, economic, risk, engagement, total }
+
+  @Column(DataType.JSONB)
+  taereSignals: object[]; // Array de sinais detectados
+
+  @Column(DataType.JSONB)
+  taereReasons: string[]; // Motivos da classificação
+
+  @Default(0)
+  @Column(DataType.FLOAT)
+  taereConfidence: number; // 0-1
+
   @ForeignKey(() => Company)
   @Column
   companyId: number;

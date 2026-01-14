@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { Op } from "sequelize";
-import AnnaService from "../services/AnnaService";
+import AuroraService from "../services/AuroraService";
 import TicketAnalysis from "../models/TicketAnalysis";
 import sequelize from "sequelize";
 
@@ -24,7 +24,7 @@ export const getResumo = async (
 ): Promise<Response> => {
   const { ticketId } = req.params;
 
-  const resumo = await AnnaService.gerarResumo(Number(ticketId));
+  const resumo = await AuroraService.gerarResumo(Number(ticketId));
 
   return res.json({ resumo });
 };
@@ -36,7 +36,7 @@ export const converterAgendamento = async (
   const { ticketId } = req.params;
   const { scheduleId } = req.body;
 
-  await AnnaService.converterEmAgendamento(Number(ticketId), scheduleId);
+  await AuroraService.converterEmAgendamento(Number(ticketId), scheduleId);
 
   return res.json({ success: true });
 };
@@ -47,7 +47,7 @@ export const getDashboard = async (
 ): Promise<Response> => {
   const { companyId } = req.user;
 
-  // Métricas da Anna
+  // Métricas da Aurora
   const totalConversas = await TicketAnalysis.count({ where: { companyId } });
   const totalQualificados = await TicketAnalysis.count({
     where: { companyId, scoreQualificacao: { [Op.gte]: 70 } }

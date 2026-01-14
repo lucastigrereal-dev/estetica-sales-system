@@ -7,6 +7,7 @@ import OpenAIService from "./OpenAIService";
 import SendWhatsAppMessage from "./WbotServices/SendWhatsAppMessage";
 import { logger } from "../utils/logger";
 import { getIO } from "../libs/socket";
+import { evaluateLead, LeadState } from "./sdr-aurora/engine.js";
 
 interface ProcessarMensagemResponse {
   deveContinuar: boolean;
@@ -14,7 +15,7 @@ interface ProcessarMensagemResponse {
   mensagemResposta?: string;
 }
 
-class AnnaService {
+class AuroraService {
   async processarMensagem(
     ticketId: number,
     mensagemUsuario: string,
@@ -42,6 +43,55 @@ class AnnaService {
           historicoConversa: []
         });
       }
+
+      // 2.1. TAERE v1.3: Avaliar lead ANTES do GPT-4
+      const taereResult = evaluateLead({
+        text: mensagemUsuario,
+        responseTime: 60, // Valor padrão (pode ser calculado depois)
+        messageLength: mensagemUsuario.length,
+        audio: false
+      });
+
+      // Salvar resultado TAERE no TicketAnalysis
+      await analysis.update({
+        leadState: taereResult.state,
+        taereScores: taereResult.scores as any,
+        taereSignals: taereResult.signals as any,
+        taereReasons: taereResult.reasons as any,
+        taereConfidence: taereResult.confidence
+      });
+
+      logger.info(`[TAERE] Ticket ${ticketId} - Estado: ${taereResult.state}, Score: ${taereResult.scores.total}`);
+
+      // 2.2. TAERE: Se HOT, transferir para humano imediatamente (não gastar GPT)
+      if (taereResult.state === LeadState.HOT) {
+        await ticket.update({ auroraActive: false, status: "pending" });
+
+        const mensagemHot = `🔥 *Lead Qualificado!*\n\nVocê demonstrou alto interesse! Vou transferir você para um de nossos especialistas que pode te ajudar melhor.\n\nUm momento por favor...`;
+
+        await SendWhatsAppMessage({ body: mensagemHot, ticket });
+
+        return {
+          deveContinuar: false,
+          transferirPara: "humano",
+          mensagemResposta: mensagemHot
+        };
+      }
+
+      // 2.3. TAERE: Se SPAM, bloquear (não gastar GPT)
+      if (taereResult.state === LeadState.SPAM) {
+        await ticket.update({ auroraActive: false });
+
+        logger.warn(`[TAERE] Ticket ${ticketId} bloqueado por SPAM`);
+
+        return {
+          deveContinuar: false,
+          mensagemResposta: ""
+        };
+      }
+
+      // 2.4. TAERE: Se WARM/COLD/CURIOSO, continuar conversação normal
+      // (Os scores TAERE já foram salvos acima)
 
       // 3. Buscar configurações da clínica
       const procedimentosSetting = await Setting.findOne({
@@ -71,7 +121,7 @@ class AnnaService {
       ];
 
       // 5. Gerar resposta conversacional
-      const respostaAnna = await OpenAIService.gerarResposta(
+      const respostaAurora = await OpenAIService.gerarResposta(
         mensagemUsuario,
         contexto,
         historicoAtualizado
@@ -79,7 +129,7 @@ class AnnaService {
 
       historicoAtualizado.push({
         role: "assistant",
-        content: respostaAnna
+        content: respostaAurora
       });
 
       // 6. Analisar sentimento
@@ -87,8 +137,8 @@ class AnnaService {
         mensagemUsuario
       );
       const sentimentoAtualizado =
-        (analysis.sentimentoMedio * ticket.annaStage + sentimento.score) /
-        (ticket.annaStage + 1);
+        (analysis.sentimentoMedio * ticket.auroraStage + sentimento.score) /
+        (ticket.auroraStage + 1);
 
       // 7. Qualificar lead (a cada 3 mensagens ou quando >= 6 mensagens)
       let qualificacao = null;
@@ -120,9 +170,9 @@ class AnnaService {
         // 8. Decidir próximo passo
         if (qualificacao.pronto && qualificacao.score > 70) {
           // QUALIFICADO - Sugerir agendamento
-          await ticket.update({ annaActive: false, annaStage: 5 });
+          await ticket.update({ auroraActive: false, auroraStage: 5 });
 
-          const mensagemAgendamento = `${respostaAnna}\n\n*Você está qualificado(a)! 🎉*\n\nGostaria de agendar sua avaliação gratuita?\n\n*[ 1 ]* - Sim, agendar agora\n*[ 2 ]* - Falar com atendente\n*[ 3 ]* - Depois eu retorno`;
+          const mensagemAgendamento = `${respostaAurora}\n\n*Você está qualificado(a)! 🎉*\n\nGostaria de agendar sua avaliação gratuita?\n\n*[ 1 ]* - Sim, agendar agora\n*[ 2 ]* - Falar com atendente\n*[ 3 ]* - Depois eu retorno`;
 
           await SendWhatsAppMessage({ body: mensagemAgendamento, ticket });
 
@@ -132,12 +182,12 @@ class AnnaService {
           };
         } else if (qualificacao.score < 40) {
           // NÃO QUALIFICADO - Transferir para chatbot ou humano
-          await ticket.update({ annaActive: false, chatbot: true });
+          await ticket.update({ auroraActive: false, chatbot: true });
 
           return {
             deveContinuar: false,
             transferirPara: "chatbot",
-            mensagemResposta: respostaAnna
+            mensagemResposta: respostaAurora
           };
         }
       } else {
@@ -146,18 +196,18 @@ class AnnaService {
           sentimentoMedio: sentimentoAtualizado,
           historicoConversa: historicoAtualizado as any
         });
-        await ticket.update({ annaStage: ticket.annaStage + 1 });
+        await ticket.update({ auroraStage: ticket.auroraStage + 1 });
       }
 
       // 9. Enviar resposta
-      await SendWhatsAppMessage({ body: respostaAnna, ticket });
+      await SendWhatsAppMessage({ body: respostaAurora, ticket });
 
       return {
         deveContinuar: true,
-        mensagemResposta: respostaAnna
+        mensagemResposta: respostaAurora
       };
     } catch (error) {
-      logger.error("Erro ao processar mensagem Anna:", error);
+      logger.error("Erro ao processar mensagem Aurora:", error);
       throw error;
     }
   }
@@ -187,4 +237,4 @@ class AnnaService {
   }
 }
 
-export default new AnnaService();
+export default new AuroraService();

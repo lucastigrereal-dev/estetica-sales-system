@@ -13,7 +13,7 @@ interface QualificacaoResult {
   melhorHorario: string | null;
 }
 
-const SYSTEM_PROMPT = `Você é Anna, assistente virtual de uma clínica de estética.
+const SYSTEM_PROMPT = `Você é Aurora, assistente virtual de uma clínica de estética.
 Você é simpática, profissional e objetiva.
 Seu objetivo é qualificar leads e agendar procedimentos estéticos.
 
@@ -113,7 +113,7 @@ Responda em JSON: {"score":0,"interessado":false,"procedimentoSugerido":null,"me
   }
 };
 
-export const processarMensagemAnna = async (
+export const processarMensagemAurora = async (
   ticketId: number,
   mensagemRecebida: string,
   companyId: number

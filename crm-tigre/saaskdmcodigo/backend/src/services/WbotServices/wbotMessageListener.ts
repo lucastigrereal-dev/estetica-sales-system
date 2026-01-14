@@ -37,7 +37,7 @@ import SendWhatsAppMessage from "./SendWhatsAppMessage";
 import moment from "moment";
 import Queue from "../../models/Queue";
 import QueueOption from "../../models/QueueOption";
-import AnnaService from "../AnnaService";
+import AuroraService from "../AuroraService";
 import FindOrCreateATicketTrakingService from "../TicketServices/FindOrCreateATicketTrakingService";
 import VerifyCurrentSchedule from "../CompanyService/VerifyCurrentSchedule";
 import Campaign from "../../models/Campaign";
@@ -1737,11 +1737,11 @@ const handleMessage = async (
 
     }
 
-    // ANNA (IA): Processar mensagem com IA se Anna está ativa
-    if (ticket.annaActive && !msg.key.fromMe) {
+    // AURORA (IA): Processar mensagem com IA se Aurora está ativa
+    if (ticket.auroraActive && !msg.key.fromMe) {
       try {
         const bodyMessage = getBodyMessage(msg);
-        const resultado = await AnnaService.processarMensagem(
+        const resultado = await AuroraService.processarMensagem(
           ticket.id,
           bodyMessage,
           companyId
@@ -1758,11 +1758,11 @@ const handleMessage = async (
           }
         }
 
-        return; // Anna processou, não continuar para chatbot
+        return; // Aurora processou, não continuar para chatbot
       } catch (error) {
-        logger.error("Erro ao processar Anna:", error);
-        // Em caso de erro, desativar Anna e continuar fluxo normal
-        await ticket.update({ annaActive: false });
+        logger.error("Erro ao processar Aurora:", error);
+        // Em caso de erro, desativar Aurora e continuar fluxo normal
+        await ticket.update({ auroraActive: false });
       }
     }
 

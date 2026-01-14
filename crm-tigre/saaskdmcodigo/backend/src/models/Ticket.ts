@@ -88,11 +88,11 @@ class Ticket extends Model<Ticket> {
 
   @Default(false)
   @Column
-  annaActive: boolean;
+  auroraActive: boolean;
 
   @Default(0)
   @Column
-  annaStage: number;
+  auroraStage: number;
 
   @ForeignKey(() => QueueOption)
   @Column

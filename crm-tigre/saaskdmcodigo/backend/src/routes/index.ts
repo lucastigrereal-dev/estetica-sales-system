@@ -31,7 +31,7 @@ import ticketTagRoutes from "./ticketTagRoutes";
 import pacienteRoutes from "./pacienteRoutes";
 import procedimentoRoutes from "./procedimentoRoutes";
 import agendamentoRoutes from "./agendamentoRoutes";
-import annaRoutes from "./annaRoutes";
+import auroraRoutes from "./auroraRoutes";
 
 const routes = Router();
 
@@ -67,6 +67,6 @@ routes.use("/webhook/fb", webHookMetaRoutes);
 routes.use(pacienteRoutes);
 routes.use(procedimentoRoutes);
 routes.use(agendamentoRoutes);
-routes.use(annaRoutes);
+routes.use(auroraRoutes);
 
 export default routes;
