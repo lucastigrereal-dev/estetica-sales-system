@@ -1,0 +1,73 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Docker
+.dockerignore
+docker-compose.yml
+docker-compose.*.yml
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Python
+__pycache__
+*.py[cod]
+*$py.class
+.Python
+venv
+env
+.venv
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Build
+dist
+build
+out
+
+# Documentation
+README.md
+docs/
+*.md
+LICENSE
+
+# Logs
+*.log
+logs/
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+database/
+
+# Tests
+tests/
+test/
+*.test.*
+coverage/
+.pytest_cache
+
+# CI/CD
+.github
+.gitlab-ci.yml
+.travis.yml

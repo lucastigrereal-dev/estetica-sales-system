@@ -1,0 +1,242 @@
+{
+  "name": "Follow-up Automático - Leads Sem Resposta 3 Dias",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 10 * * *"
+            }
+          ]
+        }
+      },
+      "id": "cron-trigger-followup",
+      "name": "Cron Trigger - Diário 10h",
+      "type": "n8n-nodes-base.cron",
+      "typeVersion": 1,
+      "position": [240, 300]
+    },
+    {
+      "parameters": {
+        "method": "GET",
+        "url": "=http://localhost:3000/api/leads/no-response",
+        "sendQuery": true,
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "days",
+              "value": "3"
+            },
+            {
+              "name": "status",
+              "value": "novo,contato_inicial"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "fetch-leads-no-response",
+      "name": "Buscar Leads Sem Resposta Há 3 Dias",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [460, 300]
+    },
+    {
+      "parameters": {
+        "batchSize": 1,
+        "options": {}
+      },
+      "id": "loop-leads",
+      "name": "Loop - Para Cada Lead",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 1,
+      "position": [680, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "=http://localhost:3000/api/whatsapp/send",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": []
+        },
+        "jsonParameters": true,
+        "body": "={\n  \"to\": \"{{ $json.telefone }}\",\n  \"message\": \"Olá {{ $json.nome }}! 👋\\n\\nPercebemos que você demonstrou interesse em nossos procedimentos estéticos.\\n\\n{{ $json.followup_count === 0 ? '✨ Gostaria de conhecer mais sobre nossos tratamentos? Estamos prontos para te atender!' : $json.followup_count === 1 ? '💫 Ainda tem alguma dúvida? Ficaremos felizes em ajudar!' : '🌟 Última chance! Temos condições especiais para novos clientes. Vamos conversar?' }}\\n\\nResponda esta mensagem e vamos agendar sua avaliação gratuita! 💖\\n\\nClínica Estética\",\n  \"type\": \"followup\",\n  \"lead_id\": \"{{ $json.id }}\"\n}",
+        "options": {}
+      },
+      "id": "send-followup-whatsapp",
+      "name": "Enviar Follow-up WhatsApp",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [900, 300]
+    },
+    {
+      "parameters": {
+        "method": "PATCH",
+        "url": "=http://localhost:3000/api/leads/{{ $node['Loop - Para Cada Lead'].json.id }}",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": []
+        },
+        "jsonParameters": true,
+        "body": "={\n  \"ultimo_contato\": \"{{ $now.toISO() }}\",\n  \"followup_count\": {{ $node['Loop - Para Cada Lead'].json.followup_count + 1 }},\n  \"status\": \"{{ $node['Loop - Para Cada Lead'].json.followup_count >= 2 ? 'perdido' : 'em_followup' }}\",\n  \"observacoes\": \"Follow-up automático #{{ $node['Loop - Para Cada Lead'].json.followup_count + 1 }} enviado em {{ $now.toFormat('dd/MM/yyyy HH:mm') }}\"\n}",
+        "options": {}
+      },
+      "id": "update-lead-contact",
+      "name": "Atualizar Último Contato",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 3,
+      "position": [1120, 300]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $node['Loop - Para Cada Lead'].context.noItemsLeft }}",
+              "value2": false
+            }
+          ]
+        }
+      },
+      "id": "check-loop-done",
+      "name": "Verificar Fim do Loop",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [1340, 300]
+    },
+    {
+      "parameters": {
+        "values": {
+          "number": [
+            {
+              "name": "total_leads_processed",
+              "value": "={{ $node['Buscar Leads Sem Resposta Há 3 Dias'].json.length }}"
+            },
+            {
+              "name": "total_followups_sent",
+              "value": "={{ $runIndex + 1 }}"
+            }
+          ],
+          "string": [
+            {
+              "name": "execution_time",
+              "value": "={{ $now.toFormat('dd/MM/yyyy HH:mm:ss') }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "summary-stats",
+      "name": "Estatísticas do Follow-up",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 1,
+      "position": [1560, 300]
+    }
+  ],
+  "connections": {
+    "Cron Trigger - Diário 10h": {
+      "main": [
+        [
+          {
+            "node": "Buscar Leads Sem Resposta Há 3 Dias",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Buscar Leads Sem Resposta Há 3 Dias": {
+      "main": [
+        [
+          {
+            "node": "Loop - Para Cada Lead",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Loop - Para Cada Lead": {
+      "main": [
+        [
+          {
+            "node": "Enviar Follow-up WhatsApp",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Enviar Follow-up WhatsApp": {
+      "main": [
+        [
+          {
+            "node": "Atualizar Último Contato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Atualizar Último Contato": {
+      "main": [
+        [
+          {
+            "node": "Verificar Fim do Loop",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Verificar Fim do Loop": {
+      "main": [
+        [
+          {
+            "node": "Loop - Para Cada Lead",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Estatísticas do Follow-up",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "1",
+  "id": "followup-sequence-workflow",
+  "meta": {
+    "instanceId": "estetica-sales-system"
+  },
+  "tags": []
+}
