@@ -1,7 +1,7 @@
 # ===================================
 # Stage 1: Builder
 # ===================================
-FROM node:18-alpine AS builder
+FROM node:16-alpine AS builder
 
 ARG REACT_APP_BACKEND_URL
 ARG REACT_APP_STRIPE_KEY
@@ -12,7 +12,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install dependencies
-RUN npm ci
+RUN npm install
 
 # Copy source code
 COPY . .
@@ -39,10 +39,6 @@ COPY nginx.conf /etc/nginx/conf.d/default.conf
 # Copy built app from builder
 COPY --from=builder /app/build /usr/share/nginx/html
 
-# Copy entrypoint script
-COPY docker-entrypoint.sh /
-RUN chmod +x /docker-entrypoint.sh
-
 # Expose port
 EXPOSE 80
 
@@ -51,5 +47,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=10s --retries=3 \
   CMD curl -f http://localhost/ || exit 1
 
 # Run nginx
-ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["nginx", "-g", "daemon off;"]

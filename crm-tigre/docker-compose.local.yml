@@ -1,0 +1,135 @@
+version: '3.8'
+
+services:
+  # ===== POSTGRES DATABASE =====
+  postgres:
+    image: postgres:15-alpine
+    container_name: crm-tigre-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-crm_tigre}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-changeme}
+      POSTGRES_DB: ${POSTGRES_DB:-crm_tigre}
+      PGDATA: /var/lib/postgresql/data/pgdata
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - crm-network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-crm_tigre}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ===== REDIS CACHE =====
+  redis:
+    image: redis:7-alpine
+    container_name: crm-tigre-redis
+    restart: always
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-changeme}
+    ports:
+      - "6380:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - crm-network
+    healthcheck:
+      test: ["CMD", "redis-cli", "--raw", "incr", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # ===== BACKEND API =====
+  backend:
+    build:
+      context: ./saaskdmcodigo/backend
+      dockerfile: Dockerfile
+      args:
+        NODE_ENV: production
+    container_name: crm-tigre-backend
+    restart: always
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 4000
+
+      # Database
+      DB_DIALECT: postgres
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_USER: ${POSTGRES_USER:-crm_tigre}
+      DB_PASS: ${POSTGRES_PASSWORD:-changeme}
+      DB_NAME: ${POSTGRES_DB:-crm_tigre}
+      DB_DEBUG: false
+
+      # Redis
+      IO_REDIS_SERVER: redis
+      IO_REDIS_PORT: 6379
+      IO_REDIS_DB_SESSION: 2
+      IO_REDIS_PASSWORD: ${REDIS_PASSWORD:-changeme}
+
+      # JWT
+      JWT_SECRET: ${JWT_SECRET}
+      JWT_REFRESH_SECRET: ${JWT_REFRESH_SECRET:-myrefreshkey-whaticket-2024}
+      JWT_EXPIRES_IN: ${JWT_EXPIRES_IN:-7d}
+
+      # OpenAI (Aurora IA)
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-PLACEHOLDER}
+      OPENAI_MODEL: ${OPENAI_MODEL:-gpt-4-turbo-preview}
+
+      # URLs
+      FRONTEND_URL: ${FRONTEND_URL:-http://localhost:3000}
+      BACKEND_URL: ${BACKEND_URL:-http://localhost:4000}
+
+    ports:
+      - "4000:4000"
+    volumes:
+      - backend_uploads:/app/public/uploads
+      - backend_logs:/app/logs
+    networks:
+      - crm-network
+
+  # ===== FRONTEND =====
+  frontend:
+    build:
+      context: ./saaskdmcodigo/frontend
+      dockerfile: Dockerfile
+      args:
+        REACT_APP_BACKEND_URL: ${BACKEND_URL:-http://localhost:4000}
+        REACT_APP_STRIPE_KEY: ${REACT_APP_STRIPE_KEY:-}
+    container_name: crm-tigre-frontend
+    restart: always
+    depends_on:
+      - backend
+    environment:
+      REACT_APP_BACKEND_URL: ${BACKEND_URL:-http://localhost:4000}
+    ports:
+      - "3001:80"
+    networks:
+      - crm-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+  backend_uploads:
+    driver: local
+  backend_logs:
+    driver: local
+
+networks:
+  crm-network:
+    driver: bridge

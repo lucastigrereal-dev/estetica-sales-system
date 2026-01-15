@@ -1,7 +1,7 @@
 # ===================================
 # Stage 1: Builder
 # ===================================
-FROM node:18-alpine AS builder
+FROM node:20-alpine AS builder
 
 WORKDIR /app
 
@@ -23,7 +23,7 @@ RUN npm run build || true
 # ===================================
 # Stage 2: Production
 # ===================================
-FROM node:18-alpine
+FROM node:20-alpine
 
 WORKDIR /app
 
@@ -32,7 +32,11 @@ RUN apk add --no-cache \
     ffmpeg \
     curl \
     bash \
-    tzdata
+    tzdata \
+    git \
+    python3 \
+    make \
+    g++
 
 # Set timezone
 ENV TZ=America/Sao_Paulo
@@ -70,4 +74,4 @@ HEALTHCHECK --interval=30s --timeout=10s --start-period=40s --retries=3 \
   CMD curl -f http://localhost:4000/health || exit 1
 
 # Start application
-CMD ["npm", "run", "start"]
+CMD ["node", "dist/server.js"]
