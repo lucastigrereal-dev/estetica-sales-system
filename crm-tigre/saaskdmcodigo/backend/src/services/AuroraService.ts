@@ -7,7 +7,7 @@ import OpenAIService from "./OpenAIService";
 import SendWhatsAppMessage from "./WbotServices/SendWhatsAppMessage";
 import { logger } from "../utils/logger";
 import { getIO } from "../libs/socket";
-import { evaluateLead, LeadState } from "./sdr-aurora/engine.js";
+import { evaluateLead, LeadState } from "./sdr-aurora/engine";
 
 interface ProcessarMensagemResponse {
   deveContinuar: boolean;

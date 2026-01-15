@@ -1,9 +1,21 @@
 import OpenAI from "openai";
 import { logger } from "../utils/logger";
 
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY
-});
+// Lazy initialization - só instancia quando necessário
+let openai: OpenAI | null = null;
+
+const getOpenAIClient = (): OpenAI => {
+  if (!openai) {
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey || apiKey === "PLACEHOLDER_SUBSTITUA_AQUI") {
+      throw new Error(
+        "⚠️  OPENAI_API_KEY não configurada! Configure no arquivo .env antes de usar Aurora (IA)"
+      );
+    }
+    openai = new OpenAI({ apiKey });
+  }
+  return openai;
+};
 
 interface ContextoConversa {
   nomeClinica: string;
@@ -41,7 +53,8 @@ class OpenAIService {
     try {
       const systemPrompt = this.buildSystemPrompt(contexto);
 
-      const response = await openai.chat.completions.create({
+      const client = getOpenAIClient();
+      const response = await client.chat.completions.create({
         model: process.env.OPENAI_MODEL || "gpt-4-turbo-preview",
         messages: [
           { role: "system", content: systemPrompt },
@@ -61,7 +74,8 @@ class OpenAIService {
 
   async analisarSentimento(mensagem: string): Promise<AnaliseSentimento> {
     try {
-      const response = await openai.chat.completions.create({
+      const client = getOpenAIClient();
+      const response = await client.chat.completions.create({
         model: "gpt-4o-mini",
         messages: [
           {
@@ -99,7 +113,8 @@ Extraia as seguintes informações:
 Retorne JSON válido com essas chaves.
 `;
 
-      const response = await openai.chat.completions.create({
+      const client = getOpenAIClient();
+      const response = await client.chat.completions.create({
         model: "gpt-4-turbo-preview",
         messages: [
           { role: "system", content: prompt },
@@ -118,7 +133,8 @@ Retorne JSON válido com essas chaves.
 
   async gerarResumoConversa(mensagens: HistoricoMensagem[]): Promise<string> {
     try {
-      const response = await openai.chat.completions.create({
+      const client = getOpenAIClient();
+      const response = await client.chat.completions.create({
         model: "gpt-4o-mini",
         messages: [
           {
@@ -139,7 +155,7 @@ Retorne JSON válido com essas chaves.
   }
 
   private buildSystemPrompt(contexto: ContextoConversa): string {
-    return `Você é Anna, assistente virtual da ${contexto.nomeClinica}.
+    return `Você é Aurora, assistente virtual da ${contexto.nomeClinica}.
 
 Você é simpática, profissional e objetiva.
 Seu objetivo é qualificar leads e coletar informações para agendamento.

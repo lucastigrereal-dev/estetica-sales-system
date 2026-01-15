@@ -1,4 +1,4 @@
-import { LeadState, LeadScores, SignalCategory } from "./types.js";
+import { LeadState, LeadScores, SignalCategory } from "./types";
 
 export function classifyState(scores: LeadScores, signalCats: SignalCategory[]): LeadState {
   const hasSpam = signalCats.includes(SignalCategory.SPAM);

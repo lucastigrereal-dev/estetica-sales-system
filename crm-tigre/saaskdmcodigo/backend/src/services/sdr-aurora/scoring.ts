@@ -1,4 +1,4 @@
-import { LeadContext, LeadScores, TAEREWeights, SignalCategory } from "./types.js";
+import { LeadContext, LeadScores, TAEREWeights, SignalCategory } from "./types";
 
 const DEFAULT_WEIGHTS: TAEREWeights = {
   timing: 18,

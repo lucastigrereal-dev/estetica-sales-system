@@ -1,5 +1,5 @@
-import { LeadContext, LeadSignal, SignalCategory } from "./types.js";
-import { INTIMAX_PATTERNS } from "./patterns.js";
+import { LeadContext, LeadSignal, SignalCategory } from "./types";
+import { INTIMAX_PATTERNS } from "./patterns";
 
 export function extractSignals(ctx: LeadContext): LeadSignal[] {
   const signals: LeadSignal[] = [];

@@ -27,7 +27,7 @@ const CronJob = require('cron').CronJob;
 
 // Importar jobs de automação
 import { LembreteJob } from "./jobs/LembreteJob";
-import { Lembrete2hJob } from "./jobs/Lembrete2hJob";
+// import { Lembrete2hJob } from "./jobs/Lembrete2hJob"; // DISABLED - arquivo com erro de compilação
 import { NpsJob } from "./jobs/NpsJob";
 import { ReativacaoJob } from "./jobs/ReativacaoJob";
 
@@ -738,9 +738,9 @@ export async function startQueueProcess() {
   LembreteJob.start();
   logger.info("✅ LembreteJob (24h) iniciado - Cron: 0 * * * *");
 
-  // Lembrete 2h - a cada 30 minutos
-  Lembrete2hJob.start();
-  logger.info("✅ Lembrete2hJob (2h) iniciado - Cron: */30 * * * *");
+  // Lembrete 2h - a cada 30 minutos (DISABLED - arquivo com erro de compilação)
+  // Lembrete2hJob.start();
+  // logger.info("✅ Lembrete2hJob (2h) iniciado - Cron: */30 * * * *");
 
   // NPS - todos os dias às 20:00
   NpsJob.start();

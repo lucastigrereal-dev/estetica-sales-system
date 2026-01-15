@@ -1,7 +1,7 @@
-import { LeadContext, EvaluationResult, LeadState } from "./types.js";
-import { extractSignals, getSignalCategories } from "./extractSignals.js";
-import { scoreTAERE } from "./scoring.js";
-import { classifyState, decideAction, buildReasons } from "./classifier.js";
+import { LeadContext, EvaluationResult, LeadState } from "./types";
+import { extractSignals, getSignalCategories } from "./extractSignals";
+import { scoreTAERE } from "./scoring";
+import { classifyState, decideAction, buildReasons } from "./classifier";
 
 export function evaluateLead(ctx: LeadContext): EvaluationResult {
   // 1. Extrair sinais da mensagem
@@ -33,4 +33,4 @@ export function evaluateLead(ctx: LeadContext): EvaluationResult {
   };
 }
 
-export { LeadState, LeadContext, EvaluationResult } from "./types.js";
+export { LeadState, LeadContext, EvaluationResult } from "./types";

@@ -1,4 +1,4 @@
-import { SignalCategory } from "./types.js";
+import { SignalCategory } from "./types";
 
 export interface PatternDef {
   category: SignalCategory;
