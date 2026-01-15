@@ -1,0 +1,8 @@
+total 12
+drwxr-xr-x 1 lucas 197609   0 jan 14 16:14 .
+drwxr-xr-x 1 lucas 197609   0 jan 14 18:03 ..
+-rw-r--r-- 1 lucas 197609 279 jan 15 15:42 auth.js
+-rw-r--r-- 1 lucas 197609 513 jan 15 15:42 database.js
+-rw-r--r-- 1 lucas 197609 483 jan 15 15:42 Gn.js
+-rw-r--r-- 1 lucas 197609 408 jan 15 15:42 redis.js
+-rw-r--r-- 1 lucas 197609 730 jan 15 15:42 upload.js

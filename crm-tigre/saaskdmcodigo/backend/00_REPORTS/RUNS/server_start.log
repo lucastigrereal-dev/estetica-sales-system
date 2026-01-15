@@ -1,0 +1,29 @@
+
+> backend@1.0.0 dev:server
+> ts-node-dev --respawn --transpile-only --ignore node_modules src/server.ts
+
+[INFO] 16:14:10 ts-node-dev ver. 1.1.8 (using ts-node ver. 9.1.1, typescript ver. 4.9.5)
+Error: listen EADDRINUSE: address already in use :::8080
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at app.listen (C:\Users\lucas\estetica-sales-system\crm-tigre\saaskdmcodigo\backend\node_modules\express\lib\application.js:635:24)
+    at Object.<anonymous> (C:\Users\lucas\estetica-sales-system\crm-tigre\saaskdmcodigo\backend\src\server.ts:16:20)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1760:14)
+    at Module._compile (C:\Users\lucas\estetica-sales-system\crm-tigre\saaskdmcodigo\backend\node_modules\source-map-support\source-map-support.js:568:25)
+    at Module.m._compile (C:\Users\lucas\AppData\Local\Temp\ts-node-dev-hook-8362190388134225.js:69:33)
+    at node:internal/modules/cjs/loader:1893:10
+    at require.extensions.<computed> (C:\Users\lucas\AppData\Local\Temp\ts-node-dev-hook-8362190388134225.js:71:20)
+    at Object.nodeDevHook [as .ts] (C:\Users\lucas\estetica-sales-system\crm-tigre\saaskdmcodigo\backend\node_modules\ts-node-dev\lib\hook.js:63:13)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+    at Module._load (node:internal/modules/cjs/loader:1299:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:244:24)
+    at Module.require (node:internal/modules/cjs/loader:1503:12)
+    at require (node:internal/modules/helpers:152:16)
+    at Object.<anonymous> (C:\Users\lucas\estetica-sales-system\crm-tigre\saaskdmcodigo\backend\node_modules\ts-node-dev\lib\wrap.js:104:1)
+    at Module.<anonymous> (node:internal/modules/cjs/loader:1760:14)
+    at Module._compile (C:\Users\lucas\estetica-sales-system\crm-tigre\saaskdmcodigo\backend\node_modules\source-map-support\source-map-support.js:568:25)
+    at Object.<anonymous> (node:internal/modules/cjs/loader:1893:10)
+    at Module.load (node:internal/modules/cjs/loader:1480:32)
+[ERROR] 16:14:15 Error: listen EADDRINUSE: address already in use :::8080

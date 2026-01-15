@@ -1,0 +1,23 @@
+diff --git a/crm-tigre/saaskdmcodigo/backend/src/config/database.ts b/crm-tigre/saaskdmcodigo/backend/src/config/database.ts
+index d5e452b..ce26ec9 100644
+--- a/crm-tigre/saaskdmcodigo/backend/src/config/database.ts
++++ b/crm-tigre/saaskdmcodigo/backend/src/config/database.ts
+@@ -1,5 +1,7 @@
+ import "../bootstrap";
+ 
++const isTest = process.env.NODE_ENV === "test";
++
+ module.exports = {
+   define: {
+     charset: "utf8mb4",
+@@ -8,8 +10,8 @@ module.exports = {
+   dialect: process.env.DB_DIALECT || "mysql",
+   timezone: "-03:00",
+   host: process.env.DB_HOST,
+-  port: process.env.DB_PORT || 3306,
+-  database: process.env.DB_NAME,
++  port: process.env.DB_PORT || (process.env.DB_DIALECT === "postgres" ? 5432 : 3306),
++  database: isTest ? (process.env.DB_NAME_TEST || process.env.DB_NAME) : process.env.DB_NAME,
+   username: process.env.DB_USER,
+   password: process.env.DB_PASS,
+   logging: process.env.DB_DEBUG === "true"

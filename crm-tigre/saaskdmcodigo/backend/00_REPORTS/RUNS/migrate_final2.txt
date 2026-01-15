@@ -1,0 +1,348 @@
+
+[4mSequelize CLI [Node: 24.11.0, CLI: 5.5.1, ORM: 5.22.5][24m
+
+Loaded configuration file "dist\config\database.js".
+(node:47136) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+== 20200717133431-add-uuid-ossp: migrating =======
+== 20200717133431-add-uuid-ossp: migrated (0.014s)
+
+== 20200717133438-create-users: migrating =======
+== 20200717133438-create-users: migrated (0.014s)
+
+== 20200717144403-create-contacts: migrating =======
+== 20200717144403-create-contacts: migrated (0.012s)
+
+== 20200717145643-create-tickets: migrating =======
+== 20200717145643-create-tickets: migrated (0.014s)
+
+== 20200717151645-create-messages: migrating =======
+== 20200717151645-create-messages: migrated (0.012s)
+
+== 20200717170223-create-whatsapps: migrating =======
+== 20200717170223-create-whatsapps: migrated (0.011s)
+
+== 20200723200315-create-contacts-custom-fields: migrating =======
+== 20200723200315-create-contacts-custom-fields: migrated (0.011s)
+
+== 20200723202116-add-email-field-to-contacts: migrating =======
+== 20200723202116-add-email-field-to-contacts: migrated (0.006s)
+
+== 20200730153237-remove-user-association-from-messages: migrating =======
+== 20200730153237-remove-user-association-from-messages: migrated (0.007s)
+
+== 20200730153545-add-fromMe-to-messages: migrating =======
+== 20200730153545-add-fromMe-to-messages: migrated (0.006s)
+
+== 20200813114236-change-ticket-lastMessage-column-type: migrating =======
+== 20200813114236-change-ticket-lastMessage-column-type: migrated (0.006s)
+
+== 20200901235509-add-profile-column-to-users: migrating =======
+== 20200901235509-add-profile-column-to-users: migrated (0.007s)
+
+== 20200903215941-create-settings: migrating =======
+== 20200903215941-create-settings: migrated (0.012s)
+
+== 20200904220257-add-name-to-whatsapp: migrating =======
+== 20200904220257-add-name-to-whatsapp: migrated (0.008s)
+
+== 20200906122228-add-name-default-field-to-whatsapp: migrating =======
+== 20200906122228-add-name-default-field-to-whatsapp: migrated (0.006s)
+
+== 20200906155658-add-whatsapp-field-to-tickets: migrating =======
+== 20200906155658-add-whatsapp-field-to-tickets: migrated (0.006s)
+
+== 20200919124112-update-default-column-name-on-whatsappp: migrating =======
+== 20200919124112-update-default-column-name-on-whatsappp: migrated (0.020s)
+
+== 20200927220708-add-isDeleted-column-to-messages: migrating =======
+== 20200927220708-add-isDeleted-column-to-messages: migrated (0.007s)
+
+== 20200929145451-add-user-tokenVersion-column: migrating =======
+== 20200929145451-add-user-tokenVersion-column: migrated (0.006s)
+
+== 20200930162323-add-isGroup-column-to-tickets: migrating =======
+== 20200930162323-add-isGroup-column-to-tickets: migrated (0.006s)
+
+== 20200930194808-add-isGroup-column-to-contacts: migrating =======
+== 20200930194808-add-isGroup-column-to-contacts: migrated (0.006s)
+
+== 20201004150008-add-contactId-column-to-messages: migrating =======
+== 20201004150008-add-contactId-column-to-messages: migrated (0.007s)
+
+== 20201004155719-add-vcardContactId-column-to-messages: migrating =======
+== 20201004155719-add-vcardContactId-column-to-messages: migrated (0.006s)
+
+== 20201004955719-remove-vcardContactId-column-to-messages: migrating =======
+== 20201004955719-remove-vcardContactId-column-to-messages: migrated (0.007s)
+
+== 20201026215410-add-retries-to-whatsapps: migrating =======
+== 20201026215410-add-retries-to-whatsapps: migrated (0.005s)
+
+== 20201028124427-add-quoted-msg-to-messages: migrating =======
+== 20201028124427-add-quoted-msg-to-messages: migrated (0.006s)
+
+== 20210108001431-add-unreadMessages-to-tickets: migrating =======
+== 20210108001431-add-unreadMessages-to-tickets: migrated (0.006s)
+
+== 20210108164404-create-queues: migrating =======
+== 20210108164404-create-queues: migrated (0.016s)
+
+== 20210108164504-add-queueId-to-tickets: migrating =======
+== 20210108164504-add-queueId-to-tickets: migrated (0.008s)
+
+== 20210108174594-associate-whatsapp-queue: migrating =======
+== 20210108174594-associate-whatsapp-queue: migrated (0.011s)
+
+== 20210108204708-associate-users-queue: migrating =======
+== 20210108204708-associate-users-queue: migrated (0.010s)
+
+== 20210109192513-add-greetingMessage-to-whatsapp: migrating =======
+== 20210109192513-add-greetingMessage-to-whatsapp: migrated (0.007s)
+
+== 20210109192514-create-companies-table: migrating =======
+== 20210109192514-create-companies-table: migrated (0.014s)
+
+== 20210109192515-add-column-companyId-to-Settings-table: migrating =======
+== 20210109192515-add-column-companyId-to-Settings-table: migrated (0.007s)
+
+== 20210109192516-add-column-companyId-to-Users-table: migrating =======
+== 20210109192516-add-column-companyId-to-Users-table: migrated (0.007s)
+
+== 20210109192517-add-column-companyId-to-Contacts-table: migrating =======
+== 20210109192517-add-column-companyId-to-Contacts-table: migrated (0.008s)
+
+== 20210109192518-add-column-companyId-to-Messages-table: migrating =======
+== 20210109192518-add-column-companyId-to-Messages-table: migrated (0.006s)
+
+== 20210109192519-add-column-companyId-to-Queues-table: migrating =======
+== 20210109192519-add-column-companyId-to-Queues-table: migrated (0.006s)
+
+== 20210109192520-add-column-companyId-to-Whatsapps-table: migrating =======
+== 20210109192520-add-column-companyId-to-Whatsapps-table: migrated (0.006s)
+
+== 20210109192521-add-column-companyId-to-Tickets-table: migrating =======
+== 20210109192521-add-column-companyId-to-Tickets-table: migrated (0.006s)
+
+== 20210109192522-create-plans-table: migrating =======
+== 20210109192522-create-plans-table: migrated (0.011s)
+
+== 20210109192523-add-column-planId-to-Companies: migrating =======
+== 20210109192523-add-column-planId-to-Companies: migrated (0.007s)
+
+== 20210109192523-add-column-status-and-schedules-to-Companies: migrating =======
+== 20210109192523-add-column-status-and-schedules-to-Companies: migrated (0.008s)
+
+== 20210109192523-create-ticket-notes: migrating =======
+== 20210109192523-create-ticket-notes: migrated (0.010s)
+
+== 20210109192524-create-quick-messages: migrating =======
+== 20210109192524-create-quick-messages: migrated (0.014s)
+
+== 20210109192525-add-column-complationMessage-to-whatsapp: migrating =======
+== 20210109192525-add-column-complationMessage-to-whatsapp: migrated (0.006s)
+
+== 20210109192526-add-column-outOfHoursMessage-to-whatsapp : migrating =======
+== 20210109192526-add-column-outOfHoursMessage-to-whatsapp : migrated (0.007s)
+
+== 20210109192527-add-column-super-to-Users-table: migrating =======
+== 20210109192527-add-column-super-to-Users-table: migrated (0.007s)
+
+== 20210109192528-change-column-message-to-quick-messages-table: migrating =======
+== 20210109192528-change-column-message-to-quick-messages-table: migrated (0.006s)
+
+== 20210109192529-create-helps: migrating =======
+== 20210109192529-create-helps: migrated (0.011s)
+
+== 20210109192530-add-unique-constraint-to-Contacts-table: migrating =======
+== 20210109192530-add-unique-constraint-to-Contacts-table: migrated (0.007s)
+
+== 20210109192531-create-TicketTracking-table: migrating =======
+== 20210109192531-create-TicketTracking-table: migrated (0.011s)
+
+== 20210109192532-add-column-online-to-Users-table: migrating =======
+== 20210109192532-add-column-online-to-Users-table: migrated (0.006s)
+
+== 20210109192533-create-UserRatings-table: migrating =======
+== 20210109192533-create-UserRatings-table: migrated (0.010s)
+
+== 20210109192534-add-rated-to-TicketTraking: migrating =======
+== 20210109192534-add-rated-to-TicketTraking: migrated (0.012s)
+
+== 20210109192535-add-column-ratingMessage-to-whatsapp: migrating =======
+== 20210109192535-add-column-ratingMessage-to-whatsapp: migrated (0.006s)
+
+== 20210109192536-add-unique-constraint-to-Tickets-table: migrating =======
+== 20210109192536-add-unique-constraint-to-Tickets-table: migrated (0.009s)
+
+== 20210818102606-add-uuid-to-tickets: migrating =======
+== 20210818102606-add-uuid-to-tickets: migrated (0.018s)
+
+== 20210818102607-remove-unique-indexes-to-Contacts-table: migrating =======
+== 20210818102607-remove-unique-indexes-to-Contacts-table: migrated (0.007s)
+
+== 20210818102607-remove-unique-indexes-to-Queues-table: migrating =======
+== 20210818102607-remove-unique-indexes-to-Queues-table: migrated (0.008s)
+
+== 20210818102608-add-unique-indexes-to-Queues-table: migrating =======
+== 20210818102608-add-unique-indexes-to-Queues-table: migrated (0.016s)
+
+== 20210818102609-add-token-to-Whatsapps: migrating =======
+== 20210818102609-add-token-to-Whatsapps: migrated (0.005s)
+
+== 20211205164404-create-queue-options: migrating =======
+== 20211205164404-create-queue-options: migrated (0.014s)
+
+== 20211212125704-add-chatbot-to-tickets: migrating =======
+== 20211212125704-add-chatbot-to-tickets: migrated (0.009s)
+
+== 20211227010200-create-schedules: migrating =======
+== 20211227010200-create-schedules: migrated (0.014s)
+
+== 20220115114088-add-column-userId-to-QuickMessages-table: migrating =======
+== 20220115114088-add-column-userId-to-QuickMessages-table: migrated (0.005s)
+
+== 20220117130000-create-tags: migrating =======
+== 20220117130000-create-tags: migrated (0.012s)
+
+== 20220117134400-associate-tickets-tags: migrating =======
+== 20220117134400-associate-tickets-tags: migrated (0.008s)
+
+== 20220122160900-add-status-to-schedules: migrating =======
+== 20220122160900-add-status-to-schedules: migrated (0.007s)
+
+== 20220220014719-add-farewellMessage-to-whatsapp: migrating =======
+== 20220220014719-add-farewellMessage-to-whatsapp: migrated (0.006s)
+
+== 20220221014717-add-provider-whatsapp: migrating =======
+== 20220221014717-add-provider-whatsapp: migrated (0.007s)
+
+== 20220221014718-add-remoteJid-messages: migrating =======
+== 20220221014718-add-remoteJid-messages: migrated (0.006s)
+
+== 20220221014719-add-jsonMessage-messages: migrating =======
+== 20220221014719-add-jsonMessage-messages: migrated (0.006s)
+
+== 20220221014720-add-participant-messages: migrating =======
+== 20220221014720-add-participant-messages: migrated (0.006s)
+
+== 20220221014721-create-baileys: migrating =======
+== 20220221014721-create-baileys: migrated (0.011s)
+
+== 20220315110000-create-ContactLists-table: migrating =======
+== 20220315110000-create-ContactLists-table: migrated (0.010s)
+
+== 20220315110001-create-ContactListItems-table: migrating =======
+== 20220315110001-create-ContactListItems-table: migrated (0.012s)
+
+== 20220315110002-create-Campaigns-table: migrating =======
+== 20220315110002-create-Campaigns-table: migrated (0.012s)
+
+== 20220315110004-create-CampaignSettings-table: migrating =======
+== 20220315110004-create-CampaignSettings-table: migrated (0.010s)
+
+== 20220315110005-remove-constraint-to-Settings: migrating =======
+== 20220315110005-remove-constraint-to-Settings: migrated (0.013s)
+
+== 20220321130000-create-CampaignShipping: migrating =======
+== 20220321130000-create-CampaignShipping: migrated (0.011s)
+
+== 20220404000000-add-column-queueId-to-Messages-table: migrating =======
+== 20220404000000-add-column-queueId-to-Messages-table: migrated (0.005s)
+
+== 20220406000000-add-column-dueDate-to-Companies: migrating =======
+== 20220406000000-add-column-dueDate-to-Companies: migrated (0.006s)
+
+== 20220406000001-add-column-recurrence-to-Companies: migrating =======
+== 20220406000001-add-column-recurrence-to-Companies: migrated (0.005s)
+
+== 20220411000000-add-column-startTime-and-endTime-to-Queues: migrating =======
+== 20220411000000-add-column-startTime-and-endTime-to-Queues: migrated (0.009s)
+
+== 20220411000001-remove-column-startTime-and-endTime-to-Queues: migrating =======
+== 20220411000001-remove-column-startTime-and-endTime-to-Queues: migrated (0.009s)
+
+== 20220411000002-add-column-schedules-and-outOfHoursMessage-to-Queues: migrating =======
+== 20220411000002-add-column-schedules-and-outOfHoursMessage-to-Queues: migrated (0.006s)
+
+== 20220411000003-create-table-Announcements: migrating =======
+== 20220411000003-create-table-Announcements: migrated (0.011s)
+
+== 20220425000000-create-table-Chats: migrating =======
+== 20220425000000-create-table-Chats: migrated (0.012s)
+
+== 20220425000001-create-table-ChatUsers: migrating =======
+== 20220425000001-create-table-ChatUsers: migrated (0.010s)
+
+== 20220425000002-create-table-ChatMessages: migrating =======
+== 20220425000002-create-table-ChatMessages: migrated (0.014s)
+
+== 20220512000001-create-Indexes: migrating =======
+== 20220512000001-create-Indexes: migrated (0.016s)
+
+== 20220512000002-create-subscriptions: migrating =======
+== 20220512000002-create-subscriptions: migrated (0.011s)
+
+== 20220512000003-create-invoices: migrating =======
+== 20220512000003-create-invoices: migrated (0.012s)
+
+== 20220814000000-add-value-to-plans: migrating =======
+== 20220814000000-add-value-to-plans: migrated (0.007s)
+
+== 20222016014719-add-channel-session: migrating =======
+== 20222016014719-add-channel-session: migrated (0.005s)
+
+== 20222016014719-add-channel-to-contacts: migrating =======
+== 20222016014719-add-channel-to-contacts: migrated (0.005s)
+
+== 20222016014719-add-channel-to-message: migrating =======
+== 20222016014719-add-channel-to-message: migrated (0.005s)
+
+== 20222016014719-add-channel-to-ticket: migrating =======
+== 20222016014719-add-channel-to-ticket: migrated (0.005s)
+
+== 20222016014719-add-channel-token: migrating =======
+== 20222016014719-add-channel-token: migrated (0.005s)
+
+== 20222016014719-add-channel-tokenUser: migrating =======
+== 20222016014719-add-channel-tokenUser: migrated (0.005s)
+
+== 20222016014719-add-facebookPageUserId-whatsapp: migrating =======
+== 20222016014719-add-facebookPageUserId-whatsapp: migrated (0.005s)
+
+== 20222016014719-add-facebookUserId-whatsapp: migrating =======
+== 20222016014719-add-facebookUserId-whatsapp: migrated (0.009s)
+
+== 20230528202116-add-transferMessage-field-to-Whatsapp: migrating =======
+== 20230528202116-add-transferMessage-field-to-Whatsapp: migrated (0.006s)
+
+== 20230723301001-add-kanban-to-Tags: migrating =======
+== 20230723301001-add-kanban-to-Tags: migrated (0.005s)
+
+== 20230813114236-change-ticket-lastMessage-column-type: migrating =======
+== 20230813114236-change-ticket-lastMessage-column-type: migrated (0.006s)
+
+== 20230904212800-alter-value-to-plans: migrating =======
+== 20230904212800-alter-value-to-plans: migrated (0.011s)
+
+== 20230915212800-add-public-to-plans: migrating =======
+== 20230915212800-add-public-to-plans: migrated (0.005s)
+
+== 20230918122800-add-media-to-Queues: migrating =======
+== 20230918122800-add-media-to-Queues: migrated (0.006s)
+
+== 20230918142800-add-media-to-QueueOptions: migrating =======
+== 20230918142800-add-media-to-QueueOptions: migrated (0.008s)
+
+== 20260114000001-create-procedimentos: migrating =======
+== 20260114000001-create-procedimentos: migrated (0.012s)
+
+== 20260114000002-create-agendamentos: migrating =======
+== 20260114000002-create-agendamentos: migrated (0.021s)
+
+== 20260114000003-create-automacoes: migrating =======
+== 20260114000003-create-automacoes: migrated (0.019s)
+
+== 20260114155109-create-pacientes: migrating =======
+== 20260114155109-create-pacientes: migrated (0.013s)
+

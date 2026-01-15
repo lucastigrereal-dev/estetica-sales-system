@@ -1,0 +1,11 @@
+{
+  "define": {
+    "charset": "utf8mb4",
+    "collate": "utf8mb4_bin"
+  },
+  "dialect": "mysql",
+  "timezone": "-03:00",
+  "port": 3306,
+  "password": "***",
+  "logging": false
+}

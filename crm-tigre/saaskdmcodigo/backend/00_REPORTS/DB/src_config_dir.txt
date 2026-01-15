@@ -1,0 +1,8 @@
+total 9
+drwxr-xr-x 1 lucas 197609   0 jan 14 16:00 .
+drwxr-xr-x 1 lucas 197609   0 jan 14 21:01 ..
+-rw-r--r-- 1 lucas 197609 189 jan 14 16:00 auth.ts
+-rw-r--r-- 1 lucas 197609 406 jan 14 16:00 database.ts
+-rw-r--r-- 1 lucas 197609 309 jan 14 16:00 Gn.ts
+-rw-r--r-- 1 lucas 197609 238 jan 14 16:00 redis.ts
+-rw-r--r-- 1 lucas 197609 404 jan 14 16:00 upload.ts

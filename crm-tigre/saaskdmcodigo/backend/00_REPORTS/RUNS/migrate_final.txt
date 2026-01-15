@@ -1,0 +1,9 @@
+
+[4mSequelize CLI [Node: 24.11.0, CLI: 5.5.1, ORM: 5.22.5][24m
+
+Loaded configuration file "dist\config\database.js".
+(node:14660) [DEP0176] DeprecationWarning: fs.R_OK is deprecated, use fs.constants.R_OK instead
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+[31mERROR:[39m permission denied for schema public
+
