@@ -102,7 +102,7 @@ const SignUp = () => {
 	};
 
 	const [plans, setPlans] = useState([]);
-	const { list: listPlans } = usePlans();
+	const { getPlanList: listPlans } = usePlans();
 
 	useEffect(() => {
 		async function fetchData() {
