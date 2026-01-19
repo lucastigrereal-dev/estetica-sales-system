@@ -1,16 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 	<head>
-		<title>Hello Clique / Hello Drop</title>
+		<title>Instituto Rodovansky - CRM Premium</title>
+
+		<!-- Google Fonts - Premium Typography -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+		<!-- Material-UI Default Fonts -->
 		<link
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
 		/>
+
 		<link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
 		<link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-		<link rel=”shortcut icon” href=”%PUBLIC_URL%/favicon.ico”>
+		<link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
 		<link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-		<meta name="theme-color" content="#000000" />
+		<meta name="theme-color" content="#C9A050" />
+		<meta name="description" content="Instituto Rodovansky - Sistema Avançado de Gestão de Clínica de Estética" />
 		<meta
 			name="viewport"
 			content="minimum-scale=1, initial-scale=1, width=device-width"
@@ -20,6 +29,32 @@
 			// See https://github.com/facebook/react/issues/20829#issuecomment-802088260
 			if (!crossOriginIsolated) SharedArrayBuffer = ArrayBuffer;
 		</script>
+		<style>
+			/* CSS Variables for Premium Design */
+			:root {
+				--primary-gold: #C9A050;
+				--primary-gold-light: #E8D5A3;
+				--primary-gold-dark: #9A7B3D;
+				--secondary-navy: #1A2E4C;
+				--secondary-navy-light: #2D4A6F;
+				--secondary-navy-dark: #0F1C2E;
+				--neutral-white: #FFFFFF;
+				--neutral-cream: #FAF8F5;
+				--shadow-soft: 0 2px 8px rgba(26, 46, 76, 0.08);
+				--shadow-medium: 0 4px 16px rgba(26, 46, 76, 0.12);
+				--font-heading: 'Playfair Display', Georgia, serif;
+				--font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+				--font-accent: 'Cormorant Garamond', Georgia, serif;
+			}
+
+			* {
+				font-family: var(--font-body) !important;
+			}
+
+			h1, h2, h3, h4, h5, h6 {
+				font-family: var(--font-heading) !important;
+			}
+		</style>
 	</head>
 	<body>
 		<noscript>You need to enable JavaScript to run this app.</noscript>

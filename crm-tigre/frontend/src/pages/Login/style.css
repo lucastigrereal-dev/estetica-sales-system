@@ -5,8 +5,9 @@
 }
 
 body{
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Inter', 'Poppins', sans-serif;
     overflow: hidden;
+    background: linear-gradient(135deg, #1A2E4C 0%, #2D4A6F 50%, #FAF8F5 100%);
 }
 
 .wave{
@@ -53,9 +54,12 @@ form{
 
 .login-content h2{
 	margin: 15px 0;
-	color: #333;
+	color: #1A2E4C;
 	text-transform: uppercase;
 	font-size: 2.9rem;
+	font-family: 'Playfair Display', Georgia, serif;
+	font-weight: 700;
+	letter-spacing: 2px;
 }
 
 .login-content .input-div{
@@ -103,7 +107,7 @@ form{
 	bottom: -2px;
 	width: 0%;
 	height: 2px;
-	background-color: #38d39f;
+	background-color: #C9A050;
 	transition: .4s;
 }
 
@@ -125,7 +129,7 @@ form{
 }
 
 .input-div.focus > .i > i{
-	color: #38d39f;
+	color: #C9A050;
 }
 
 .input-div > div > input{
@@ -157,7 +161,7 @@ a{
 }
 
 a:hover{
-	color: #38d39f;
+	color: #C9A050;
 }
 
 .btn{
@@ -167,15 +171,18 @@ a:hover{
 	border-radius: 25px;
 	outline: none;
 	border: none;
-	background-image: linear-gradient(to right, #32be8f, #38d39f, #32be8f);
+	background-image: linear-gradient(135deg, #1A2E4C 0%, #C9A050 100%);
 	background-size: 200%;
 	font-size: 1.2rem;
-	color: #fff;
-	font-family: 'Poppins', sans-serif;
+	color: #FFFFFF;
+	font-family: 'Inter', 'Poppins', sans-serif;
 	text-transform: uppercase;
 	margin: 1rem 0;
 	cursor: pointer;
 	transition: .5s;
+	font-weight: 600;
+	letter-spacing: 1px;
+	box-shadow: 0 4px 16px rgba(26, 46, 76, 0.2);
 }
 .btn:hover{
 	background-position: right;
