@@ -5,6 +5,7 @@ import { logger } from "./utils/logger";
 import { StartAllWhatsAppsSessions } from "./services/WbotServices/StartAllWhatsAppsSessions";
 import Company from "./models/Company";
 import { startQueueProcess } from "./queues";
+import { startLembreteJobs } from "./jobs/LembreteJob";
 import https from "https"
 import fs from "fs"
 // const privatkey = fs.readFileSync("./certs/key.pem","utf-8")
@@ -23,6 +24,7 @@ const server = app.listen(process.env.PORT, async () => {
 
   Promise.all(allPromises).then(() => {
     startQueueProcess();
+    startLembreteJobs();
   });
   logger.info(`Server started on port: ${process.env.PORT}`);
 });

@@ -28,6 +28,8 @@ import invoiceRoutes from "./invoicesRoutes";
 import subscriptionRoutes from "./subScriptionRoutes";
 import webHookMetaRoutes from "./WebHookMetaRoutes";
 import ticketTagRoutes from "./ticketTagRoutes";
+import auroraRoutes from "./auroraRoutes";
+import lembreteRoutes from "./lembreteRoutes";
 
 const routes = Router();
 
@@ -60,6 +62,7 @@ routes.use(subscriptionRoutes);
 routes.use(invoiceRoutes);
 routes.use(ticketTagRoutes);
 routes.use("/webhook/fb", webHookMetaRoutes);
-
+routes.use("/aurora", auroraRoutes);
+routes.use("/lembretes", lembreteRoutes);
 
 export default routes;
