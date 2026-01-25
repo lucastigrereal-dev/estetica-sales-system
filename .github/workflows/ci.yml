@@ -1,0 +1,200 @@
+# ========================================
+# 🎯 CI UNIVERSAL - estetica-sales-system
+# ========================================
+# Configurado automaticamente por Claude Code
+# Stack: Python FastAPI + Node CRM (multi-language)
+
+name: CI Universal
+
+on:
+  push:
+    branches: [main, master, develop]
+  pull_request:
+    branches: [main, master, develop]
+
+# ========================================
+# 📝 CONFIGURAÇÃO
+# ========================================
+env:
+  # 1. Tipo do projeto
+  PROJECT_TYPE: 'multi-lang'
+
+  # 2. Diretório do backend (use "." se backend está na raiz)
+  BACKEND_DIR: 'crm-tigre/saaskdmcodigo/backend'
+
+  # 3. Diretório do frontend (deixe vazio "" se não tiver)
+  FRONTEND_DIR: 'crm-tigre/saaskdmcodigo/frontend'
+
+  # 4. Versão do Node.js
+  NODE_VERSION: '20'
+
+# ========================================
+# 🚀 JOBS
+# ========================================
+jobs:
+  # ==========================================
+  # Backend Node/TypeScript
+  # ==========================================
+  backend-node:
+    name: Backend (Node)
+    runs-on: ubuntu-latest
+    if: contains(fromJSON('["nestjs", "nextjs", "monorepo", "multi-lang"]'), env.PROJECT_TYPE)
+
+    defaults:
+      run:
+        working-directory: ${{ env.BACKEND_DIR }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: ${{ env.BACKEND_DIR }}/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+        continue-on-error: true
+
+      - name: Test
+        run: npm test
+        continue-on-error: true
+
+      - name: Build
+        run: npm run build
+
+  # ==========================================
+  # Frontend (se existir)
+  # ==========================================
+  frontend:
+    name: Frontend
+    runs-on: ubuntu-latest
+    if: env.FRONTEND_DIR != ''
+
+    defaults:
+      run:
+        working-directory: ${{ env.FRONTEND_DIR }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+          cache-dependency-path: ${{ env.FRONTEND_DIR }}/package-lock.json
+
+      - name: Install dependencies
+        run: npm ci || npm install
+
+      - name: Lint
+        run: npm run lint
+        continue-on-error: true
+
+      - name: Build
+        run: npm run build
+
+  # ==========================================
+  # Backend Python (se aplicável)
+  # ==========================================
+  backend-python:
+    name: Backend (Python)
+    runs-on: ubuntu-latest
+    if: contains(fromJSON('["python", "multi-lang"]'), env.PROJECT_TYPE)
+
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: 'pip'
+          cache-dependency-path: backend/requirements.txt
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Lint
+        run: |
+          pip install flake8
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        continue-on-error: true
+
+      - name: Test
+        run: |
+          if [ -f "pytest.ini" ]; then
+            pip install pytest
+            pytest
+          fi
+        continue-on-error: true
+
+  # ==========================================
+  # Monorepo (Turbo)
+  # ==========================================
+  monorepo:
+    name: Monorepo (Turbo)
+    runs-on: ubuntu-latest
+    if: env.PROJECT_TYPE == 'monorepo'
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Generate Prisma (if exists)
+        run: npm run db:generate || true
+
+      - name: Lint all workspaces
+        run: npm run lint
+
+      - name: Build all workspaces
+        run: npm run build
+
+  # ==========================================
+  # Security Scan (todos os projetos)
+  # ==========================================
+  security:
+    name: Security Scan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Run Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          scan-type: 'fs'
+          scan-ref: '.'
+          format: 'sarif'
+          output: 'trivy-results.sarif'
+          severity: 'CRITICAL,HIGH'
+
+      - name: Upload Trivy results
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: 'trivy-results.sarif'
+        continue-on-error: true
