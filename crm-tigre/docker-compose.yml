@@ -61,11 +61,13 @@ services:
 
       # Database
       DATABASE_URL: postgresql://${POSTGRES_USER:-crm_tigre}:${POSTGRES_PASSWORD:-changeme}@postgres:5432/${POSTGRES_DB:-crm_tigre}?schema=public
+      DB_DIALECT: postgres
       DB_HOST: postgres
       DB_PORT: 5432
       DB_USER: ${POSTGRES_USER:-crm_tigre}
       DB_PASS: ${POSTGRES_PASSWORD:-changeme}
       DB_NAME: ${POSTGRES_DB:-crm_tigre}
+      DB_DEBUG: false
 
       # Redis
       REDIS_URL: redis://:${REDIS_PASSWORD:-changeme}@redis:6379
