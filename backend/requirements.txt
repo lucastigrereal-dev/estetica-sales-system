@@ -11,3 +11,6 @@ httpx==0.26.0
 cryptography==41.0.7
 reportlab==4.4.7
 xlsxwriter==3.2.9
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+python-multipart==0.0.6

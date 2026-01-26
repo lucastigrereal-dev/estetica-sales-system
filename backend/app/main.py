@@ -2,7 +2,9 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from .database import engine, Base
 from .routers import (
+    auth,
     leads,
+    lead_scoring,
     agendamentos,
     dashboard,
     pagamentos,
@@ -31,7 +33,9 @@ app.add_middleware(
 )
 
 # Incluir routers
+app.include_router(auth.router, prefix="/api", tags=["Autenticação"])
 app.include_router(leads.router, prefix="/api", tags=["Leads"])
+app.include_router(lead_scoring.router, prefix="/api", tags=["Lead Scoring"])
 app.include_router(agendamentos.router, prefix="/api", tags=["Agendamentos"])
 app.include_router(dashboard.router, prefix="/api", tags=["Dashboard"])
 app.include_router(dashboard_executivo.router, prefix="/api", tags=["Dashboard Executivo"])

@@ -26,7 +26,13 @@ class LeadResponse(BaseModel):
     origem: Optional[str]
     interesse: Optional[str]
     status: str
+    score: Optional[int] = 0
+    temperature: Optional[str] = "cold"
+    replied_to_campaign: Optional[bool] = False
+    opened_messages: Optional[int] = 0
+    requested_appointment: Optional[bool] = False
     created_at: datetime
+    updated_at: Optional[datetime] = None
 
     class Config:
         from_attributes = True
@@ -222,3 +228,38 @@ class DashboardFinanceiroResponse(BaseModel):
     pagamentos_aprovados_count: int
     receita_por_metodo: Dict[str, float]
     taxa_conversao_pagamento: float
+
+# ========================================
+# Autenticação - Schemas
+# ========================================
+
+class UserCreate(BaseModel):
+    email: str
+    password: str
+    nome: str
+    role: str = "atendente"  # admin, atendente, medico
+    clinica_id: int
+
+class UserLogin(BaseModel):
+    email: str
+    password: str
+
+class UserResponse(BaseModel):
+    id: int
+    email: str
+    nome: str
+    role: str
+    clinica_id: int
+    ativo: bool
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+class Token(BaseModel):
+    access_token: str
+    token_type: str
+    user: Optional[dict] = None
+
+class TokenData(BaseModel):
+    email: Optional[str] = None

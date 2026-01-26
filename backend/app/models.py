@@ -1,7 +1,8 @@
-from sqlalchemy import Column, Integer, String, Float, DateTime, Boolean, ForeignKey, Text, Index
+from sqlalchemy import Column, Integer, String, Float, DateTime, Boolean, ForeignKey, Text, Index, Enum
 from sqlalchemy.orm import relationship
 from datetime import datetime
 from .database import Base
+import enum
 
 class Clinica(Base):
     __tablename__ = "clinicas"
@@ -25,6 +26,34 @@ class Clinica(Base):
     pacientes = relationship("Paciente", back_populates="clinica")
     agendamentos = relationship("Agendamento", back_populates="clinica")
     pagamentos = relationship("Pagamento", back_populates="clinica")
+    users = relationship("User", back_populates="clinica")
+
+class UserRole(str, enum.Enum):
+    ADMIN = "admin"
+    ATENDENTE = "atendente"
+    MEDICO = "medico"
+
+class User(Base):
+    __tablename__ = "users"
+
+    id = Column(Integer, primary_key=True, index=True)
+    email = Column(String(100), unique=True, nullable=False, index=True)
+    password_hash = Column(String(255), nullable=False)
+    nome = Column(String(200), nullable=False)
+    role = Column(String(50), nullable=False, default=UserRole.ATENDENTE.value)
+    clinica_id = Column(Integer, ForeignKey("clinicas.id"), nullable=False)
+    ativo = Column(Boolean, default=True)
+
+    created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
+
+    # Relacionamento
+    clinica = relationship("Clinica", back_populates="users")
+
+    __table_args__ = (
+        Index('idx_user_email', 'email'),
+        Index('idx_user_clinica', 'clinica_id'),
+    )
 
 class Lead(Base):
     __tablename__ = "leads"
@@ -36,7 +65,18 @@ class Lead(Base):
     origem = Column(String)  # Ex: "instagram", "whatsapp", "indicacao"
     interesse = Column(String)  # Procedimento de interesse
     status = Column(String, default="novo")  # "novo", "contatado", "agendado", "convertido"
+
+    # Lead Scoring
+    score = Column(Integer, default=0)  # Pontuação 0-100
+    temperature = Column(String, default="cold")  # "hot", "warm", "cold"
+
+    # Tracking
+    replied_to_campaign = Column(Boolean, default=False)
+    opened_messages = Column(Integer, default=0)
+    requested_appointment = Column(Boolean, default=False)
+
     created_at = Column(DateTime, default=datetime.utcnow)
+    updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
 
     # Relacionamento
     paciente = relationship("Paciente", back_populates="lead", uselist=False)
