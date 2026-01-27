@@ -3,7 +3,6 @@ import makeWASocket, {
   AuthenticationState,
   DisconnectReason,
   fetchLatestBaileysVersion,
-  makeInMemoryStore,
   WASocket
 } from "@adiwajshing/baileys";
 import P from "pino";

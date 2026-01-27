@@ -26,9 +26,14 @@ const baseConfig = {
   legacyHeaders: false, // Disable X-RateLimit-* headers
   handler: rateLimitHandler,
   store: new RedisStore({
-    client: redisClient,
+    sendCommand: async (command: string, ...args: any[]) => {
+      if (command === "incr") return redisClient.incr(args[0]);
+      if (command === "get") return redisClient.get(args[0]);
+      if (command === "expire") return redisClient.expire(args[0], args[1]);
+      return null;
+    },
     prefix: "rl:"
-  })
+  } as any)
 };
 
 // ====================================

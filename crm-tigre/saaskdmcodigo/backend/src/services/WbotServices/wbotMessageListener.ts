@@ -1501,7 +1501,7 @@ const handleMessage = async (
          // dev Ricardo
 
         if (ticketTraking !== null && verifyRating(ticketTraking)) {
-          handleRating(msg, ticket, ticketTraking);
+          handleRating(msg as any, ticket, ticketTraking);
           return;
         }
       }
@@ -1618,7 +1618,7 @@ const handleMessage = async (
     try {
       if (!msg.key.fromMe) {
         if (ticketTraking !== null && verifyRating(ticketTraking)) {
-          handleRating(msg, ticket, ticketTraking);
+          handleRating(msg as any, ticket, ticketTraking);
           return;
         }
       }
@@ -1751,7 +1751,7 @@ const handleMessage = async (
           if (resultado.transferirPara === "chatbot") {
             // Transferir para chatbot de árvore
             await ticket.update({ chatbot: true, queueOptionId: null });
-            await handleChartbot(ticket, msg, wbot, false);
+            await handleChartbot(ticket, msg as any, wbot, false);
           } else if (resultado.transferirPara === "humano") {
             // Transferir para atendente
             await ticket.update({ status: "pending", userId: null });
@@ -1768,12 +1768,12 @@ const handleMessage = async (
 
     if (whatsapp.queues.length == 1 && ticket.queue) {
       if (ticket.chatbot && !msg.key.fromMe) {
-        await handleChartbot(ticket, msg, wbot);
+        await handleChartbot(ticket, msg as any, wbot);
       }
     }
     if (whatsapp.queues.length > 1 && ticket.queue) {
       if (ticket.chatbot && !msg.key.fromMe) {
-        await handleChartbot(ticket, msg, wbot, dontReadTheFirstQuestion);
+        await handleChartbot(ticket, msg as any, wbot, dontReadTheFirstQuestion);
       }
     }
 
@@ -1893,7 +1893,7 @@ const filterMessages = (msg: WAMessage): boolean => {
       WAMessageStubType.E2E_DEVICE_CHANGED,
       WAMessageStubType.E2E_IDENTITY_CHANGED,
       WAMessageStubType.CIPHERTEXT
-    ].includes(msg.messageStubType as WAMessageStubType)
+    ].includes(msg.messageStubType)
   )
     return false;
 

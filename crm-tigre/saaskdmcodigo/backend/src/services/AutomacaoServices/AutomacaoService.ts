@@ -238,8 +238,7 @@ class AutomacaoService {
         contact,
         whatsapp.id,
         0, // unreadMessages
-        companyId,
-        0 // queueId (0 = sem fila)
+        companyId
       );
 
       // Enviar mensagem

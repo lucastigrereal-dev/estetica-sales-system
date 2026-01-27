@@ -58,24 +58,24 @@ const CreateAgendamentoService = async ({
       [Op.or]: [
         {
           horaInicio: {
-            [Op.between]: [horaInicio, horaFim]
+            [Op.between]: [horaInicio as any, horaFim as any]
           }
         },
         {
           horaFim: {
-            [Op.between]: [horaInicio, horaFim]
+            [Op.between]: [horaInicio as any, horaFim as any]
           }
         },
         {
           [Op.and]: [
             {
               horaInicio: {
-                [Op.lte]: horaInicio
+                [Op.lte]: horaInicio as any
               }
             },
             {
               horaFim: {
-                [Op.gte]: horaFim
+                [Op.gte]: horaFim as any
               }
             }
           ]
